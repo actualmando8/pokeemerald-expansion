@@ -61,11 +61,13 @@ NavelRock_Base_Frlg_EventScript_Lugia::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Base_Frlg_EventScript_RanFromLugia
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Base_Frlg_EventScript_RanFromLugia
 	setflag FLAG_FOUGHT_LUGIA
+	call_if_set FLAG_FOUGHT_HO_OH, NavelRock_EventScript_SetNavelRockComplete
 	release
 	end
 
 NavelRock_Base_Frlg_EventScript_DefeatedLugia::
 	setflag FLAG_LUGIA_FLEW_AWAY
+	call_if_set FLAG_FOUGHT_HO_OH, NavelRock_EventScript_SetNavelRockComplete
 	setvar VAR_0x8004, SPECIES_LUGIA
 	goto EventScript_MonFlewAway
 	end

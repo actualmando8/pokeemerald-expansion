@@ -1087,10 +1087,14 @@ static u8 Debug_GenerateListTrainerMenu(void)
                 noDraw = TRUE;
                 break;
             }
+#if FREE_MATCH_CALL == FALSE
             if (gSaveBlock1Ptr->trainerRematches[rematchTableId])
                 StringCopy(gStringVar1, COMPOUND_STRING("{COLOR GREEN} TRUE"));
             else
                 StringCopy(gStringVar1, COMPOUND_STRING("{COLOR RED} FALSE"));
+#else
+            noDraw = TRUE;
+#endif
             break;
         case 8:
             if (I_VS_SEEKER_CHARGING == 0)
@@ -2140,12 +2144,14 @@ static void DebugAction_Trainers_SetRematch(u8 taskId)
 
 static void DebugAction_Trainers_SetRematchReadiness(u8 taskId)
 {
+#if FREE_MATCH_CALL == FALSE
     if (gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] == -1)
         return;
     if (gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]])
         gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] = FALSE;
     else
         gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] = TRUE;
+#endif
 }
 
 static void DebugAction_Trainers_TryBattle(u8 taskId)
@@ -2192,9 +2198,11 @@ static void DebugAction_Trainers_TryBattle(u8 taskId)
 
 static void DebugAction_Trainers_RechargeVsSeeker(u8 taskId)
 {
+#if FREE_MATCH_CALL == FALSE
     gSaveBlock1Ptr->trainerRematchStepCounter = VSSEEKER_RECHARGE_STEPS;
     MapResetTrainerRematches(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     ScriptContext_SetupScript(EventScript_VsSeekerChargingDone);
+#endif
     Debug_DestroyMenu_Full(taskId);
 }
 

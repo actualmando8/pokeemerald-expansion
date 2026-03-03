@@ -298,6 +298,7 @@ gSpecials::
 	def_special GetPokeblockNameByMonNature
 	def_special GetSecretBaseNearbyMapName
 	def_special CheckRelicanthWailord
+	def_special CheckAllFiveRegis
 	def_special ShouldDoBrailleRegirockEffectOld
 	def_special DoOrbEffect
 	def_special FadeOutOrbEffect
@@ -561,6 +562,7 @@ gSpecials::
 	def_special Script_GetChosenMonOffensiveIVs
 	def_special Script_GetChosenMonDefensiveIVs
 	def_special UseBlankMessageToCancelPokemonPic
+	def_special OpenPlayerNamingScreen
 	def_special EnterCode
 	def_special GetCodeFeedback
 	def_special SetHiddenNature

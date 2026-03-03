@@ -467,20 +467,27 @@ string generate_groups_text(Json groups_data, vector<string> &invalid_maps) {
     vector<string> valid_groups;
     for (auto &key : groups_data["group_order"].array_items()) {
         string group = json_to_string(key);
-        vector<string> valid_maps;
+        bool has_valid = false;
         auto maps = groups_data[group].array_items();
         for (Json &map_name : maps) {
             string map_name_str = json_to_string(map_name);
             auto it = find(invalid_maps.begin(), invalid_maps.end(), map_name_str);
             if (it == invalid_maps.end()) {
-                valid_maps.push_back(map_name_str);
+                has_valid = true;
+                break;
             }
         }
 
-        if (valid_maps.size() > 0) {
+        if (has_valid) {
             text << group << "::\n";
-            for (string map : valid_maps)
-                text << "\t.4byte " << map << "\n";
+            for (Json &map_name : maps) {
+                string map_name_str = json_to_string(map_name);
+                auto it = find(invalid_maps.begin(), invalid_maps.end(), map_name_str);
+                if (it == invalid_maps.end())
+                    text << "\t.4byte " << map_name_str << "\n";
+                else
+                    text << "\t.4byte 0\n";
+            }
             text << "\n";
             valid_groups.push_back(group);
         }
@@ -772,9 +779,7 @@ string generate_layout_headers_text(Json layouts_data) {
         if (layout_version.empty()) {
             layout_version = "emerald";
         }
-        if ((version == "emerald" && layout_version != "emerald")
-         || (version == "firered" && layout_version != "frlg"))
-            continue;
+        // Include all layouts regardless of version for multi-region support
         string layoutName = json_to_string(layout, "name");
         string border_label = layoutName + "_Border";
         string blockdata_label = layoutName + "_Blockdata";
@@ -827,9 +832,7 @@ string generate_layouts_table_text(Json layouts_data) {
         if (layout_version.empty()) {
             layout_version = "emerald";
         }
-        if ((version == "emerald" && layout_version != "emerald") || (version == "firered" && layout_version != "frlg")) {
-            text << "\t.4byte NULL\n";
-        } else {
+        {
             string layout_name = json_to_string(layout, "name", true);
             if (layout_name.empty()) layout_name = "NULL";
             text << "\t.4byte " << layout_name << "\n";

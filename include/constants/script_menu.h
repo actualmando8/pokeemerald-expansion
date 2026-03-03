@@ -17,13 +17,13 @@
 #define MULTI_BASE_PC_WITH_REGISTRY        6
 #define MULTI_REGISTER_MENU                7
 #define MULTI_SSTIDAL_LILYCOVE             8 // Exit only, populated by CreateLilycoveSSTidalMultichoice
-#define MULTI_UNUSED_9                     9
-#define MULTI_UNUSED_10                    10
+#define MULTI_BRINEY_CUSTOM                9  // Custom: Dewford / Route 104 / Cancel
+#define MULTI_BRINEY_DEWFORD_CUSTOM         10 // Custom: Slateport / Route 104 / Cancel
 #define MULTI_FRONTIER_PASS_INFO           11
 #define MULTI_BIKE                         12
 #define MULTI_STATUS_INFO                  13
 #define MULTI_BRINEY_OFF_DEWFORD           14
-#define MULTI_UNUSED_15                    15
+#define MULTI_HOENN_STARTER                15 // Custom: Treecko / Torchic / Mudkip / Cancel
 #define MULTI_VIEWED_PAINTINGS             16
 #define MULTI_YESNOINFO                    17
 #define MULTI_BATTLE_MODE                  18

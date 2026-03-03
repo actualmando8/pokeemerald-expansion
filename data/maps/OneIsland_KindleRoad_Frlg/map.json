@@ -2,8 +2,8 @@
   "id": "MAP_ONE_ISLAND_KINDLE_ROAD",
   "name": "OneIsland_KindleRoad_Frlg",
   "layout": "LAYOUT_ONE_ISLAND_KINDLE_ROAD",
-  "music": "MUS_RG_ROUTE3",
-  "region": "REGION_KANTO",
+  "music": "MUS_RG_SEVII_ROUTE",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_KINDLE_ROAD",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -203,6 +203,20 @@
       "trainer_sight_or_berry_tree_id": "1",
       "script": "OneIsland_KindleRoad_EventScript_Kia",
       "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_GRETA",
+      "x": 13,
+      "y": 55,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "OneIsland_KindleRoad_EventScript_Greta",
+      "flag": "FLAG_DEFEATED_SEVII_GRETA"
     },
     {
       "type": "object",
@@ -452,9 +466,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

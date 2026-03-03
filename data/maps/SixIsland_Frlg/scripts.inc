@@ -29,6 +29,12 @@ SixIsland_Text_ThatWayToWaterPathRuinValley::
 	.string "the RUIN VALLEY.$"
 
 SixIsland_Text_SkyAtNightIsFantastic::
-	.string "When you're this far away from the\n"
-	.string "city, the sky at night is fantastic.$"
+	.string "My grandparents came from JOHTO.\n"
+	.string "They say this island reminds them\l"
+	.string "of ILEX FOREST back home.\p"
+	.string "There are legends about a POKéMON\n"
+	.string "that travels through time hiding\l"
+	.string "deep in the PATTERN BUSH.\p"
+	.string "Maybe it's just a story, but the\n"
+	.string "air there does feel… different.$"
 

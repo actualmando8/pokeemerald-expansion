@@ -1,5 +1,62 @@
 SevenIsland_TanobyRuins_Frlg_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, SevenIsland_TanobyRuins_OnResume
+	map_script MAP_SCRIPT_ON_TRANSITION, SevenIsland_TanobyRuins_OnTransition
 	.byte 0
+
+SevenIsland_TanobyRuins_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, SevenIsland_TanobyRuins_EventScript_TryRemoveRegigigas
+	end
+
+SevenIsland_TanobyRuins_EventScript_TryRemoveRegigigas::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
+SevenIsland_TanobyRuins_OnTransition:
+	call_if_unset FLAG_DEFEATED_REGIGIGAS, SevenIsland_TanobyRuins_EventScript_TryShowRegigigas
+	end
+
+SevenIsland_TanobyRuins_EventScript_TryShowRegigigas::
+	goto_if_unset FLAG_REGI_DOORS_OPENED, SevenIsland_TanobyRuins_EventScript_DontShowRegigigas
+	specialvar VAR_RESULT, CheckAllFiveRegis
+	goto_if_eq VAR_RESULT, FALSE, SevenIsland_TanobyRuins_EventScript_DontShowRegigigas
+	clearflag FLAG_HIDE_REGIGIGAS
+	return
+
+SevenIsland_TanobyRuins_EventScript_DontShowRegigigas::
+	setflag FLAG_HIDE_REGIGIGAS
+	return
+
+SevenIsland_TanobyRuins_EventScript_Regigigas::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_REGIGIGAS, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_REGIGIGAS, 50
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SevenIsland_TanobyRuins_EventScript_DefeatedRegigigas
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SevenIsland_TanobyRuins_EventScript_RanFromRegigigas
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SevenIsland_TanobyRuins_EventScript_RanFromRegigigas
+	setflag FLAG_DEFEATED_REGIGIGAS
+	release
+	end
+
+SevenIsland_TanobyRuins_EventScript_DefeatedRegigigas::
+	setflag FLAG_DEFEATED_REGIGIGAS
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+SevenIsland_TanobyRuins_EventScript_RanFromRegigigas::
+	setvar VAR_0x8004, SPECIES_REGIGIGAS
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
 SevenIsland_TanobyRuins_Text_BrandonIntro::
 	.string "Do you know anything about this\n"

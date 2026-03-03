@@ -8,4 +8,4 @@ AUTO_GEN_TARGETS += test/battle/trainer_control.h
 AUTO_GEN_TARGETS += src/data/debug_trainers.h
 
 %.h: %.party
-	$(CPP) $(CPPFLAGS) -traditional-cpp - < $< | $(TRAINERPROC) -o $@ -i $< -
+	$(CPP) $(CPPFLAGS) -P -traditional-cpp - < $< | $(TRAINERPROC) -o $@ -i $< -

@@ -6,6 +6,28 @@ static const struct MenuAction MultichoiceList_BrineyOnDewford[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_BrineyCustom[] =
+{
+    {COMPOUND_STRING("DEWFORD")},
+    {COMPOUND_STRING("ROUTE 104")},
+    {gText_Cancel2},
+};
+
+static const struct MenuAction MultichoiceList_BrineyDewfordCustom[] =
+{
+    {COMPOUND_STRING("SLATEPORT")},
+    {COMPOUND_STRING("ROUTE 104")},
+    {gText_Cancel2},
+};
+
+static const struct MenuAction MultichoiceList_HoennStarter[] =
+{
+    {COMPOUND_STRING("TREECKO")},
+    {COMPOUND_STRING("TORCHIC")},
+    {COMPOUND_STRING("MUDKIP")},
+    {gText_Cancel2},
+};
+
 static const struct MenuAction MultichoiceList_EnterInfo[] =
 {
     {COMPOUND_STRING("ENTER")},
@@ -1110,13 +1132,13 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BASE_PC_WITH_REGISTRY]      = MULTICHOICE(MultichoiceList_BasePCWithRegistry),
     [MULTI_REGISTER_MENU]              = MULTICHOICE(MultichoiceList_RegisterMenu),
     [MULTI_SSTIDAL_LILYCOVE]           = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_UNUSED_9]                   = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_UNUSED_10]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_BRINEY_CUSTOM]              = MULTICHOICE(MultichoiceList_BrineyCustom),
+    [MULTI_BRINEY_DEWFORD_CUSTOM]      = MULTICHOICE(MultichoiceList_BrineyDewfordCustom),
     [MULTI_FRONTIER_PASS_INFO]         = MULTICHOICE(MultichoiceList_FrontierPassInfo),
     [MULTI_BIKE]                       = MULTICHOICE(MultichoiceList_Bike),
     [MULTI_STATUS_INFO]                = MULTICHOICE(MultichoiceList_StatusInfo),
     [MULTI_BRINEY_OFF_DEWFORD]         = MULTICHOICE(MultichoiceList_BrineyOffDewford),
-    [MULTI_UNUSED_15]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_HOENN_STARTER]              = MULTICHOICE(MultichoiceList_HoennStarter),
     [MULTI_VIEWED_PAINTINGS]           = MULTICHOICE(MultichoiceList_ViewedPaintings),
     [MULTI_YESNOINFO]                  = MULTICHOICE(MultichoiceList_YesNoInfo),
     [MULTI_BATTLE_MODE]                = MULTICHOICE(MultichoiceList_BattleMode),

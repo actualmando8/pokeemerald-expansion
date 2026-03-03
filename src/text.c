@@ -17,6 +17,7 @@
 #include "window.h"
 #include "constants/songs.h"
 #include "constants/speaker_names.h"
+#include "regions.h"
 
 static u16 RenderText(struct TextPrinter *);
 static u32 RenderFont(struct TextPrinter *);
@@ -1450,6 +1451,8 @@ static u16 RenderText(struct TextPrinter *textPrinter)
                 textPrinter->printerTemplate.currentChar++;
                 currChar |= *textPrinter->printerTemplate.currentChar << 8;
                 textPrinter->printerTemplate.currentChar++;
+                if (currChar == MUS_CAUGHT && GetCurrentRegion() == REGION_KANTO)
+                    currChar = MUS_RG_CAUGHT;
                 PlayBGM(currChar);
                 return RENDER_REPEAT;
             case EXT_CTRL_CODE_ESCAPE:

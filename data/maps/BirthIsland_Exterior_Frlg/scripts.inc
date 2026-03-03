@@ -88,11 +88,13 @@ BirthIsland_Exterior_Frlg_EventScript_Deoxys::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, BirthIsland_Exterior_Frlg_EventScript_RanFromDeoxys
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, BirthIsland_Exterior_Frlg_EventScript_RanFromDeoxys
 	setflag FLAG_FOUGHT_DEOXYS
+	setflag FLAG_DEFEATED_DEOXYS
 	release
 	end
 
 BirthIsland_Exterior_Frlg_EventScript_DefeatedDeoxys::
 	setflag FLAG_DEOXYS_FLEW_AWAY
+	setflag FLAG_DEFEATED_DEOXYS
 	setvar VAR_0x8004, SPECIES_DEOXYS
 	goto EventScript_MonFlewAway
 	end

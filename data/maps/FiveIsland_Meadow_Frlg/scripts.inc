@@ -109,3 +109,33 @@ FiveIsland_Meadow_Text_Rocket3PostBattle::
 	.string "You won't be able to get in without\n"
 	.string "the passwords anyway.$"
 
+FiveIsland_Meadow_EventScript_Spenser::
+	trainerbattle_single TRAINER_SEVII_SPENSER, FiveIsland_Meadow_Text_SpenserIntro, FiveIsland_Meadow_Text_SpenserDefeat, FiveIsland_Meadow_EventScript_SpenserDefeated
+	msgbox FiveIsland_Meadow_Text_SpenserPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+FiveIsland_Meadow_EventScript_SpenserDefeated::
+	setflag FLAG_DEFEATED_SEVII_SPENSER
+	msgbox FiveIsland_Meadow_Text_SpenserDefeat, MSGBOX_DEFAULT
+	release
+	end
+
+FiveIsland_Meadow_Text_SpenserIntro::
+	.string "I am SPENSER, the PALACE MAVEN.\p"
+	.string "This meadow teems with the wild\n"
+	.string "energy of nature itself.\p"
+	.string "Let your POKéMON's instincts\n"
+	.string "guide you in battle!$"
+
+FiveIsland_Meadow_Text_SpenserDefeat::
+	.string "Ho ho! Your POKéMON's instincts\n"
+	.string "are razor-sharp!\p"
+	.string "Nature has blessed you with\n"
+	.string "remarkable partners.$"
+
+FiveIsland_Meadow_Text_SpenserPostBattle::
+	.string "In the BATTLE PALACE, POKéMON\n"
+	.string "fight on their own instincts.\p"
+	.string "This meadow reminds me of that\n"
+	.string "wild, untamed spirit.$"
+

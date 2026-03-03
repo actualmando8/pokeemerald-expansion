@@ -169,6 +169,36 @@ OneIsland_KindleRoad_Text_RouteSign::
 	.string "This is KINDLE ROAD.\p"
 	.string "Go straight for MT. EMBER.$"
 
+OneIsland_KindleRoad_EventScript_Greta::
+	trainerbattle_single TRAINER_SEVII_GRETA, OneIsland_KindleRoad_Text_GretaIntro, OneIsland_KindleRoad_Text_GretaDefeat, OneIsland_KindleRoad_EventScript_GretaDefeated
+	msgbox OneIsland_KindleRoad_Text_GretaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+OneIsland_KindleRoad_EventScript_GretaDefeated::
+	setflag FLAG_DEFEATED_SEVII_GRETA
+	msgbox OneIsland_KindleRoad_Text_GretaDefeat, MSGBOX_DEFAULT
+	release
+	end
+
+OneIsland_KindleRoad_Text_GretaIntro::
+	.string "I'm GRETA, the ARENA TYCOON!\p"
+	.string "The fire of MT. EMBER fuels my\n"
+	.string "fighting spirit!\p"
+	.string "Show me the strength of your\n"
+	.string "convictions!$"
+
+OneIsland_KindleRoad_Text_GretaDefeat::
+	.string "That burning passion…\n"
+	.string "You've earned my respect!\p"
+	.string "The fire inside you burns\n"
+	.string "brighter than MT. EMBER itself!$"
+
+OneIsland_KindleRoad_Text_GretaPostBattle::
+	.string "I came to this volcanic island to\n"
+	.string "train my spirit.\p"
+	.string "The heat here reminds me to never\n"
+	.string "let my fighting spirit cool down!$"
+
 OneIsland_KindleRoad_Text_EmberSpaSign::
 	.string "Light the Fire in Your Heart!\n"
 	.string "EMBER SPA$"

@@ -21,11 +21,40 @@ LittlerootTown_ProfessorBirchsLab_MapScripts::
 
 LittlerootTown_ProfessorBirchsLab_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
+	call LittlerootTown_ProfessorBirchsLab_EventScript_TryShowBirchForVisitor
+	call LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStarters
 	call ProfBirch_EventScript_UpdateLocation
 	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6, LittlerootTown_ProfessorBirchsLab_EventScript_SetAfterJohtoStarterLayout
 	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_SetJohtoStarterLayout
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3, LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter
 	end
+
+@ Show Birch in lab if player is a Kanto visitor who hasn't met him yet
+LittlerootTown_ProfessorBirchsLab_EventScript_TryShowBirchForVisitor::
+	goto_if_set FLAG_MET_PROF_BIRCH, LittlerootTown_ProfessorBirchsLab_EventScript_TryShowBirchForVisitorEnd
+	goto_if_unset FLAG_VISITED_SLATEPORT_CITY, LittlerootTown_ProfessorBirchsLab_EventScript_TryShowBirchForVisitorEnd
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
+LittlerootTown_ProfessorBirchsLab_EventScript_TryShowBirchForVisitorEnd::
+	return
+
+@ Enable Johto starters if player has all 8 Hoenn badges (alternative to Hoenn dex completion)
+LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStarters::
+	goto_if_unset FLAG_MET_PROF_BIRCH, LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd
+	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd
+	@ Check all 8 Hoenn badges
+	goto_if_unset FLAG_BADGE01_GET, LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd
+	goto_if_unset FLAG_BADGE02_GET, LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd
+	goto_if_unset FLAG_BADGE03_GET, LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd
+	goto_if_unset FLAG_BADGE04_GET, LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd
+	goto_if_unset FLAG_BADGE05_GET, LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd
+	goto_if_unset FLAG_BADGE06_GET, LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd
+	goto_if_unset FLAG_BADGE07_GET, LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd
+	goto_if_unset FLAG_BADGE08_GET, LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd
+	@ All 8 badges - enable Johto starters
+	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
+LittlerootTown_ProfessorBirchsLab_EventScript_TryEnableJohtoStartersEnd::
+	return
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter::
 	specialvar VAR_RESULT, HasAllHoennMons
@@ -463,6 +492,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter::
 LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	lock
 	faceplayer
+	goto_if_unset FLAG_MET_PROF_BIRCH, LittlerootTown_ProfessorBirchsLab_EventScript_BirchVisitorIntro
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GrassyPatchWaiting
 	goto_if_unset FLAG_HAS_MATCH_CALL, LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
@@ -992,3 +1022,169 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "we meet. I'll be waiting!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
+
+@ ========================================
+@ Custom: Birch visitor interaction (Kanto player)
+@ ========================================
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchVisitorIntro::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_VisitorIntro, MSGBOX_DEFAULT
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_VisitorOfferStarter, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_BirchVisitorDecline
+	message LittlerootTown_ProfessorBirchsLab_Text_VisitorChooseStarter
+	waitmessage
+	multichoicedefault 17, 4, MULTI_HOENN_STARTER, 3, FALSE
+	switch VAR_RESULT
+	case 0, LittlerootTown_ProfessorBirchsLab_EventScript_GiveTreecko
+	case 1, LittlerootTown_ProfessorBirchsLab_EventScript_GiveTorchic
+	case 2, LittlerootTown_ProfessorBirchsLab_EventScript_GiveMudkip
+	case 3, LittlerootTown_ProfessorBirchsLab_EventScript_BirchVisitorDecline
+	case MULTI_B_PRESSED, LittlerootTown_ProfessorBirchsLab_EventScript_BirchVisitorDecline
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchVisitorDecline::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_VisitorDecline, MSGBOX_DEFAULT
+	release
+	end
+
+@ --- Give Treecko ---
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveTreecko::
+	bufferspeciesname STR_VAR_1, SPECIES_TREECKO
+	setvar VAR_STARTER_MON, 0
+	givemon SPECIES_TREECKO, 5
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_VisitorStarterToParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LittlerootTown_ProfessorBirchsLab_EventScript_VisitorStarterToPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+@ --- Give Torchic ---
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveTorchic::
+	bufferspeciesname STR_VAR_1, SPECIES_TORCHIC
+	setvar VAR_STARTER_MON, 1
+	givemon SPECIES_TORCHIC, 5
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_VisitorStarterToParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LittlerootTown_ProfessorBirchsLab_EventScript_VisitorStarterToPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+@ --- Give Mudkip ---
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveMudkip::
+	bufferspeciesname STR_VAR_1, SPECIES_MUDKIP
+	setvar VAR_STARTER_MON, 2
+	givemon SPECIES_MUDKIP, 5
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_VisitorStarterToParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LittlerootTown_ProfessorBirchsLab_EventScript_VisitorStarterToPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+@ --- Starter received (party) ---
+LittlerootTown_ProfessorBirchsLab_EventScript_VisitorStarterToParty::
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_ProfessorBirchsLab_Text_VisitorReceivedStarter
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_VisitorFinishMeeting
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_VisitorFinishMeeting
+	end
+
+@ --- Starter received (PC) ---
+LittlerootTown_ProfessorBirchsLab_EventScript_VisitorStarterToPC::
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_ProfessorBirchsLab_Text_VisitorReceivedStarter
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_VisitorStarterSentToPC
+	call Common_EventScript_NameReceivedBoxMon
+LittlerootTown_ProfessorBirchsLab_EventScript_VisitorStarterSentToPC::
+	call Common_EventScript_TransferredToPC
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_VisitorFinishMeeting
+	end
+
+@ --- Finish the meeting: introduce rival, set flags ---
+LittlerootTown_ProfessorBirchsLab_EventScript_VisitorFinishMeeting::
+	setflag FLAG_MET_PROF_BIRCH
+	setvar VAR_BIRCH_LAB_STATE, 5
+	setflag FLAG_ADVENTURE_STARTED
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setvar VAR_LITTLEROOT_RIVAL_STATE, 4
+	setvar VAR_LITTLEROOT_TOWN_STATE, 3
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_VisitorMeetMay
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_VisitorMeetBrendan
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_VisitorMeetMay::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_VisitorMeetMay, MSGBOX_DEFAULT
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
+	addobject LOCALID_BIRCHS_LAB_RIVAL
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_VisitorMeetBrendan::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_VisitorMeetBrendan, MSGBOX_DEFAULT
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
+	addobject LOCALID_BIRCHS_LAB_RIVAL
+	release
+	end
+
+@ ========================================
+@ Custom: Birch after-meeting dialogue
+@ ========================================
+LittlerootTown_ProfessorBirchsLab_Text_VisitorIntro:
+	.string "PROF. BIRCH: Well, hello there!\p"
+	.string "I'm PROF. BIRCH, the POKéMON\n"
+	.string "researcher here in HOENN.\p"
+	.string "You're not from around here,\n"
+	.string "are you? I can tell!\p"
+	.string "All the way from KANTO, huh?\n"
+	.string "That's quite a journey!\p"
+	.string "I study the habitats of wild\n"
+	.string "POKéMON in this region.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_VisitorOfferStarter:
+	.string "PROF. BIRCH: Say, I have some\n"
+	.string "POKéMON native to HOENN that\l"
+	.string "I've been raising.\p"
+	.string "Would you like to have one?\n"
+	.string "A gift from me to a fellow\l"
+	.string "POKéMON enthusiast!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_VisitorChooseStarter:
+	.string "PROF. BIRCH: Go ahead!\n"
+	.string "Pick whichever one you like!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_VisitorDecline:
+	.string "PROF. BIRCH: No worries!\n"
+	.string "The offer stands anytime.\p"
+	.string "Feel free to stop by whenever\n"
+	.string "you change your mind!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_VisitorReceivedStarter:
+	.string "{PLAYER} received {STR_VAR_1}\n"
+	.string "from PROF. BIRCH!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_VisitorMeetMay:
+	.string "PROF. BIRCH: Wonderful!\n"
+	.string "Take good care of it!\p"
+	.string "Oh, by the way…\n"
+	.string "My daughter MAY is also a\l"
+	.string "POKéMON TRAINER.\p"
+	.string "She'd love to meet someone\n"
+	.string "from another region!\p"
+	.string "You should say hello to her.\n"
+	.string "She lives right next door!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_VisitorMeetBrendan:
+	.string "PROF. BIRCH: Wonderful!\n"
+	.string "Take good care of it!\p"
+	.string "Oh, by the way…\n"
+	.string "My son BRENDAN is also a\l"
+	.string "POKéMON TRAINER.\p"
+	.string "He'd love to meet someone\n"
+	.string "from another region!\p"
+	.string "You should say hello to him.\n"
+	.string "He lives right next door!$"

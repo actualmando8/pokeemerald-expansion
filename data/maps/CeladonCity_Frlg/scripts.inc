@@ -4,7 +4,16 @@ CeladonCity_Frlg_MapScripts::
 
 CeladonCity_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_CELADON_CITY
+	call Common_EventScript_SetupRivalGfxId
+	call_if_unset FLAG_HIDE_HOENN_RIVAL_CELADON, CeladonCity_EventScript_TryShowHoennRival
 	end
+
+CeladonCity_EventScript_TryShowHoennRival::
+	goto_if_unset FLAG_MET_PROF_BIRCH, Common_EventScript_NopReturn
+	goto_if_unset FLAG_IS_CHAMPION, Common_EventScript_NopReturn
+	goto_if_unset FLAG_IS_KANTO_CHAMPION, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_HOENN_RIVAL_CELADON
+	return
 
 CeladonCity_EventScript_LittleGirl::
 	msgbox CeladonCity_Text_GotMyKoffingInCinnabar, MSGBOX_NPC
@@ -17,7 +26,22 @@ CeladonCity_EventScript_OldMan1::
 	end
 
 CeladonCity_EventScript_Woman::
-	msgbox CeladonCity_Text_GameCornerIsBadForCitysImage, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, CeladonCity_EventScript_WomanPostCrisis
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 1, CeladonCity_EventScript_WomanWeatherCrisis
+	msgbox CeladonCity_Text_GameCornerIsBadForCitysImage
+	release
+	end
+
+CeladonCity_EventScript_WomanWeatherCrisis::
+	msgbox CeladonCity_Text_WomanWeatherCrisis
+	release
+	end
+
+CeladonCity_EventScript_WomanPostCrisis::
+	msgbox CeladonCity_Text_WomanPostCrisis
+	release
 	end
 
 CeladonCity_EventScript_OldMan2::
@@ -215,4 +239,117 @@ CeladonCity_Text_SomeoneStoleSilphScope::
 	.string "I'm sure of it.\p"
 	.string "But I lost sight of him!\n"
 	.string "Where'd he go?$"
+
+CeladonCity_EventScript_HoennRival::
+	lock
+	faceplayer
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, CeladonCity_EventScript_RivalMay
+	goto_if_eq VAR_RESULT, FEMALE, CeladonCity_EventScript_RivalBrendan
+	end
+
+CeladonCity_EventScript_RivalBrendan::
+	goto_if_set FLAG_HIDE_HOENN_RIVAL_CELADON, CeladonCity_EventScript_RivalBrendanPostBattle
+	msgbox CeladonCity_Text_BrendanIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_BRENDAN_CELADON, CeladonCity_Text_BrendanDefeat
+	msgbox CeladonCity_Text_BrendanPostBattle, MSGBOX_DEFAULT
+	setflag FLAG_HIDE_HOENN_RIVAL_CELADON
+	release
+	end
+
+CeladonCity_EventScript_RivalBrendanPostBattle::
+	msgbox CeladonCity_Text_BrendanRematch, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_EventScript_RivalMay::
+	goto_if_set FLAG_HIDE_HOENN_RIVAL_CELADON, CeladonCity_EventScript_RivalMayPostBattle
+	msgbox CeladonCity_Text_MayIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_MAY_CELADON, CeladonCity_Text_MayDefeat
+	msgbox CeladonCity_Text_MayPostBattle, MSGBOX_DEFAULT
+	setflag FLAG_HIDE_HOENN_RIVAL_CELADON
+	release
+	end
+
+CeladonCity_EventScript_RivalMayPostBattle::
+	msgbox CeladonCity_Text_MayRematch, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_Text_BrendanIntro::
+	.string "BRENDAN: {PLAYER}! I can't\n"
+	.string "believe I found you here!\p"
+	.string "I heard you conquered both\n"
+	.string "ELITE FOURs. That's incredible!\p"
+	.string "But I've been training hard too.\n"
+	.string "All across HOENN and KANTO!\p"
+	.string "Let's see who's really the\n"
+	.string "strongest TRAINER from HOENN!$"
+
+CeladonCity_Text_BrendanDefeat::
+	.string "Wow… You really are something\n"
+	.string "else, {PLAYER}.$"
+
+CeladonCity_Text_BrendanPostBattle::
+	.string "BRENDAN: That was an amazing\n"
+	.string "battle, {PLAYER}.\p"
+	.string "I can see why both regions\n"
+	.string "couldn't hold you back.\p"
+	.string "Keep going. I know you'll do\n"
+	.string "things no one has ever done.$"
+
+CeladonCity_Text_BrendanRematch::
+	.string "BRENDAN: {PLAYER}!\n"
+	.string "Good to see you again.\p"
+	.string "I'm still training. One day\n"
+	.string "I'll catch up to you!$"
+
+CeladonCity_Text_MayIntro::
+	.string "MAY: {PLAYER}! What are you\n"
+	.string "doing in CELADON CITY?\p"
+	.string "I heard you conquered both\n"
+	.string "ELITE FOURs. That's amazing!\p"
+	.string "But don't think I've been\n"
+	.string "sitting around!\p"
+	.string "I've gotten way stronger.\n"
+	.string "Let me show you!$"
+
+CeladonCity_Text_MayDefeat::
+	.string "Ugh… I still can't beat you,\n"
+	.string "{PLAYER}…$"
+
+CeladonCity_Text_MayPostBattle::
+	.string "MAY: That battle was so much\n"
+	.string "fun, {PLAYER}!\p"
+	.string "You've really become the\n"
+	.string "strongest TRAINER around.\p"
+	.string "I'm proud to call you my\n"
+	.string "rival. Keep pushing forward!$"
+
+CeladonCity_Text_MayRematch::
+	.string "MAY: {PLAYER}!\n"
+	.string "Hey there!\p"
+	.string "I'm exploring KANTO now.\n"
+	.string "There's so much to see here!$"
+
+CeladonCity_Text_WomanWeatherCrisis:
+	.string "Have you seen the news?\p"
+	.string "There are reports of impossible\n"
+	.string "weather over the seas south\l"
+	.string "of here.\p"
+	.string "Torrential rain and blazing\n"
+	.string "drought… at the same time!\p"
+	.string "They say it's coming from\n"
+	.string "a region called HOENN.\p"
+	.string "It's frightening. Even CELADON's\n"
+	.string "skies have looked strange lately.$"
+
+CeladonCity_Text_WomanPostCrisis:
+	.string "Remember that terrible weather\n"
+	.string "over the southern seas?\p"
+	.string "It cleared up overnight!\n"
+	.string "They say a TRAINER resolved\l"
+	.string "the whole crisis.\p"
+	.string "Can you imagine? One person\n"
+	.string "calming the very weather itself…$"
 

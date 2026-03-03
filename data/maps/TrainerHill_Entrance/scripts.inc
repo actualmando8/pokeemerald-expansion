@@ -263,6 +263,7 @@ TrainerHill_Entrance_Pokemart_Basic:
 	.2byte ITEM_DIRE_HIT
 	.2byte ITEM_GUARD_SPEC
 	.2byte ITEM_X_ACCURACY
+	.2byte ITEM_RARE_CANDY
 	pokemartlistend
 
 TrainerHill_Entrance_EventScript_ExpandedPokemart::
@@ -285,6 +286,7 @@ TrainerHill_Entrance_Pokemart_Expanded:
 	.2byte ITEM_DIRE_HIT
 	.2byte ITEM_GUARD_SPEC
 	.2byte ITEM_X_ACCURACY
+	.2byte ITEM_RARE_CANDY
 	pokemartlistend
 
 TrainerHill_Entrance_Text_StillGettingReady:

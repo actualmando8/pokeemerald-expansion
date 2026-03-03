@@ -2,8 +2,8 @@
   "id": "MAP_TWO_ISLAND_CAPE_BRINK",
   "name": "TwoIsland_CapeBrink_Frlg",
   "layout": "LAYOUT_TWO_ISLAND_CAPE_BRINK",
-  "music": "MUS_RG_ROUTE3",
-  "region": "REGION_KANTO",
+  "music": "MUS_RG_SEVII_ROUTE",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_CAPE_BRINK",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -22,7 +22,20 @@
     }
   ],
   "object_events": [
-
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_NOLAND",
+      "x": 10,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "TwoIsland_CapeBrink_EventScript_Noland",
+      "flag": "FLAG_DEFEATED_SEVII_NOLAND"
+    }
   ],
   "warp_events": [
     {
@@ -33,9 +46,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",

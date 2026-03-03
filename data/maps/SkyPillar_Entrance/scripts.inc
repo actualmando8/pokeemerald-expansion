@@ -1,8 +1,63 @@
 SkyPillar_Entrance_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_Entrance_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_Entrance_OnTransition
 	.byte 0
 
-SkyPillar_Entrance_OnTransition:
-	setflag FLAG_LANDMARK_SKY_PILLAR
+SkyPillar_Entrance_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, SkyPillar_Entrance_EventScript_TryRemoveRegidrago
 	end
 
+SkyPillar_Entrance_EventScript_TryRemoveRegidrago::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
+SkyPillar_Entrance_OnTransition:
+	setflag FLAG_LANDMARK_SKY_PILLAR
+	call_if_unset FLAG_DEFEATED_REGIDRAGO, SkyPillar_Entrance_EventScript_ShowRegidrago
+	end
+
+SkyPillar_Entrance_EventScript_ShowRegidrago::
+	goto_if_unset FLAG_REGI_DOORS_OPENED, SkyPillar_Entrance_EventScript_DontShowRegidrago
+	clearflag FLAG_HIDE_REGIDRAGO
+	return
+
+SkyPillar_Entrance_EventScript_DontShowRegidrago::
+	return
+
+SkyPillar_Entrance_EventScript_RegidragoBraille::
+	lockall
+	braillemsgbox SkyPillar_Braille_Regidrago
+	releaseall
+	end
+
+SkyPillar_Entrance_EventScript_Regidrago::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_REGIDRAGO, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_REGIDRAGO, 40
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special StartRegiBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SkyPillar_Entrance_EventScript_DefeatedRegidrago
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SkyPillar_Entrance_EventScript_RanFromRegidrago
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SkyPillar_Entrance_EventScript_RanFromRegidrago
+	setflag FLAG_DEFEATED_REGIDRAGO
+	release
+	end
+
+SkyPillar_Entrance_EventScript_DefeatedRegidrago::
+	setflag FLAG_DEFEATED_REGIDRAGO
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+SkyPillar_Entrance_EventScript_RanFromRegidrago::
+	setvar VAR_0x8004, SPECIES_REGIDRAGO
+	goto Common_EventScript_LegendaryFlewAway
+	end

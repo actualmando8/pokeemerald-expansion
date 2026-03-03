@@ -23,10 +23,15 @@ VermilionCity_Movement_ExitSSAnne::
 VermilionCity_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_VERMILION_CITY
 	call_if_set FLAG_TALKED_TO_OAKS_AIDE_IN_VERMILION, VermilionCity_EventScript_HideOaksAide
+	call_if_set FLAG_DEFEATED_LT_SURGE, VermilionCity_EventScript_ShowHoennTicketMan
 	end
 
 VermilionCity_EventScript_HideOaksAide::
 	setflag FLAG_HIDE_VERMILION_CITY_OAKS_AIDE
+	return
+
+VermilionCity_EventScript_ShowHoennTicketMan::
+	clearflag FLAG_HIDE_VERMILION_HOENN_TICKET_MAN
 	return
 
 VermilionCity_EventScript_Woman::
@@ -393,4 +398,140 @@ VermilionCity_Text_Route2AideHasPackageForYou::
 	.string "ROUTE 2, {PLAYER}.\p"
 	.string "If you're in the ROUTE 2 area,\n"
 	.string "please look for him.$"
+
+@ ========================================
+@ Hoenn Ticket Man - appears after Surge badge
+@ ========================================
+VermilionCity_EventScript_HoennTicketMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_HOENN_TICKET, VermilionCity_EventScript_HoennTicketManPostGive
+	msgbox VermilionCity_Text_HoennTicketManIntro
+	msgbox VermilionCity_Text_HoennTicketManGive
+	setflag FLAG_GOT_HOENN_TICKET
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox VermilionCity_Text_HoennTicketManReceived
+	waitfanfare
+	msgbox VermilionCity_Text_HoennTicketManAfterGive
+	release
+	end
+
+VermilionCity_EventScript_HoennTicketManPostGive::
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, VermilionCity_EventScript_HoennTicketManPostCrisis
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 1, VermilionCity_EventScript_HoennTicketManFerrySuspended
+	msgbox VermilionCity_Text_HoennTicketManReminder
+	multichoice 14, 6, MULTI_YESNO, FALSE
+	switch VAR_RESULT
+	case 0, VermilionCity_EventScript_SailToSlateport
+	case 1, VermilionCity_EventScript_DontSail
+	case MULTI_B_PRESSED, VermilionCity_EventScript_DontSail
+	end
+
+VermilionCity_EventScript_HoennTicketManFerrySuspended::
+	msgbox VermilionCity_Text_HoennTicketManWeatherCrisis
+	release
+	end
+
+VermilionCity_EventScript_HoennTicketManPostCrisis::
+	goto_if_set FLAG_IS_CHAMPION, VermilionCity_EventScript_HoennTicketManClosure
+	msgbox VermilionCity_Text_HoennTicketManReminder
+	multichoice 14, 6, MULTI_YESNO, FALSE
+	switch VAR_RESULT
+	case 0, VermilionCity_EventScript_SailToSlateport
+	case 1, VermilionCity_EventScript_DontSail
+	case MULTI_B_PRESSED, VermilionCity_EventScript_DontSail
+	end
+
+VermilionCity_EventScript_HoennTicketManClosure::
+	msgbox VermilionCity_Text_HoennTicketManClosure
+	msgbox VermilionCity_Text_HoennTicketManReminder
+	multichoice 14, 6, MULTI_YESNO, FALSE
+	switch VAR_RESULT
+	case 0, VermilionCity_EventScript_SailToSlateport
+	case 1, VermilionCity_EventScript_DontSail
+	case MULTI_B_PRESSED, VermilionCity_EventScript_DontSail
+	end
+
+VermilionCity_EventScript_SailToSlateport::
+	msgbox VermilionCity_Text_HoennTicketManBonVoyage
+	closemessage
+	delay 20
+	fadescreen FADE_TO_BLACK
+	warp MAP_SLATEPORT_CITY, 29, 17
+	waitstate
+	release
+	end
+
+VermilionCity_EventScript_DontSail::
+	msgbox VermilionCity_Text_HoennTicketManComeBack
+	release
+	end
+
+VermilionCity_Text_HoennTicketManIntro::
+	.string "Oh! You must be a strong TRAINER\n"
+	.string "to have bested LT. SURGE!\p"
+	.string "Please, hear me out.\p"
+	.string "I fled here from SLATEPORT CITY\n"
+	.string "in the HOENN region.\p"
+	.string "A gang of thugs calling themselves\n"
+	.string "TEAM AQUA has been causing\l"
+	.string "terrible trouble there.\p"
+	.string "They were at the OCEANIC MUSEUM,\n"
+	.string "trying to steal valuable research\l"
+	.string "equipment!$"
+
+VermilionCity_Text_HoennTicketManGive::
+	.string "HOENN needs someone brave like\n"
+	.string "you, {PLAYER}!\p"
+	.string "Here, take this. It's a ticket\n"
+	.string "for the ferry to SLATEPORT.$"
+
+VermilionCity_Text_HoennTicketManReceived::
+	.string "{PLAYER} received the\n"
+	.string "HOENN TICKET from the man!$"
+
+VermilionCity_Text_HoennTicketManAfterGive::
+	.string "Talk to me anytime you'd like\n"
+	.string "to sail to SLATEPORT.\p"
+	.string "The ferry departs right from\n"
+	.string "here in VERMILION HARBOR.$"
+
+VermilionCity_Text_HoennTicketManReminder::
+	.string "Would you like to sail to\n"
+	.string "SLATEPORT CITY in HOENN?$"
+
+VermilionCity_Text_HoennTicketManBonVoyage::
+	.string "Wonderful! The ferry to SLATEPORT\n"
+	.string "is departing now.\p"
+	.string "Bon voyage, {PLAYER}!$"
+
+VermilionCity_Text_HoennTicketManComeBack::
+	.string "No worries. Come talk to me\n"
+	.string "whenever you're ready to go.$"
+
+VermilionCity_Text_HoennTicketManClosure:
+	.string "{PLAYER}! I heard the news!\n"
+	.string "You became CHAMPION of HOENN!\p"
+	.string "When I fled SLATEPORT, I never\n"
+	.string "imagined the person I'd ask for\l"
+	.string "help would go on to save the\l"
+	.string "entire region.\p"
+	.string "The weather crisis, TEAM AQUA,\n"
+	.string "all of it… you put it right.\p"
+	.string "SLATEPORT is thriving again.\n"
+	.string "And it's all because of you.\p"
+	.string "I can never repay you, but the\n"
+	.string "ferry is always yours to use.$"
+
+VermilionCity_Text_HoennTicketManWeatherCrisis:
+	.string "I'm sorry, {PLAYER}, but the\n"
+	.string "ferry to HOENN is suspended.\p"
+	.string "There are reports of catastrophic\n"
+	.string "weather over HOENN's seas.\p"
+	.string "Massive storms… the sky itself\n"
+	.string "seems to be at war.\p"
+	.string "I'm worried sick about SLATEPORT.\n"
+	.string "I hope everyone is safe…\p"
+	.string "The ferries can't sail until\n"
+	.string "the seas calm down.$"
 

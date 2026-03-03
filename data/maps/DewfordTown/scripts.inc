@@ -4,7 +4,14 @@ DewfordTown_MapScripts::
 
 DewfordTown_OnTransition:
 	setflag FLAG_VISITED_DEWFORD_TOWN
+	call DewfordTown_EventScript_TryShowCustomBriney
 	end
+
+DewfordTown_EventScript_TryShowCustomBriney::
+	goto_if_unset FLAG_BADGE04_GET, DewfordTown_EventScript_TryShowCustomBrineyEnd
+	clearflag FLAG_HIDE_DEWFORD_CUSTOM_BRINEY
+DewfordTown_EventScript_TryShowCustomBrineyEnd::
+	return
 
 DewfordTown_EventScript_Briney::
 	lock
@@ -789,3 +796,60 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+@ ========================================
+@ Custom Briney - boat to Slateport / Route 104
+@ ========================================
+DewfordTown_EventScript_CustomBriney::
+	lock
+	faceplayer
+	message DewfordTown_Text_CustomBrineyOffer
+	waitmessage
+	multichoicedefault 17, 6, MULTI_BRINEY_DEWFORD_CUSTOM, 2, FALSE
+	switch VAR_RESULT
+	case 0, DewfordTown_EventScript_CustomBrineySailSlateport
+	case 1, DewfordTown_EventScript_CustomBrineySailRoute104
+	case 2, DewfordTown_EventScript_CustomBrineyDecline
+	case MULTI_B_PRESSED, DewfordTown_EventScript_CustomBrineyDecline
+	end
+
+DewfordTown_EventScript_CustomBrineySailSlateport::
+	msgbox DewfordTown_Text_CustomBrineySetSailSlateport, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_EXIT
+	warp MAP_SLATEPORT_CITY, 20, 40
+	waitstate
+	release
+	end
+
+DewfordTown_EventScript_CustomBrineySailRoute104::
+	msgbox DewfordTown_Text_CustomBrineySetSailRoute104, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_EXIT
+	warp MAP_ROUTE104, 17, 52
+	waitstate
+	release
+	end
+
+DewfordTown_EventScript_CustomBrineyDecline::
+	msgbox DewfordTown_Text_CustomBrineyDecline, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_Text_CustomBrineyOffer:
+	.string "MR. BRINEY: Ahoy!\n"
+	.string "Where shall we sail?$"
+
+DewfordTown_Text_CustomBrineySetSailSlateport:
+	.string "MR. BRINEY: Off we go!\n"
+	.string "Next stop, SLATEPORT!$"
+
+DewfordTown_Text_CustomBrineySetSailRoute104:
+	.string "MR. BRINEY: Off to ROUTE 104!\n"
+	.string "Hold on tight!$"
+
+DewfordTown_Text_CustomBrineyDecline:
+	.string "MR. BRINEY: Take your time!\n"
+	.string "I'll be waiting right here.$"

@@ -66,14 +66,20 @@ NavelRock_Summit_EventScript_HoOh::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Summit_EventScript_RanFromHoOh
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Summit_EventScript_RanFromHoOh
 	setflag FLAG_FOUGHT_HO_OH
+	call_if_set FLAG_FOUGHT_LUGIA, NavelRock_EventScript_SetNavelRockComplete
 	releaseall
 	end
 
 NavelRock_Summit_EventScript_DefeatedHoOh::
 	setflag FLAG_HO_OH_FLEW_AWAY
+	call_if_set FLAG_FOUGHT_LUGIA, NavelRock_EventScript_SetNavelRockComplete
 	setvar VAR_0x8004, SPECIES_HO_OH
 	goto EventScript_MonFlewAway
 	end
+
+NavelRock_EventScript_SetNavelRockComplete::
+	setflag FLAG_NAVEL_ROCK_COMPLETED
+	return
 
 NavelRock_Summit_EventScript_RanFromHoOh::
 	setvar VAR_0x8004, SPECIES_HO_OH

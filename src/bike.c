@@ -9,6 +9,7 @@
 #include "overworld.h"
 #include "sound.h"
 #include "constants/songs.h"
+#include "regions.h"
 
 // this file's functions
 static void MovePlayerOnMachBike(enum Direction, u16, u16);
@@ -1295,8 +1296,8 @@ void GetOnOffBike(u8 transitionFlags)
     {
         EndORASDowsing();
         SetPlayerAvatarTransitionFlags(transitionFlags);
-        Overworld_SetSavedMusic(MUS_CYCLING);
-        Overworld_ChangeMusicTo(MUS_CYCLING);
+        Overworld_SetSavedMusic(GetCurrentRegion() == REGION_KANTO ? MUS_RG_CYCLING : MUS_CYCLING);
+        Overworld_ChangeMusicTo(GetCurrentRegion() == REGION_KANTO ? MUS_RG_CYCLING : MUS_CYCLING);
     }
 }
 

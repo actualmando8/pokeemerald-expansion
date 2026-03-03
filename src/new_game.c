@@ -134,10 +134,8 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    if (IS_FRLG)
-        SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
-    else
-        SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    // Start in Pallet Town Player's House 2F
+    SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 5, 5);
     WarpIntoMap();
 }
 
@@ -159,12 +157,17 @@ void ResetMenuAndMonGlobals(void)
 
 void NewGameInitData(void)
 {
+    // Preserve player name/gender set by the intro naming screen
+    u8 playerName[PLAYER_NAME_LENGTH + 1];
+    u8 playerGender;
 #if IS_FRLG
     u8 rivalName[PLAYER_NAME_LENGTH + 1];
 #endif
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
         RtcReset();
 
+    StringCopy(playerName, gSaveBlock2Ptr->playerName);
+    playerGender = gSaveBlock2Ptr->playerGender;
 #if IS_FRLG
     StringCopy(rivalName, gSaveBlock1Ptr->rivalName);
 #endif
@@ -210,10 +213,8 @@ void NewGameInitData(void)
     ResetFanClub();
     ResetLotteryCorner();
     WarpToTruck();
-    if (IS_FRLG)
-        RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
-    else
-        RunScriptImmediately(EventScript_ResetAllMapFlags);
+    RunScriptImmediately(EventScript_ResetAllMapFlags);
+    RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
 #if IS_FRLG
         StringCopy(gSaveBlock1Ptr->rivalName, rivalName);
 #endif
@@ -232,6 +233,15 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
+    
+    // Restore player name/gender from intro naming screen
+    StringCopy(gSaveBlock2Ptr->playerName, playerName);
+    gSaveBlock2Ptr->playerGender = playerGender;
+    {
+        // Set Kanto rival name
+        static const u8 sKantoRivalName[] = COMPOUND_STRING("BLUE");
+        StringCopy(gSaveBlock1Ptr->rivalName, sKantoRivalName);
+    }
 }
 
 static void ResetMiniGamesRecords(void)

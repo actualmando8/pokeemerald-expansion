@@ -79,6 +79,7 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "cable_club.h"
+#include "regions.h"
 #include "test/test_runner_battle.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
@@ -5420,9 +5421,9 @@ static void HandleEndTurn_BattleWon(void)
         gBattlescriptCurrInstr = BattleScript_FrontierTrainerBattleWon;
 
         if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_FRONTIER_BRAIN)
-            PlayBGM(MUS_VICTORY_GYM_LEADER);
+            PlayBGM(GetCurrentRegion() == REGION_KANTO ? MUS_RG_VICTORY_GYM_LEADER : MUS_VICTORY_GYM_LEADER);
         else
-            PlayBGM(MUS_VICTORY_TRAINER);
+            PlayBGM(GetCurrentRegion() == REGION_KANTO ? MUS_RG_VICTORY_TRAINER : MUS_VICTORY_TRAINER);
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
     {
@@ -5435,6 +5436,10 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_CHAMPION:
             PlayBGM(MUS_VICTORY_LEAGUE);
             break;
+        case TRAINER_CLASS_ELITE_FOUR_FRLG:
+        case TRAINER_CLASS_CHAMPION_FRLG:
+            PlayBGM(MUS_RG_VICTORY_GYM_LEADER);
+            break;
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
@@ -5443,11 +5448,21 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_MAGMA_LEADER:
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
+        case TRAINER_CLASS_TEAM_ROCKET_FRLG:
+        case TRAINER_CLASS_BOSS_FRLG:
+            PlayBGM(MUS_RG_VICTORY_TRAINER);
+            break;
         case TRAINER_CLASS_LEADER:
             PlayBGM(MUS_VICTORY_GYM_LEADER);
             break;
+        case TRAINER_CLASS_LEADER_FRLG:
+            PlayBGM(MUS_RG_VICTORY_GYM_LEADER);
+            break;
         default:
-            PlayBGM(MUS_VICTORY_TRAINER);
+            if (GetCurrentRegion() == REGION_KANTO)
+                PlayBGM(MUS_RG_VICTORY_TRAINER);
+            else
+                PlayBGM(MUS_VICTORY_TRAINER);
             break;
         }
     }

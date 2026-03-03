@@ -5772,6 +5772,15 @@ u16 GetBattleBGM(void)
         case SPECIES_REGIELEKI:
         case SPECIES_REGIDRAGO:
             return MUS_VS_REGI;
+        case SPECIES_MEWTWO:
+            return MUS_RG_VS_MEWTWO;
+        case SPECIES_DEOXYS:
+        case SPECIES_DEOXYS_ATTACK:
+        case SPECIES_DEOXYS_DEFENSE:
+        case SPECIES_DEOXYS_SPEED:
+            return MUS_RG_VS_DEOXYS;
+        case SPECIES_MEW:
+            return MUS_VS_MEW;
         default:
             return MUS_RG_VS_LEGEND;
         }

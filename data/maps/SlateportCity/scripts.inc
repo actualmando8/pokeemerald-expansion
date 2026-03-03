@@ -8,7 +8,15 @@ SlateportCity_OnTransition:
 	call SlateportCity_EventScript_EnterSlateport
 	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
 	call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
+	call SlateportCity_EventScript_TryShowBriney
 	end
+
+SlateportCity_EventScript_TryShowBriney::
+	goto_if_unset FLAG_BADGE04_GET, SlateportCity_EventScript_TryShowBrineyEnd
+	clearflag FLAG_HIDE_SLATEPORT_CUSTOM_BRINEY
+	clearflag FLAG_HIDE_SLATEPORT_PORT_ATTENDANT
+SlateportCity_EventScript_TryShowBrineyEnd::
+	return
 
 SlateportCity_EventScript_EnterSlateport::
 	setflag FLAG_VISITED_SLATEPORT_CITY
@@ -131,6 +139,7 @@ SlateportCity_Pokemart_EnergyGuru:
 	.2byte ITEM_ZINC
 	.2byte ITEM_CALCIUM
 	.2byte ITEM_HP_UP
+	.2byte ITEM_RARE_CANDY
 	pokemartlistend
 
 SlateportCity_EventScript_EffortRibbonWoman::
@@ -539,6 +548,7 @@ SlateportCity_EventScript_PowerTMClerk::
 SlateportCity_Pokemart_PowerTMs:
 	.2byte ITEM_TM_HIDDEN_POWER
 	.2byte ITEM_TM_SECRET_POWER
+	.2byte ITEM_RARE_CANDY
 	pokemartlistend
 
 @ Scene with Capt Sterns interview and Team Aqua announcing plans to steal Submarine
@@ -1352,3 +1362,194 @@ SlateportCity_Text_TakingBattleTentChallenge:
 	.string "After all, a tough TRAINER is\n"
 	.string "the perfect fit for the BATTLE TENT!\p"
 	.string "Give it your best effort!$"
+
+@ ========================================
+@ Museum Thug - Aqua grunt with Devon Goods
+@ ========================================
+SlateportCity_EventScript_MuseumThug::
+	lock
+	faceplayer
+	checkitem ITEM_DEVON_GOODS
+	goto_if_eq VAR_RESULT, TRUE, SlateportCity_EventScript_MuseumThugLeave
+	trainerbattle_no_intro TRAINER_GRUNT_MUSEUM_THUG, SlateportCity_Text_MuseumThugDefeat
+	msgbox SlateportCity_Text_MuseumThugNoMoney, MSGBOX_DEFAULT
+	giveitem ITEM_DEVON_GOODS
+	goto_if_eq VAR_RESULT, FALSE, SlateportCity_EventScript_MuseumThugNoRoom
+	goto SlateportCity_EventScript_MuseumThugLeave
+	end
+
+SlateportCity_EventScript_MuseumThugNoRoom::
+	msgbox SlateportCity_Text_MuseumThugBagFull, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_EventScript_MuseumThugLeave::
+	msgbox SlateportCity_Text_MuseumThugAfterGive, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SLATEPORT_MUSEUM_THUG, SlateportCity_Movement_ThugRunAway
+	waitmovement 0
+	playse SE_EXIT
+	removeobject LOCALID_SLATEPORT_MUSEUM_THUG
+	setflag FLAG_HIDE_SLATEPORT_MUSEUM_THUG
+	release
+	end
+
+SlateportCity_Movement_ThugRunAway:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+SlateportCity_Text_MuseumThugIntro:
+	.string "Huh? What are you looking at, kid?\p"
+	.string "You want to mess with TEAM AQUA?\n"
+	.string "I'll show you what happens to\l"
+	.string "nosy brats!$"
+
+SlateportCity_Text_MuseumThugDefeat:
+	.string "Urgh… How'd a kid beat me?$"
+
+SlateportCity_Text_MuseumThugNoMoney:
+	.string "Ugh… I spent all my money getting\n"
+	.string "to this lousy town.\p"
+	.string "I don't even have prize money\n"
+	.string "to give you!\p"
+	.string "Here, take this junk instead!\n"
+	.string "I swiped it from some lab in\l"
+	.string "RUSTBORO. It's all yours!$"
+
+SlateportCity_Text_MuseumThugAfterGive:
+	.string "Don't think this is over, kid!\n"
+	.string "TEAM AQUA never forgets!$"
+
+SlateportCity_Text_MuseumThugBagFull:
+	.string "Aww, come on! Take this junk!\n"
+	.string "Your BAG is full, though…\p"
+	.string "Make some room and come back!$"
+
+@ ========================================
+@ Custom Briney - boat to Dewford / Route 104
+@ ========================================
+SlateportCity_EventScript_CustomBriney::
+	lock
+	faceplayer
+	message SlateportCity_Text_BrineyOffer
+	waitmessage
+	multichoicedefault 17, 6, MULTI_BRINEY_CUSTOM, 2, FALSE
+	switch VAR_RESULT
+	case 0, SlateportCity_EventScript_BrineySailDewford
+	case 1, SlateportCity_EventScript_BrineySailRoute104
+	case 2, SlateportCity_EventScript_BrineyDecline
+	case MULTI_B_PRESSED, SlateportCity_EventScript_BrineyDecline
+	end
+
+SlateportCity_EventScript_BrineySailDewford::
+	msgbox SlateportCity_Text_BrineySetSailDewford, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_EXIT
+	warp MAP_DEWFORD_TOWN, 14, 10
+	waitstate
+	release
+	end
+
+SlateportCity_EventScript_BrineySailRoute104::
+	msgbox SlateportCity_Text_BrineySetSailRoute104, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_EXIT
+	warp MAP_ROUTE104, 17, 52
+	waitstate
+	release
+	end
+
+SlateportCity_EventScript_BrineyDecline::
+	msgbox SlateportCity_Text_BrineyDecline, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_Text_BrineyOffer:
+	.string "MR. BRINEY: Ahoy there!\n"
+	.string "Where would you like to sail?$"
+
+SlateportCity_Text_BrineySetSailDewford:
+	.string "MR. BRINEY: All aboard!\n"
+	.string "Next stop, DEWFORD TOWN!$"
+
+SlateportCity_Text_BrineySetSailRoute104:
+	.string "MR. BRINEY: Off to ROUTE 104!\n"
+	.string "Hold on tight!$"
+
+SlateportCity_Text_BrineyDecline:
+	.string "MR. BRINEY: No worries!\n"
+	.string "I'll be right here if you\l"
+	.string "change your mind.$"
+
+@ ========================================
+@ Port Attendant - ferry to Vermilion (Kanto)
+@ ========================================
+SlateportCity_EventScript_PortAttendant::
+	lock
+	faceplayer
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 1, SlateportCity_EventScript_PortAttendantCheckCrisis
+	msgbox SlateportCity_Text_PortAttendantOffer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_PortAttendantDecline
+	msgbox SlateportCity_Text_PortAttendantDepart, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_EXIT
+	warp MAP_VERMILION_CITY, 10, 5
+	waitstate
+	release
+	end
+
+SlateportCity_EventScript_PortAttendantDecline::
+	msgbox SlateportCity_Text_PortAttendantDecline, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_Text_PortAttendantOffer:
+	.string "Welcome to SLATEPORT HARBOR!\p"
+	.string "We have a ferry bound for\n"
+	.string "VERMILION CITY in KANTO.\p"
+	.string "Would you like to board?$"
+
+SlateportCity_Text_PortAttendantDepart:
+	.string "All aboard! The ferry to\n"
+	.string "VERMILION CITY is now departing!$"
+
+SlateportCity_EventScript_PortAttendantCheckCrisis::
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SlateportCity_EventScript_PortAttendantPostCrisis
+	msgbox SlateportCity_Text_PortAttendantCrisis
+	release
+	end
+
+SlateportCity_EventScript_PortAttendantPostCrisis::
+	msgbox SlateportCity_Text_PortAttendantOffer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_PortAttendantDecline
+	msgbox SlateportCity_Text_PortAttendantDepart, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_EXIT
+	warp MAP_VERMILION_CITY, 10, 5
+	waitstate
+	release
+	end
+
+SlateportCity_Text_PortAttendantDecline:
+	.string "The ferry to KANTO departs from\n"
+	.string "right here. Come back anytime!$"
+
+SlateportCity_Text_PortAttendantCrisis:
+	.string "I'm sorry, but the ferry to\n"
+	.string "KANTO has been suspended.\p"
+	.string "The seas around HOENN have become\n"
+	.string "extremely dangerous.\p"
+	.string "Something terrible is happening\n"
+	.string "to the weather…\p"
+	.string "No ships can safely sail until\n"
+	.string "this crisis is resolved.$"

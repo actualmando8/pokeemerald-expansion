@@ -8,7 +8,15 @@ FiveIsland_RocketWarehouse_Frlg_MapScripts::
 
 FiveIsland_RocketWarehouse_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_FIVE_ISLAND_ROCKET_WAREHOUSE
+	call_if_unset FLAG_DEFEATED_SEVII_GIOVANNI, FiveIsland_RocketWarehouse_EventScript_TryShowGiovanni
 	end
+
+FiveIsland_RocketWarehouse_EventScript_TryShowGiovanni::
+	goto_if_unset FLAG_IS_CHAMPION, Common_EventScript_NopReturn
+	goto_if_unset FLAG_IS_KANTO_CHAMPION, Common_EventScript_NopReturn
+	goto_if_unset FLAG_DEFEATED_ROCKETS_IN_WAREHOUSE, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_GIOVANNI_SEVII
+	return
 
 FiveIsland_RocketWarehouse_OnLoad::
 	call_if_defeated TRAINER_TEAM_ROCKET_ADMIN, FiveIsland_RocketWarehouse_EventScript_SetArrowsForReEntry
@@ -309,3 +317,61 @@ FiveIsland_RocketWarehouse_Text_GiovannisKidHasRedHair::
 	.string "You don't have any reasons for\n"
 	.string "bugging me. Leave me alone!$"
 
+FiveIsland_RocketWarehouse_EventScript_Giovanni::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_SEVII_GIOVANNI, FiveIsland_RocketWarehouse_EventScript_GiovanniPostBattle
+	msgbox FiveIsland_RocketWarehouse_Text_GiovanniIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_GIOVANNI_SEVII, FiveIsland_RocketWarehouse_Text_GiovanniDefeat
+	setflag FLAG_DEFEATED_SEVII_GIOVANNI
+	msgbox FiveIsland_RocketWarehouse_Text_GiovanniPostBattle, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_WAREHOUSE_GIOVANNI, FiveIsland_RocketWarehouse_Movement_GiovanniExit
+	waitmovement 0
+	removeobject LOCALID_WAREHOUSE_GIOVANNI
+	setflag FLAG_HIDE_GIOVANNI_SEVII
+	release
+	end
+
+FiveIsland_RocketWarehouse_EventScript_GiovanniPostBattle::
+	msgbox FiveIsland_RocketWarehouse_Text_GiovanniGone, MSGBOX_DEFAULT
+	release
+	end
+
+FiveIsland_RocketWarehouse_Movement_GiovanniExit::
+	walk_down
+	walk_down
+	walk_down
+	set_invisible
+	step_end
+
+FiveIsland_RocketWarehouse_Text_GiovanniIntro::
+	.string "GIOVANNI: …{PLAYER}.\p"
+	.string "So you've come this far.\n"
+	.string "I had a feeling we'd meet again.\p"
+	.string "When TEAM ROCKET fell apart,\n"
+	.string "I wandered the world in exile.\p"
+	.string "But I never stopped training.\n"
+	.string "I never stopped getting stronger.\p"
+	.string "This old WAREHOUSE… It brings\n"
+	.string "back memories.\p"
+	.string "One last battle, {PLAYER}.\n"
+	.string "Show me how strong you've become!$"
+
+FiveIsland_RocketWarehouse_Text_GiovanniDefeat::
+	.string "…Magnificent.\p"
+	.string "You truly are the strongest\n"
+	.string "TRAINER I have ever faced.$"
+
+FiveIsland_RocketWarehouse_Text_GiovanniPostBattle::
+	.string "GIOVANNI: …I see now.\p"
+	.string "There is no place for me in the\n"
+	.string "world of TEAM ROCKET anymore.\p"
+	.string "Perhaps it's time I found a\n"
+	.string "new path forward.\p"
+	.string "…Farewell, {PLAYER}.\n"
+	.string "May your journey continue.$"
+
+FiveIsland_RocketWarehouse_Text_GiovanniGone::
+	.string "GIOVANNI has left…\p"
+	.string "The WAREHOUSE feels empty now.$"

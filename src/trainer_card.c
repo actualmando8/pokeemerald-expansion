@@ -60,6 +60,7 @@ struct TrainerCardData
     bool8 unused_F;
     bool8 hasTrades;
     u8 badgeCount[NUM_BADGES];
+    u8 kantoBadgeCount[NUM_BADGES];
     u8 easyChatProfile[TRAINER_CARD_PROFILE_LENGTH][13];
     u8 textPlayersCard[70];
     u8 textHofTime[70];
@@ -84,8 +85,10 @@ struct TrainerCardData
     u16 backTilemap[600];
     u16 bgTilemap[600];
     u8 badgeTiles[0x80 * NUM_BADGES];
+    u8 kantoBadgeTiles[0x80 * NUM_BADGES];
     u8 stickerTiles[0x200];
     u8 cardTiles[0x2300];
+    u8 kantoCardTiles[0x2300];
     u16 cardTilemapBuffer[0x1000];
     u16 bgTilemapBuffer[0x1000];
     u16 cardTop;
@@ -159,6 +162,8 @@ static void PrintStatOnBackOfCard(u8 top, const u8 *str1, u8 *str2, const u8 *co
 static void LoadStickerGfx(void);
 static u8 SetCardBgsAndPals(void);
 static void DrawCardBackStats(void);
+static void DrawKantoBadgesOnCardBack(void);
+static bool8 PrintAllOnKantoCardFront(void);
 static void Task_DoCardFlipTask(u8);
 static bool8 Task_BeginCardFlip(struct Task *task);
 static bool8 Task_AnimateCardFlipDown(struct Task *task);
@@ -541,10 +546,7 @@ static bool8 LoadCardGfx(void)
             DecompressDataWithHeaderWram(gKantoTrainerCardBg_Tilemap, sData->bgTilemap);
         break;
     case 1:
-        if (sData->cardType != CARD_TYPE_FRLG)
-            DecompressDataWithHeaderWram(gHoennTrainerCardBack_Tilemap, sData->backTilemap);
-        else
-            DecompressDataWithHeaderWram(gKantoTrainerCardBack_Tilemap, sData->backTilemap);
+        DecompressDataWithHeaderWram(gKantoTrainerCardFront_Tilemap, sData->backTilemap);
         break;
     case 2:
         if (!sData->isLink)
@@ -577,6 +579,12 @@ static bool8 LoadCardGfx(void)
     case 5:
         if (sData->cardType == CARD_TYPE_FRLG)
             DecompressDataWithHeaderWram(sTrainerCardStickers_Gfx, sData->stickerTiles);
+        break;
+    case 6:
+        DecompressDataWithHeaderWram(sKantoTrainerCardBadges_Gfx, sData->kantoBadgeTiles);
+        break;
+    case 7:
+        DecompressDataWithHeaderWram(gKantoTrainerCard_Gfx, sData->kantoCardTiles);
         break;
     default:
         sData->gfxLoadState = 0;
@@ -825,6 +833,7 @@ static void SetDataFromTrainerCard(void)
     sData->unused_F = FALSE;
     sData->hasTrades = FALSE;
     memset(sData->badgeCount, 0, sizeof(sData->badgeCount));
+    memset(sData->kantoBadgeCount, 0, sizeof(sData->kantoBadgeCount));
     if (sData->trainerCard.hasPokedex)
         sData->hasPokedex++;
 
@@ -845,6 +854,15 @@ static void SetDataFromTrainerCard(void)
         if (FlagGet(badgeFlag))
             sData->badgeCount[i]++;
     }
+
+    if (FlagGet(FLAG_KANTO_BADGE01_GET)) sData->kantoBadgeCount[0]++;
+    if (FlagGet(FLAG_KANTO_BADGE02_GET)) sData->kantoBadgeCount[1]++;
+    if (FlagGet(FLAG_KANTO_BADGE03_GET)) sData->kantoBadgeCount[2]++;
+    if (FlagGet(FLAG_KANTO_BADGE04_GET)) sData->kantoBadgeCount[3]++;
+    if (FlagGet(FLAG_KANTO_BADGE05_GET)) sData->kantoBadgeCount[4]++;
+    if (FlagGet(FLAG_KANTO_BADGE06_GET)) sData->kantoBadgeCount[5]++;
+    if (FlagGet(FLAG_KANTO_BADGE07_GET)) sData->kantoBadgeCount[6]++;
+    if (FlagGet(FLAG_KANTO_BADGE08_GET)) sData->kantoBadgeCount[7]++;
 }
 
 static void InitGpuRegs(void)
@@ -1425,6 +1443,7 @@ static u8 SetCardBgsAndPals(void)
     {
     case 0:
         LoadBgTiles(3, sData->badgeTiles, ARRAY_COUNT(sData->badgeTiles), 0);
+        LoadBgTiles(3, sData->kantoBadgeTiles, ARRAY_COUNT(sData->kantoBadgeTiles), 160);
         break;
     case 1:
         LoadBgTiles(0, sData->cardTiles, 0x1800, 0);
@@ -1445,6 +1464,7 @@ static u8 SetCardBgsAndPals(void)
                 LoadPalette(sKantoTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
         }
         LoadPalette(sTrainerCardStar_Pal, BG_PLTT_ID(4), PLTT_SIZE_4BPP);
+        LoadPalette(sKantoTrainerCardBadges_Pal, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
         break;
     case 3:
         SetBgTilemapBuffer(0, sData->cardTilemapBuffer);
@@ -1524,6 +1544,39 @@ static void DrawStarsAndBadgesOnCard(void)
     CopyBgTilemapBufferToVram(3);
 }
 
+static void DrawKantoBadgesOnCardBack(void)
+{
+    s16 i, x;
+    u16 tileNum = 352;
+    u8 palNum = 5;
+    u8 y = 16;
+
+    if (sData->isLink)
+        return;
+
+    x = 4;
+    for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
+    {
+        if (sData->kantoBadgeCount[i])
+        {
+            FillBgTilemapBufferRect(3, tileNum, x, y, 1, 1, palNum);
+            FillBgTilemapBufferRect(3, tileNum + 1, x + 1, y, 1, 1, palNum);
+            FillBgTilemapBufferRect(3, tileNum + 16, x, y + 1, 1, 1, palNum);
+            FillBgTilemapBufferRect(3, tileNum + 17, x + 1, y + 1, 1, 1, palNum);
+        }
+    }
+}
+
+static bool8 PrintAllOnKantoCardFront(void)
+{
+    u8 savedCardType = sData->cardType;
+    bool8 result;
+    sData->cardType = CARD_TYPE_FRLG;
+    result = PrintAllOnCardFront();
+    sData->cardType = savedCardType;
+    return result;
+}
+
 static void DrawCardBackStats(void)
 {
     if (sData->cardType == CARD_TYPE_FRLG)
@@ -1564,6 +1617,7 @@ static void DrawCardBackStats(void)
             FillBgTilemapBufferRect(3, 156, 27, 16, 1, 1, 0);
         }
     }
+    DrawKantoBadgesOnCardBack();
     CopyBgTilemapBufferToVram(3);
 }
 
@@ -1686,7 +1740,7 @@ static bool8 Task_DrawFlippedCardSide(struct Task *task)
         case 1:
             if (!sData->onBack)
             {
-                if (!PrintAllOnCardBack())
+                if (!PrintAllOnKantoCardFront())
                     return FALSE;
             }
             else
@@ -1697,18 +1751,34 @@ static bool8 Task_DrawFlippedCardSide(struct Task *task)
             break;
         case 2:
             if (!sData->onBack)
+            {
+                LoadBgTiles(0, sData->kantoCardTiles, 0x1800, 0);
+                LoadPalette(sKantoTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
+                LoadPalette(sKantoTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
+                if (sData->trainerCard.gender != MALE)
+                    LoadPalette(sKantoTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
                 DrawCardFrontOrBack(sData->backTilemap);
+            }
             else
                 DrawTrainerCardWindow(WIN_CARD_TEXT);
             break;
         case 3:
             if (!sData->onBack)
-                DrawCardBackStats();
+            {
+                DrawKantoBadgesOnCardBack();
+                CopyBgTilemapBufferToVram(3);
+            }
             else
                 FillWindowPixelBuffer(WIN_TRAINER_PIC, PIXEL_FILL(0));
             break;
         case 4:
-            if (sData->onBack)
+            if (!sData->onBack)
+            {
+                FillWindowPixelBuffer(WIN_TRAINER_PIC, PIXEL_FILL(0));
+                CreateTrainerCardTrainerPic();
+                DrawTrainerCardWindow(WIN_TRAINER_PIC);
+            }
+            else
                 CreateTrainerCardTrainerPic();
             break;
         default:
@@ -1730,6 +1800,21 @@ static bool8 Task_SetCardFlipped(struct Task *task)
     // If on back of card, draw front of card because its being flipped
     if (sData->onBack)
     {
+        LoadBgTiles(0, sData->cardTiles, 0x1800, 0);
+        if (sData->cardType != CARD_TYPE_FRLG)
+        {
+            LoadPalette(sHoennTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
+            LoadPalette(sHoennTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
+            if (sData->trainerCard.gender != MALE)
+                LoadPalette(sHoennTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+        }
+        else
+        {
+            LoadPalette(sKantoTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
+            LoadPalette(sKantoTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
+            if (sData->trainerCard.gender != MALE)
+                LoadPalette(sKantoTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+        }
         DrawTrainerCardWindow(WIN_TRAINER_PIC);
         DrawCardScreenBackground(sData->bgTilemap);
         DrawCardFrontOrBack(sData->frontTilemap);

@@ -111,3 +111,32 @@ SixIsland_WaterPath_Text_RouteSign::
 	.string "WATER PATH\n"
 	.string "Leads to RUIN VALLEY$"
 
+SixIsland_WaterPath_EventScript_Lucy::
+	trainerbattle_single TRAINER_SEVII_LUCY, SixIsland_WaterPath_Text_LucyIntro, SixIsland_WaterPath_Text_LucyDefeat, SixIsland_WaterPath_EventScript_LucyDefeated
+	msgbox SixIsland_WaterPath_Text_LucyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_WaterPath_EventScript_LucyDefeated::
+	setflag FLAG_DEFEATED_SEVII_LUCY
+	msgbox SixIsland_WaterPath_Text_LucyDefeat, MSGBOX_DEFAULT
+	release
+	end
+
+SixIsland_WaterPath_Text_LucyIntro::
+	.string "I am LUCY, the PIKE QUEEN.\p"
+	.string "The serpentine waters of this\n"
+	.string "path called to me…\p"
+	.string "Like a serpent, I strike without\n"
+	.string "warning. Are you prepared?$"
+
+SixIsland_WaterPath_Text_LucyDefeat::
+	.string "…You dodged my fangs.\p"
+	.string "Even a serpent must acknowledge\n"
+	.string "a worthy opponent.$"
+
+SixIsland_WaterPath_Text_LucyPostBattle::
+	.string "The winding waterways here remind\n"
+	.string "me of the BATTLE PIKE.\p"
+	.string "Every turn hides a surprise…\n"
+	.string "Just the way I like it.$"
+

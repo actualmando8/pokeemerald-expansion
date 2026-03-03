@@ -363,6 +363,34 @@
       "trainer_sight_or_berry_tree_id": "VAR_TEMP_1",
       "script": "NULL",
       "flag": "FLAG_TEMP_2"
+    },
+    {
+      "local_id": "LOCALID_ROUTE117_BLOCKER_UPPER",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 57,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route117_EventScript_Blocker",
+      "flag": "FLAG_HIDE_ROUTE117_BLOCKER"
+    },
+    {
+      "local_id": "LOCALID_ROUTE117_BLOCKER_LOWER",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 57,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route117_EventScript_Blocker",
+      "flag": "FLAG_HIDE_ROUTE117_BLOCKER"
     }
   ],
   "warp_events": [

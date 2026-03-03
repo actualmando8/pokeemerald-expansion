@@ -435,3 +435,133 @@ BattleFrontier_OutsideEast_Text_StickyMonWithLongTail:
 	.string "with a long tail up ahead!\p"
 	.string "It was hiding under a boulder, and\n"
 	.string "it kept staring at me!$"
+
+@ ========================================
+@ Frontier Brains on the grounds
+@ ========================================
+BattleFrontier_OutsideEast_EventScript_BrainAnabel::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_SEVII_ANABEL, BattleFrontier_OutsideEast_EventScript_AnabelAcknowledge
+	msgbox BattleFrontier_OutsideEast_Text_AnabelDefault
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_AnabelAcknowledge::
+	msgbox BattleFrontier_OutsideEast_Text_AnabelAcknowledge
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_BrainGreta::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_SEVII_GRETA, BattleFrontier_OutsideEast_EventScript_GretaAcknowledge
+	msgbox BattleFrontier_OutsideEast_Text_GretaDefault
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_GretaAcknowledge::
+	msgbox BattleFrontier_OutsideEast_Text_GretaAcknowledge
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_BrainSpenser::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_SEVII_SPENSER, BattleFrontier_OutsideEast_EventScript_SpenserAcknowledge
+	msgbox BattleFrontier_OutsideEast_Text_SpenserDefault
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpenserAcknowledge::
+	msgbox BattleFrontier_OutsideEast_Text_SpenserAcknowledge
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_BrainBrandon::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_SEVII_BRANDON, BattleFrontier_OutsideEast_EventScript_BrandonAcknowledge
+	msgbox BattleFrontier_OutsideEast_Text_BrandonDefault
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_BrandonAcknowledge::
+	msgbox BattleFrontier_OutsideEast_Text_BrandonAcknowledge
+	release
+	end
+
+BattleFrontier_OutsideEast_Text_AnabelDefault:
+	.string "The BATTLE TOWER tests the bond\n"
+	.string "between TRAINER and POKéMON.\p"
+	.string "How deeply do you trust your\n"
+	.string "partners? That bond is everything.$"
+
+BattleFrontier_OutsideEast_Text_AnabelAcknowledge:
+	.string "We met near ICEFALL CAVE.\n"
+	.string "I sensed something special in you\l"
+	.string "even then.\p"
+	.string "The cold winds of FOUR ISLAND\n"
+	.string "stripped away everything but the\l"
+	.string "truth of our battle.\p"
+	.string "Here, the TOWER offers a similar\n"
+	.string "purity. No gimmicks. Just you\l"
+	.string "and your POKéMON.\p"
+	.string "I look forward to facing you\n"
+	.string "again.$"
+
+BattleFrontier_OutsideEast_Text_GretaDefault:
+	.string "The BATTLE ARENA is where\n"
+	.string "fighting spirit is tested!\p"
+	.string "Hesitate and you lose.\n"
+	.string "Attack with everything you have!$"
+
+BattleFrontier_OutsideEast_Text_GretaAcknowledge:
+	.string "KINDLE ROAD! That battle near\n"
+	.string "the EMBER SPA was incredible!\p"
+	.string "The volcanic heat of ONE ISLAND\n"
+	.string "matched my fighting spirit\l"
+	.string "perfectly.\p"
+	.string "I found my true strength on\n"
+	.string "those islands. And you helped\l"
+	.string "me find it.\p"
+	.string "The ARENA is waiting. Show me\n"
+	.string "that same fire!$"
+
+BattleFrontier_OutsideEast_Text_SpenserDefault:
+	.string "The BATTLE PALACE is a place of\n"
+	.string "instinct. Your POKéMON fight\l"
+	.string "as their nature dictates.\p"
+	.string "Can you trust them to battle\n"
+	.string "without your guidance?$"
+
+BattleFrontier_OutsideEast_Text_SpenserAcknowledge:
+	.string "The meadow of FIVE ISLAND…\n"
+	.string "I still carry that peace with me.\p"
+	.string "Nature spoke clearly there.\n"
+	.string "The grass, the wind, the\l"
+	.string "POKéMON moving freely.\p"
+	.string "It reminded me why I built the\n"
+	.string "PALACE the way I did.\p"
+	.string "Your POKéMON trusted you then.\n"
+	.string "Do they still? Come find out.$"
+
+BattleFrontier_OutsideEast_Text_BrandonDefault:
+	.string "The BATTLE PYRAMID is a test of\n"
+	.string "survival and exploration.\p"
+	.string "Darkness, wild POKéMON, and\n"
+	.string "unknown paths await within.\p"
+	.string "Only the resourceful emerge.$"
+
+BattleFrontier_OutsideEast_Text_BrandonAcknowledge:
+	.string "SEVAULT CANYON. The TANOBY RUINS.\n"
+	.string "That ancient place tested even me.\p"
+	.string "The ruins held secrets older than\n"
+	.string "any civilization I've studied.\p"
+	.string "And you walked right through them\n"
+	.string "as if they were just another road.\p"
+	.string "That confidence… it's exactly\n"
+	.string "what the PYRAMID demands.\p"
+	.string "I expect nothing less from the\n"
+	.string "TRAINER who conquered both\l"
+	.string "KANTO and HOENN.$"

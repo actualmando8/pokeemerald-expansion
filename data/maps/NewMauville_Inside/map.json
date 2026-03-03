@@ -117,6 +117,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewMauville_Inside_EventScript_Voltorb3",
       "flag": "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REGICE",
+      "x": 36,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewMauville_Inside_EventScript_Regieleki",
+      "flag": "FLAG_HIDE_REGIELEKI"
     }
   ],
   "warp_events": [
@@ -284,6 +297,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NewMauville_Inside_EventScript_Generator"
+    },
+    {
+      "type": "sign",
+      "x": 36,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewMauville_Inside_EventScript_RegielekiBraille"
     }
   ]
 }

@@ -175,24 +175,59 @@ EventScript_SailToThreeIsland::
 	end
 
 EventScript_SailToFourIsland::
+	goto_if_set FLAG_KANTO_BADGE07_GET, EventScript_SailToFourIsland_OK
+	goto_if_set FLAG_BADGE07_GET, EventScript_SailToFourIsland_OK
+	msgbox EventScript_Text_IslandNotYetAccessible, MSGBOX_DEFAULT
+	release
+	end
+
+EventScript_SailToFourIsland_OK::
 	setvar VAR_0x8006, SEAGALLOP_FOUR_ISLAND
 	goto EventScript_SailToDest
 	end
 
 EventScript_SailToFiveIsland::
+	goto_if_set FLAG_KANTO_BADGE07_GET, EventScript_SailToFiveIsland_OK
+	goto_if_set FLAG_BADGE07_GET, EventScript_SailToFiveIsland_OK
+	msgbox EventScript_Text_IslandNotYetAccessible, MSGBOX_DEFAULT
+	release
+	end
+
+EventScript_SailToFiveIsland_OK::
 	setvar VAR_0x8006, SEAGALLOP_FIVE_ISLAND
 	goto EventScript_SailToDest
 	end
 
 EventScript_SailToSixIsland::
+	goto_if_unset FLAG_KANTO_BADGE08_GET, EventScript_SailToSixIsland_Denied
+	goto_if_unset FLAG_BADGE08_GET, EventScript_SailToSixIsland_Denied
 	setvar VAR_0x8006, SEAGALLOP_SIX_ISLAND
 	goto EventScript_SailToDest
 	end
 
+EventScript_SailToSixIsland_Denied::
+	msgbox EventScript_Text_IslandNotYetAccessible, MSGBOX_DEFAULT
+	release
+	end
+
 EventScript_SailToSevenIsland::
+	goto_if_unset FLAG_KANTO_BADGE08_GET, EventScript_SailToSevenIsland_Denied
+	goto_if_unset FLAG_BADGE08_GET, EventScript_SailToSevenIsland_Denied
 	setvar VAR_0x8006, SEAGALLOP_SEVEN_ISLAND
 	goto EventScript_SailToDest
 	end
+
+EventScript_SailToSevenIsland_Denied::
+	msgbox EventScript_Text_IslandNotYetAccessible, MSGBOX_DEFAULT
+	release
+	end
+
+EventScript_Text_IslandNotYetAccessible:
+	.string "I'm sorry, but that island isn't\n"
+	.string "accessible yet.\p"
+	.string "You'll need to prove yourself\n"
+	.string "further as a TRAINER before\l"
+	.string "we can take you there.$"
 
 Text_AllAboardSeagallopNum::
 	.string "All right!\n"

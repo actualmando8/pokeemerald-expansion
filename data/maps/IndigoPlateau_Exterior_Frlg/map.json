@@ -2,8 +2,8 @@
   "id": "MAP_INDIGO_PLATEAU_EXTERIOR",
   "name": "IndigoPlateau_Exterior_Frlg",
   "layout": "LAYOUT_INDIGO_PLATEAU_EXTERIOR",
-  "music": "MUS_VICTORY_ROAD",
-  "region": "REGION_KANTO",
+  "music": "MUS_RG_VICTORY_ROAD",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_INDIGO_PLATEAU",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -62,10 +62,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

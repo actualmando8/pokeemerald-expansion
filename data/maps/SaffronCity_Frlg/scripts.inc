@@ -81,7 +81,22 @@ SaffronCity_EventScript_Pidgeot::
 	end
 
 SaffronCity_EventScript_Man::
-	msgbox SaffronCity_Text_SawRocketBossEscaping, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_IS_CHAMPION, SaffronCity_EventScript_ManPostBothE4
+	goto_if_set FLAG_IS_KANTO_CHAMPION, SaffronCity_EventScript_ManPostKantoE4
+	msgbox SaffronCity_Text_SawRocketBossEscaping
+	release
+	end
+
+SaffronCity_EventScript_ManPostKantoE4::
+	msgbox SaffronCity_Text_ManRocketEscalation
+	release
+	end
+
+SaffronCity_EventScript_ManPostBothE4::
+	msgbox SaffronCity_Text_ManRocketFinished
+	release
 	end
 
 SaffronCity_EventScript_CitySign::
@@ -177,6 +192,25 @@ SaffronCity_Text_Pidgeot::
 SaffronCity_Text_SawRocketBossEscaping::
 	.string "I saw the ROCKET BOSS escaping\n"
 	.string "SILPH's building.$"
+
+SaffronCity_Text_ManRocketEscalation:
+	.string "Even after you drove TEAM ROCKET\n"
+	.string "out of SAFFRON, they didn't stop.\p"
+	.string "I hear GIOVANNI was spotted near\n"
+	.string "some remote islands to the south.\p"
+	.string "What could he be planning now?\n"
+	.string "That man never gives up…$"
+
+SaffronCity_Text_ManRocketFinished:
+	.string "It's finally over.\n"
+	.string "TEAM ROCKET is truly finished.\p"
+	.string "After SAFFRON, the GAME CORNER,\n"
+	.string "and even those distant islands…\p"
+	.string "GIOVANNI's gone for good this\n"
+	.string "time. SAFFRON can breathe easy.\p"
+	.string "And it's all thanks to you,\n"
+	.string "isn't it? The whole region\l"
+	.string "owes you a debt.$"
 
 SaffronCity_Text_ImASecurityGuard::
 	.string "I'm a security guard.\p"

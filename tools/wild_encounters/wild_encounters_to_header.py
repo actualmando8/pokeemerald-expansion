@@ -164,10 +164,9 @@ class WildEncounterAssembler:
             map_group = map_data["mapGroup"]
             map_num = map_data["mapNum"]
             version = "EMERALD"
-            if "FireRed" in shared_label:
-                version = "FIRERED"
-            elif "LeafGreen" in shared_label:
+            if "LeafGreen" in shared_label:
                 version = "LEAFGREEN"
+            # FireRed encounters included in EMERALD builds for Kanto map support
             
             self.WriteLine(f"#ifdef {version}")
 
@@ -237,10 +236,9 @@ class WildEncounterAssembler:
                 headers["data"][shared_label]["mapNum"] = map_num
 
                 version = "EMERALD"
-                if "FireRed" in shared_label:
-                    version = "FIRERED"
-                elif "LeafGreen" in shared_label:
+                if "LeafGreen" in shared_label:
                     version = "LEAFGREEN"
+                # FireRed encounters included in EMERALD builds for Kanto map support
                 self.WriteLine(f"#ifdef {version}")
                 for mon_type in self.config.mon_types:
                     if mon_type not in map_encounters:

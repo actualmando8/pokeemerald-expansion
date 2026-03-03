@@ -7,6 +7,7 @@ Route117_MapScripts::
 
 Route117_OnTransition:
 	call Route117_EventScript_TryMoveDayCareMan
+	call Route117_EventScript_TryRemoveBlockers
 	@ set flags for OW daycare mons
 	setflag FLAG_TEMP_1
 	setflag FLAG_TEMP_2
@@ -236,6 +237,34 @@ Route117_Text_RouteSignVerdanturf:
 Route117_Text_RouteSignMauville:
 	.string "ROUTE 117\n"
 	.string "{RIGHT_ARROW} MAUVILLE CITY$"
+
+@ ========================================
+@ Route 117 Blockers - block until Dewford badge
+@ ========================================
+Route117_EventScript_TryRemoveBlockers::
+	goto_if_unset FLAG_BADGE02_GET, Route117_EventScript_TryRemoveBlockersEnd
+	setflag FLAG_HIDE_ROUTE117_BLOCKER
+Route117_EventScript_TryRemoveBlockersEnd::
+	return
+
+Route117_EventScript_Blocker::
+	lock
+	faceplayer
+	msgbox Route117_Text_BlockerMessage, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+Route117_Text_BlockerMessage:
+	.string "Sorry, but the road ahead to\n"
+	.string "VERDANTURF is closed right now.\p"
+	.string "There have been reports of wild\n"
+	.string "POKéMON causing rockslides\l"
+	.string "in RUSTURF TUNNEL.\p"
+	.string "It should be cleared up\n"
+	.string "before too long.$"
 
 Route117_Text_DayCareSign:
 	.string "POKéMON DAY CARE\n"

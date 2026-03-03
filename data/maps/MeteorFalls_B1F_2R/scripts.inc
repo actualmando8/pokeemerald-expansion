@@ -1,3 +1,54 @@
 MeteorFalls_B1F_2R_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, MeteorFalls_B1F_2R_OnResume
+	map_script MAP_SCRIPT_ON_TRANSITION, MeteorFalls_B1F_2R_OnTransition
 	.byte 0
 
+MeteorFalls_B1F_2R_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, MeteorFalls_B1F_2R_EventScript_TryRemoveJirachi
+	end
+
+MeteorFalls_B1F_2R_EventScript_TryRemoveJirachi::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
+MeteorFalls_B1F_2R_OnTransition:
+	call_if_unset FLAG_DEFEATED_JIRACHI, MeteorFalls_B1F_2R_EventScript_TryShowJirachi
+	end
+
+MeteorFalls_B1F_2R_EventScript_TryShowJirachi::
+	goto_if_unset FLAG_IS_CHAMPION, Common_EventScript_NopReturn
+	goto_if_unset FLAG_IS_KANTO_CHAMPION, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_JIRACHI
+	return
+
+MeteorFalls_B1F_2R_EventScript_Jirachi::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_JIRACHI, 40
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MeteorFalls_B1F_2R_EventScript_DefeatedJirachi
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MeteorFalls_B1F_2R_EventScript_RanFromJirachi
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MeteorFalls_B1F_2R_EventScript_RanFromJirachi
+	setflag FLAG_DEFEATED_JIRACHI
+	release
+	end
+
+MeteorFalls_B1F_2R_EventScript_DefeatedJirachi::
+	setflag FLAG_DEFEATED_JIRACHI
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+MeteorFalls_B1F_2R_EventScript_RanFromJirachi::
+	setvar VAR_0x8004, SPECIES_JIRACHI
+	goto Common_EventScript_LegendaryFlewAway
+	end

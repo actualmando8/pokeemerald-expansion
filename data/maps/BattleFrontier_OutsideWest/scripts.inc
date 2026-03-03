@@ -515,3 +515,96 @@ BattleFrontier_OutsideWest_Text_MonWithLongTailInFrontier:
 	.string "Oh, challenges can wait. I feel driven\n"
 	.string "to find the delightful creature!$"
 
+@ ========================================
+@ Frontier Brains on the grounds
+@ ========================================
+BattleFrontier_OutsideWest_EventScript_BrainNoland::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_SEVII_NOLAND, BattleFrontier_OutsideWest_EventScript_NolandAcknowledge
+	msgbox BattleFrontier_OutsideWest_Text_NolandDefault
+	release
+	end
+
+BattleFrontier_OutsideWest_EventScript_NolandAcknowledge::
+	msgbox BattleFrontier_OutsideWest_Text_NolandAcknowledge
+	release
+	end
+
+BattleFrontier_OutsideWest_EventScript_BrainTucker::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_SEVII_TUCKER, BattleFrontier_OutsideWest_EventScript_TuckerAcknowledge
+	msgbox BattleFrontier_OutsideWest_Text_TuckerDefault
+	release
+	end
+
+BattleFrontier_OutsideWest_EventScript_TuckerAcknowledge::
+	msgbox BattleFrontier_OutsideWest_Text_TuckerAcknowledge
+	release
+	end
+
+BattleFrontier_OutsideWest_EventScript_BrainLucy::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_SEVII_LUCY, BattleFrontier_OutsideWest_EventScript_LucyAcknowledge
+	msgbox BattleFrontier_OutsideWest_Text_LucyDefault
+	release
+	end
+
+BattleFrontier_OutsideWest_EventScript_LucyAcknowledge::
+	msgbox BattleFrontier_OutsideWest_Text_LucyAcknowledge
+	release
+	end
+
+BattleFrontier_OutsideWest_Text_NolandDefault:
+	.string "The BATTLE FACTORY is my domain.\n"
+	.string "Knowledge is power, and rental\l"
+	.string "POKéMON test that knowledge.\p"
+	.string "Can you win with what you're\n"
+	.string "given? That's the real question.$"
+
+BattleFrontier_OutsideWest_Text_NolandAcknowledge:
+	.string "Ah, you're the one from CAPE BRINK.\n"
+	.string "I remember our battle well.\p"
+	.string "The islands taught me patience.\n"
+	.string "HOENN taught me strategy.\p"
+	.string "We carried those lessons here.\n"
+	.string "The FACTORY is better for it.\p"
+	.string "Come challenge me anytime.\n"
+	.string "I suspect you've only grown\l"
+	.string "stronger since the islands.$"
+
+BattleFrontier_OutsideWest_Text_TuckerDefault:
+	.string "Welcome to the BATTLE DOME!\n"
+	.string "Where spectacle meets strategy!\p"
+	.string "The crowd demands a show, and\n"
+	.string "I always deliver.$"
+
+BattleFrontier_OutsideWest_Text_TuckerAcknowledge:
+	.string "You! From BOND BRIDGE!\n"
+	.string "I still think about our battle.\p"
+	.string "The SEVII ISLANDS had a certain\n"
+	.string "raw energy. No audience, no\l"
+	.string "fanfare. Just two TRAINERS\l"
+	.string "giving everything.\p"
+	.string "It was… different. But it\n"
+	.string "was real. Realer than any show.\p"
+	.string "The DOME awaits you. Let's give\n"
+	.string "the crowd something to remember.$"
+
+BattleFrontier_OutsideWest_Text_LucyDefault:
+	.string "… … …\p"
+	.string "The BATTLE PIKE rewards\n"
+	.string "those who embrace the unknown.\p"
+	.string "Choose your path carefully.$"
+
+BattleFrontier_OutsideWest_Text_LucyAcknowledge:
+	.string "… The WATER PATH.\n"
+	.string "You walked it without fear.\p"
+	.string "The winding paths of the\n"
+	.string "SEVII ISLANDS suited me well.\p"
+	.string "Here, the PIKE offers a\n"
+	.string "different kind of darkness.\p"
+	.string "… Enter, if you dare.$"
+

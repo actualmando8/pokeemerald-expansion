@@ -662,3 +662,117 @@ MauvilleCity_Text_ExplainTV:
 
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"
+
+@ ========================================
+@ Meteor Scientist - Jirachi / Deoxys story thread
+@ ========================================
+MauvilleCity_EventScript_MeteorScientist::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_DEOXYS, MauvilleCity_EventScript_ScientistPostDeoxys
+	goto_if_set FLAG_ENABLE_SHIP_BIRTH_ISLAND, MauvilleCity_EventScript_ScientistGoToBirthIsland
+	goto_if_set FLAG_DEFEATED_JIRACHI, MauvilleCity_EventScript_ScientistGiveAuroraTicket
+	goto_if_set FLAG_IS_CHAMPION, MauvilleCity_EventScript_ScientistCheckKantoChamp
+	msgbox MauvilleCity_Text_ScientistEarlyResearch
+	release
+	end
+
+MauvilleCity_EventScript_ScientistCheckKantoChamp::
+	goto_if_set FLAG_IS_KANTO_CHAMPION, MauvilleCity_EventScript_ScientistEnergyPeaked
+	msgbox MauvilleCity_Text_ScientistEarlyResearch
+	release
+	end
+
+MauvilleCity_EventScript_ScientistEnergyPeaked::
+	msgbox MauvilleCity_Text_ScientistEnergyPeaked
+	release
+	end
+
+MauvilleCity_EventScript_ScientistGiveAuroraTicket::
+	msgbox MauvilleCity_Text_ScientistJirachiDiscovery
+	additem ITEM_AURORA_TICKET
+	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox MauvilleCity_Text_ScientistReceivedAuroraTicket
+	waitfanfare
+	msgbox MauvilleCity_Text_ScientistBirthIslandReadings
+	release
+	end
+
+MauvilleCity_EventScript_ScientistGoToBirthIsland::
+	msgbox MauvilleCity_Text_ScientistBirthIslandReminder
+	release
+	end
+
+MauvilleCity_EventScript_ScientistPostDeoxys::
+	msgbox MauvilleCity_Text_ScientistPostDeoxys
+	release
+	end
+
+MauvilleCity_Text_ScientistEarlyResearch:
+	.string "I'm studying a meteor fragment we\n"
+	.string "found near METEOR FALLS.\p"
+	.string "It gives off a faint but unusual\n"
+	.string "energy signature.\p"
+	.string "We're running tests, but I've never\n"
+	.string "seen anything quite like it.$"
+
+MauvilleCity_Text_ScientistEnergyPeaked:
+	.string "The readings from the meteor\n"
+	.string "fragment have spiked dramatically!\p"
+	.string "The energy is resonating with\n"
+	.string "something deep inside METEOR FALLS.\p"
+	.string "I believe something ancient has\n"
+	.string "awakened in the deepest chamber.\p"
+	.string "If you're brave enough, you should\n"
+	.string "investigate METEOR FALLS yourself.$"
+
+MauvilleCity_Text_ScientistJirachiDiscovery:
+	.string "You encountered JIRACHI?!\n"
+	.string "Incredible!\p"
+	.string "That confirms my theory. The meteor\n"
+	.string "fragment was connected to JIRACHI's\l"
+	.string "slumber all along.\p"
+	.string "But listen, while analyzing the\n"
+	.string "fragment further, I found something\l"
+	.string "even more extraordinary.\p"
+	.string "Embedded in the meteor is a strand\n"
+	.string "of DNA that is clearly not of this\l"
+	.string "world.\p"
+	.string "Our instruments are detecting\n"
+	.string "matching energy signatures from\l"
+	.string "a remote island far to the south.$"
+
+MauvilleCity_Text_ScientistReceivedAuroraTicket:
+	.string "{PLAYER} received the\n"
+	.string "AURORATICKET from the scientist!$"
+
+MauvilleCity_Text_ScientistBirthIslandReadings:
+	.string "That ticket will grant you passage\n"
+	.string "to BIRTH ISLAND.\p"
+	.string "Whatever is out there matches the\n"
+	.string "alien DNA in the meteor.\p"
+	.string "Please, investigate it for us.\n"
+	.string "This could be the discovery of\l"
+	.string "a lifetime.$"
+
+MauvilleCity_Text_ScientistBirthIslandReminder:
+	.string "Have you been to BIRTH ISLAND yet?\p"
+	.string "The energy readings from that\n"
+	.string "location are extraordinary.\p"
+	.string "The alien DNA in the meteor matches\n"
+	.string "something out there perfectly.\p"
+	.string "You can reach BIRTH ISLAND by\n"
+	.string "ferry from VERMILION CITY.$"
+
+MauvilleCity_Text_ScientistPostDeoxys:
+	.string "You encountered a being from space\n"
+	.string "on BIRTH ISLAND?!\p"
+	.string "So the alien DNA in the meteor\n"
+	.string "truly was extraterrestrial…\p"
+	.string "A POKéMON born from a meteor.\n"
+	.string "JIRACHI awakened by a meteor.\p"
+	.string "These fragments carry more than\n"
+	.string "just rock. They carry life itself.\p"
+	.string "Thank you, {PLAYER}. This research\n"
+	.string "will change everything we know.$"

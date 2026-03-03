@@ -1,8 +1,86 @@
 SevenIsland_TanobyRuins_MoneanChamber_Frlg_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, TanobyRuins_MoneanChamber_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, SevenIsland_TanobyRuins_MoneanChamber_OnTransition
 	.byte 0
+
+TanobyRuins_MoneanChamber_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, TanobyRuins_MoneanChamber_EventScript_TryRemoveRegigigas
+	end
+
+TanobyRuins_MoneanChamber_EventScript_TryRemoveRegigigas::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
 
 SevenIsland_TanobyRuins_MoneanChamber_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER
 	call EventScript_TryDarkenRuins
+	call_if_unset FLAG_DEFEATED_REGIGIGAS, TanobyRuins_MoneanChamber_EventScript_ShowRegigigas
 	end
+
+TanobyRuins_MoneanChamber_EventScript_ShowRegigigas::
+	clearflag FLAG_HIDE_REGIGIGAS
+	return
+
+TanobyRuins_MoneanChamber_EventScript_RegigigasBraille::
+	lockall
+	braillemsgbox TanobyRuins_Braille_Regigigas
+	releaseall
+	end
+
+TanobyRuins_MoneanChamber_EventScript_Regigigas::
+	lock
+	faceplayer
+	setvar VAR_0x8004, SPECIES_REGIROCK
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, FALSE, TanobyRuins_MoneanChamber_EventScript_RegigigasNoReact
+	setvar VAR_0x8004, SPECIES_REGICE
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, FALSE, TanobyRuins_MoneanChamber_EventScript_RegigigasNoReact
+	setvar VAR_0x8004, SPECIES_REGISTEEL
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, FALSE, TanobyRuins_MoneanChamber_EventScript_RegigigasNoReact
+	setvar VAR_0x8004, SPECIES_REGIELEKI
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, FALSE, TanobyRuins_MoneanChamber_EventScript_RegigigasNoReact
+	setvar VAR_0x8004, SPECIES_REGIDRAGO
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, FALSE, TanobyRuins_MoneanChamber_EventScript_RegigigasNoReact
+	waitse
+	playmoncry SPECIES_REGIGIGAS, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_REGIGIGAS, 50
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, TanobyRuins_MoneanChamber_EventScript_DefeatedRegigigas
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, TanobyRuins_MoneanChamber_EventScript_RanFromRegigigas
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, TanobyRuins_MoneanChamber_EventScript_RanFromRegigigas
+	setflag FLAG_DEFEATED_REGIGIGAS
+	release
+	end
+
+TanobyRuins_MoneanChamber_EventScript_RegigigasNoReact::
+	msgbox TanobyRuins_MoneanChamber_Text_RegigigasNoReact, MSGBOX_DEFAULT
+	release
+	end
+
+TanobyRuins_MoneanChamber_EventScript_DefeatedRegigigas::
+	setflag FLAG_DEFEATED_REGIGIGAS
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+TanobyRuins_MoneanChamber_EventScript_RanFromRegigigas::
+	setvar VAR_0x8004, SPECIES_REGIGIGAS
+	goto Common_EventScript_LegendaryFlewAway
+	end
+
+TanobyRuins_MoneanChamber_Text_RegigigasNoReact::
+	.string "The giant stone figure doesn't\n"
+	.string "react…\p"
+	.string "It seems to be waiting for\n"
+	.string "something…$"

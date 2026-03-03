@@ -6,6 +6,7 @@ Route118_MapScripts::
 
 Route118_OnTransition:
 	call GabbyAndTy_EventScript_UpdateLocation
+	call Route118_EventScript_TryRemoveBlocker
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_StartGroudonWeather
@@ -297,4 +298,46 @@ Route118_Text_RouteSignMauville:
 Route118_Text_RouteSign119:
 	.string "ROUTE 118\n"
 	.string "{UP_ARROW} ROUTE 119$"
+
+@ ========================================
+@ Route 118 Blocker - block until 5 Kanto + 5 Hoenn badges
+@ ========================================
+Route118_EventScript_TryRemoveBlocker::
+	@ Check 5 Hoenn badges (Roxanne, Brawly, Wattson, Flannery, Norman)
+	goto_if_unset FLAG_BADGE01_GET, Route118_EventScript_TryRemoveBlockerEnd
+	goto_if_unset FLAG_BADGE02_GET, Route118_EventScript_TryRemoveBlockerEnd
+	goto_if_unset FLAG_BADGE03_GET, Route118_EventScript_TryRemoveBlockerEnd
+	goto_if_unset FLAG_BADGE04_GET, Route118_EventScript_TryRemoveBlockerEnd
+	goto_if_unset FLAG_BADGE05_GET, Route118_EventScript_TryRemoveBlockerEnd
+	@ Check 5 Kanto badges (Brock, Misty, Surge, Erika, Koga)
+	goto_if_unset FLAG_KANTO_BADGE01_GET, Route118_EventScript_TryRemoveBlockerEnd
+	goto_if_unset FLAG_KANTO_BADGE02_GET, Route118_EventScript_TryRemoveBlockerEnd
+	goto_if_unset FLAG_KANTO_BADGE03_GET, Route118_EventScript_TryRemoveBlockerEnd
+	goto_if_unset FLAG_KANTO_BADGE04_GET, Route118_EventScript_TryRemoveBlockerEnd
+	goto_if_unset FLAG_KANTO_BADGE05_GET, Route118_EventScript_TryRemoveBlockerEnd
+	setflag FLAG_HIDE_ROUTE118_BLOCKER
+Route118_EventScript_TryRemoveBlockerEnd::
+	return
+
+Route118_EventScript_Blocker::
+	lock
+	faceplayer
+	msgbox Route118_Text_BlockerMessage, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+Route118_Text_BlockerMessage:
+	.string "Hold on there, TRAINER!\p"
+	.string "The road east is too dangerous\n"
+	.string "right now.\p"
+	.string "Wild POKéMON have been causing\n"
+	.string "terrible storms on ROUTE 119.\p"
+	.string "Only the most experienced\n"
+	.string "TRAINERS should attempt it.\p"
+	.string "Come back when you've proven\n"
+	.string "yourself in both KANTO\l"
+	.string "and HOENN!$"
 

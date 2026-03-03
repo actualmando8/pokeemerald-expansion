@@ -42,11 +42,13 @@ CeruleanCave_B1F_EventScript_Mewtwo::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CeruleanCave_B1F_EventScript_RanFromMewtwo
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CeruleanCave_B1F_EventScript_RanFromMewtwo
 	setflag FLAG_FOUGHT_MEWTWO
+	setflag FLAG_DEFEATED_MEWTWO
 	release
 	end
 
 CeruleanCave_B1F_EventScript_DefeatedMewtwo::
 	setflag FLAG_FOUGHT_MEWTWO
+	setflag FLAG_DEFEATED_MEWTWO
 	goto EventScript_RemoveStaticMon
 	end
 

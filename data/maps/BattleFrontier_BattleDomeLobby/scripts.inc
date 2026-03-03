@@ -133,6 +133,20 @@ BattleFrontier_BattleDomeLobby_EventScript_DoublesAttendant::
 	end
 
 BattleFrontier_BattleDomeLobby_EventScript_AttendantWelcome::
+	goto_if_unset FLAG_IS_CHAMPION, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_IS_KANTO_CHAMPION, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_SEVII_NOLAND, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_SEVII_GRETA, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_SEVII_TUCKER, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_SEVII_SPENSER, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_SEVII_ANABEL, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_SEVII_LUCY, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_SEVII_BRANDON, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_NAVEL_ROCK_COMPLETED, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_DEOXYS, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_MEW, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_JIRACHI, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
+	goto_if_unset FLAG_DEFEATED_MEWTWO, BattleFrontier_BattleDomeLobby_EventScript_DomeLocked
 	special SavePlayerParty
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_SINGLES, BattleFrontier_BattleDomeLobby_EventScript_WelcomeSingles
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_DOUBLES, BattleFrontier_BattleDomeLobby_EventScript_WelcomeDoubles
@@ -685,3 +699,22 @@ BattleFrontier_BattleDomeLobby_Text_ExplainDoubleKORules:
 	.string "time--a double KO--in a tournament\l"
 	.string "match, the REFEREES will review\l"
 	.string "the match and declare the winner.$"
+
+BattleFrontier_BattleDomeLobby_EventScript_DomeLocked::
+	msgbox BattleFrontier_BattleDomeLobby_Text_DomeLocked, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_BattleDomeLobby_Text_DomeLocked:
+	.string "I'm sorry, but the BATTLE DOME\n"
+	.string "tournament is not yet open to you.\p"
+	.string "Only TRAINERS who have proven\n"
+	.string "themselves across all regions\l"
+	.string "may enter.\p"
+	.string "You must defeat both the KANTO\n"
+	.string "and HOENN ELITE FOURs, triumph\l"
+	.string "over all seven FRONTIER BRAINS\l"
+	.string "on the SEVII ISLANDS, and\l"
+	.string "complete the NAVEL ROCK trial.\p"
+	.string "We look forward to the day you\n"
+	.string "return as a true champion!$"

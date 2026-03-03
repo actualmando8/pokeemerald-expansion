@@ -55,6 +55,7 @@
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
 #include "fishing.h"
+#include "regions.h"
 
 enum TransitionType
 {
@@ -1597,49 +1598,71 @@ void PlayTrainerEncounterMusic(void)
     if (TRAINER_BATTLE_PARAM.mode != TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC
         && TRAINER_BATTLE_PARAM.mode != TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC)
     {
-        switch (GetTrainerEncounterMusicId(trainerId))
+        if (GetCurrentRegion() == REGION_KANTO)
         {
-        case TRAINER_ENCOUNTER_MUSIC_MALE:
-            music = MUS_ENCOUNTER_MALE;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_FEMALE:
-            music = MUS_ENCOUNTER_FEMALE;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_GIRL:
-            music = MUS_ENCOUNTER_GIRL;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_INTENSE:
-            music = MUS_ENCOUNTER_INTENSE;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_COOL:
-            music = MUS_ENCOUNTER_COOL;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_AQUA:
-            music = MUS_ENCOUNTER_AQUA;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_MAGMA:
-            music = MUS_ENCOUNTER_MAGMA;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_SWIMMER:
-            music = MUS_ENCOUNTER_SWIMMER;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_TWINS:
-            music = MUS_ENCOUNTER_TWINS;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR:
-            music = MUS_ENCOUNTER_ELITE_FOUR;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_HIKER:
-            music = MUS_ENCOUNTER_HIKER;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_INTERVIEWER:
-            music = MUS_ENCOUNTER_INTERVIEWER;
-            break;
-        case TRAINER_ENCOUNTER_MUSIC_RICH:
-            music = MUS_ENCOUNTER_RICH;
-            break;
-        default:
-            music = MUS_ENCOUNTER_SUSPICIOUS;
+            switch (GetTrainerEncounterMusicId(trainerId))
+            {
+            case TRAINER_ENCOUNTER_MUSIC_FEMALE:
+            case TRAINER_ENCOUNTER_MUSIC_GIRL:
+            case TRAINER_ENCOUNTER_MUSIC_TWINS:
+                music = MUS_RG_ENCOUNTER_GIRL;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS:
+            case TRAINER_ENCOUNTER_MUSIC_AQUA:
+            case TRAINER_ENCOUNTER_MUSIC_MAGMA:
+                music = MUS_RG_ENCOUNTER_ROCKET;
+                break;
+            default:
+                music = MUS_RG_ENCOUNTER_BOY;
+                break;
+            }
+        }
+        else
+        {
+            switch (GetTrainerEncounterMusicId(trainerId))
+            {
+            case TRAINER_ENCOUNTER_MUSIC_MALE:
+                music = MUS_ENCOUNTER_MALE;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_FEMALE:
+                music = MUS_ENCOUNTER_FEMALE;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_GIRL:
+                music = MUS_ENCOUNTER_GIRL;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_INTENSE:
+                music = MUS_ENCOUNTER_INTENSE;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_COOL:
+                music = MUS_ENCOUNTER_COOL;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_AQUA:
+                music = MUS_ENCOUNTER_AQUA;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_MAGMA:
+                music = MUS_ENCOUNTER_MAGMA;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_SWIMMER:
+                music = MUS_ENCOUNTER_SWIMMER;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_TWINS:
+                music = MUS_ENCOUNTER_TWINS;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR:
+                music = MUS_ENCOUNTER_ELITE_FOUR;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_HIKER:
+                music = MUS_ENCOUNTER_HIKER;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_INTERVIEWER:
+                music = MUS_ENCOUNTER_INTERVIEWER;
+                break;
+            case TRAINER_ENCOUNTER_MUSIC_RICH:
+                music = MUS_ENCOUNTER_RICH;
+                break;
+            default:
+                music = MUS_ENCOUNTER_SUSPICIOUS;
+            }
         }
         PlayNewMapMusic(music);
     }

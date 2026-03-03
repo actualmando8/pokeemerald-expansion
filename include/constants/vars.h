@@ -1,7 +1,38 @@
 #ifndef GUARD_CONSTANTS_VARS_H
 #define GUARD_CONSTANTS_VARS_H
 
+#define FRLG_VAR_OFFSET 0xE0
 #include "constants/vars_frlg.h"
+
+// Undef shared names from FRLG that Emerald redefines
+#undef SPECIAL_VARS_START
+#undef VAR_0x8000
+#undef VAR_0x8001
+#undef VAR_0x8002
+#undef VAR_0x8003
+#undef VAR_0x8004
+#undef VAR_0x8005
+#undef VAR_0x8006
+#undef VAR_0x8007
+#undef VAR_0x8008
+#undef VAR_0x8009
+#undef VAR_0x800A
+#undef VAR_0x800B
+#undef VAR_DAILY_BLENDER
+#undef VAR_DAILY_BP
+#undef VAR_DAILY_PICKED_BERRIES
+#undef VAR_DAILY_PLANTED_BERRIES
+#undef VAR_DAILY_ROULETTE
+#undef VAR_DAILY_SLOTS
+#undef VAR_DAILY_WILDS
+#undef VAR_FACING
+#undef VAR_FRONTIER_FACILITY
+#undef VAR_ITEM_ID
+#undef VAR_LAST_TALKED
+#undef VAR_LOTAD_SIZE_RECORD
+#undef VAR_POKELOT_RND2
+#undef VAR_RESULT
+
 
 #define VARS_START 0x4000
 
@@ -277,7 +308,8 @@
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF
-#define VARS_COUNT                                       (VARS_END - VARS_START + 1)
+// FRLG offset vars always exceed Emerald count
+#define VARS_COUNT                                       VARS_COUNT_FRLG
 
 #define SPECIAL_VARS_START            0x8000
 // special vars

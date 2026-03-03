@@ -8,9 +8,16 @@ NewMauville_Inside_OnResume:
 	call_if_eq VAR_TEMP_1, 1, NewMauville_Inside_EventScript_SetBarrierStateBlueButton
 	call_if_eq VAR_TEMP_2, 1, NewMauville_Inside_EventScript_SetBarrierStateGreenButton
 	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NewMauville_Inside_EventScript_TryRemoveVoltorb
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NewMauville_Inside_EventScript_TryRemoveRegieleki
 	end
 
 NewMauville_Inside_EventScript_TryRemoveVoltorb::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
+NewMauville_Inside_EventScript_TryRemoveRegieleki::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
 	removeobject VAR_LAST_TALKED
@@ -22,6 +29,7 @@ NewMauville_Inside_OnTransition:
 	call_if_unset FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb1
 	call_if_unset FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb2
 	call_if_unset FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb3
+	call_if_unset FLAG_DEFEATED_REGIELEKI, NewMauville_Inside_EventScript_ShowRegieleki
 	end
 
 NewMauville_Inside_EventScript_ShowVoltorb1::
@@ -261,3 +269,47 @@ NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped:
 	.string "… … … … … … … …\p"
 	.string "The generator appears to have\n"
 	.string "stopped…$"
+
+NewMauville_Inside_EventScript_ShowRegieleki::
+	goto_if_unset FLAG_REGI_DOORS_OPENED, NewMauville_Inside_EventScript_DontShowRegieleki
+	clearflag FLAG_HIDE_REGIELEKI
+	return
+
+NewMauville_Inside_EventScript_DontShowRegieleki::
+	return
+
+NewMauville_Inside_EventScript_RegielekiBraille::
+	lockall
+	braillemsgbox NewMauville_Braille_Regieleki
+	releaseall
+	end
+
+NewMauville_Inside_EventScript_Regieleki::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_REGIELEKI, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_REGIELEKI, 40
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special StartRegiBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_DefeatedRegieleki
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Inside_EventScript_RanFromRegieleki
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauville_Inside_EventScript_RanFromRegieleki
+	setflag FLAG_DEFEATED_REGIELEKI
+	release
+	end
+
+NewMauville_Inside_EventScript_DefeatedRegieleki::
+	setflag FLAG_DEFEATED_REGIELEKI
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+NewMauville_Inside_EventScript_RanFromRegieleki::
+	setvar VAR_0x8004, SPECIES_REGIELEKI
+	goto Common_EventScript_LegendaryFlewAway
+	end

@@ -51,6 +51,7 @@
 #include "menu_specialized.h"
 #include "data.h"
 #include "generational_changes.h"
+#include "regions.h"
 #include "move.h"
 #include "constants/abilities.h"
 #include "constants/battle_anim.h"
@@ -4221,7 +4222,7 @@ static void Cmd_getexp(void)
                     && !gBattleStruct->wildVictorySong)
                 {
                     BattleStopLowHpSound();
-                    PlayBGM(MUS_VICTORY_WILD);
+                    PlayBGM(GetCurrentRegion() == REGION_KANTO ? MUS_RG_VICTORY_WILD : MUS_VICTORY_WILD);
                     gBattleStruct->wildVictorySong++;
                 }
 
@@ -13872,7 +13873,7 @@ void BS_SetTeleportOutcome(void)
 void BS_PlayTrainerDefeatedMusic(void)
 {
     NATIVE_ARGS();
-    BtlController_EmitPlayFanfareOrBGM(gBattlerAttacker, B_COMM_TO_CONTROLLER, MUS_VICTORY_TRAINER, TRUE);
+    BtlController_EmitPlayFanfareOrBGM(gBattlerAttacker, B_COMM_TO_CONTROLLER, GetCurrentRegion() == REGION_KANTO ? MUS_RG_VICTORY_TRAINER : MUS_VICTORY_TRAINER, TRUE);
     MarkBattlerForControllerExec(gBattlerAttacker);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }

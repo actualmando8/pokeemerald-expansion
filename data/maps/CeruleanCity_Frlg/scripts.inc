@@ -5,7 +5,14 @@ CeruleanCity_Frlg_MapScripts::
 CeruleanCity_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_CERULEAN_CITY
 	call_if_unset FLAG_GOT_SS_TICKET, CeruleanCity_EventScript_BlockExits
+	call CeruleanCity_EventScript_CheckCaveAccess
 	end
+
+CeruleanCity_EventScript_CheckCaveAccess::
+	goto_if_unset FLAG_IS_CHAMPION, Common_EventScript_NopReturn
+	goto_if_unset FLAG_IS_KANTO_CHAMPION, Common_EventScript_NopReturn
+	setflag FLAG_HIDE_CERULEAN_CAVE_GUARD
+	return
 
 CeruleanCity_EventScript_BlockExits::
 	setobjectxyperm LOCALID_CERULEAN_POLICEMAN, 30, 12
@@ -255,7 +262,16 @@ CeruleanCity_EventScript_Youngster::
 	end
 
 CeruleanCity_EventScript_CeruleanCaveGuard::
-	msgbox CeruleanCity_Text_ThisIsCeruleanCave, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_IS_CHAMPION, CeruleanCity_EventScript_CaveGuardAlmostReady
+	msgbox CeruleanCity_Text_ThisIsCeruleanCave
+	release
+	end
+
+CeruleanCity_EventScript_CaveGuardAlmostReady::
+	msgbox CeruleanCity_Text_CaveGuardAlmostThere
+	release
 	end
 
 CeruleanCity_EventScript_Woman::
@@ -505,13 +521,23 @@ CeruleanCity_Text_ThisIsCeruleanCave::
 	.string "This is CERULEAN CAVE.\p"
 	.string "Horribly strong POKéMON live inside\n"
 	.string "there.\p"
-	.string "It takes a very special TRAINER to\n"
-	.string "be allowed inside there.\p"
-	.string "You'd have to be strong enough to\n"
-	.string "become the POKéMON LEAGUE\l"
-	.string "CHAMPION for starters.\p"
-	.string "And, you would have to have\n"
-	.string "made a great achievement.$"
+	.string "Only a TRAINER who has proven\n"
+	.string "themselves as CHAMPION of not\l"
+	.string "one, but TWO regions would be\l"
+	.string "worthy of entering.\p"
+	.string "Come back when you've conquered\n"
+	.string "both POKéMON LEAGUEs.$"
+
+CeruleanCity_Text_CaveGuardAlmostThere:
+	.string "This is CERULEAN CAVE.\p"
+	.string "I can see you're a CHAMPION\n"
+	.string "of one POKéMON LEAGUE already.\p"
+	.string "But the POKéMON inside are so\n"
+	.string "powerful that only someone who\l"
+	.string "has conquered BOTH leagues\l"
+	.string "should enter.\p"
+	.string "You're almost there. Come back\n"
+	.string "when you've beaten them both.$"
 
 CeruleanCity_Text_CitySign::
 	.string "CERULEAN CITY\n"

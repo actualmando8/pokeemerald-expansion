@@ -103,6 +103,7 @@ PetalburgCity_Gym_EventScript_Norman::
 	vsseeker_rematchid TRAINER_NORMAN_1
 	lock
 	faceplayer
+	goto_if_set FLAG_VISITED_SLATEPORT_CITY, PetalburgCity_Gym_EventScript_NormanKantoVisitor
 	switch VAR_PETALBURG_GYM_STATE
 	case 2, PetalburgCity_Gym_EventScript_NormanNoBadges
 	case 3, PetalburgCity_Gym_EventScript_NormanOneBadge
@@ -1589,4 +1590,97 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "capable of battle?\p"
 	.string "Sorry, but you'll have to come back\n"
 	.string "with at least two POKéMON.$"
+
+@ ========================================
+@ Custom: Norman handler for Kanto visitor
+@ ========================================
+PetalburgCity_Gym_EventScript_NormanKantoVisitor::
+	@ If already beaten, use existing post-battle / rematch paths
+	goto_if_eq VAR_PETALBURG_GYM_STATE, 7, PetalburgCity_Gym_EventScript_NormanPostBattle
+	goto_if_eq VAR_PETALBURG_GYM_STATE, 8, PetalburgCity_Gym_EventScript_NormanRematch
+	@ Check for 4 Hoenn badges (Roxanne, Brawly, Wattson, Flannery)
+	goto_if_unset FLAG_BADGE01_GET, PetalburgCity_Gym_EventScript_NormanKantoNotReady
+	goto_if_unset FLAG_BADGE02_GET, PetalburgCity_Gym_EventScript_NormanKantoNotReady
+	goto_if_unset FLAG_BADGE03_GET, PetalburgCity_Gym_EventScript_NormanKantoNotReady
+	goto_if_unset FLAG_BADGE04_GET, PetalburgCity_Gym_EventScript_NormanKantoNotReady
+	@ Ready to battle
+	msgbox PetalburgCity_Gym_Text_NormanKantoIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
+	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
+	waitmessage
+	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_PETALBURG_GYM
+	setvar VAR_PETALBURG_GYM_STATE, 7
+	setflag FLAG_BADGE05_GET
+	special ResetHealLocationFromDewford
+	call EventScript_HideMrBriney
+	setflag FLAG_HIDE_MAUVILLE_GYM_WATTSON
+	clearflag FLAG_HIDE_MAUVILLE_CITY_WATTSON
+	setvar VAR_0x8008, 5
+	call Common_EventScript_SetGymTrainers
+	clearflag FLAG_HIDE_DEWFORD_HALL_SLUDGE_BOMB_MAN
+	call PetalburgCity_Gym_EventScript_UnlockAllDoors
+	special DrawWholeMapView
+	call PetalburgCity_Gym_EventScript_GiveFacade
+	delay 30
+	@ Give HM Surf directly (skip Wally's dad scene)
+	msgbox PetalburgCity_Gym_Text_NormanKantoPostBattle, MSGBOX_DEFAULT
+	giveitem ITEM_HM_SURF
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	setflag FLAG_RECEIVED_HM_SURF
+	setvar VAR_PETALBURG_CITY_STATE, 5
+	msgbox PetalburgCity_Gym_Text_NormanKantoSurf, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_Gym_EventScript_NormanKantoNotReady::
+	msgbox PetalburgCity_Gym_Text_NormanKantoNotReady, MSGBOX_DEFAULT
+	release
+	end
+
+@ ========================================
+@ Custom: Norman Kanto visitor text
+@ ========================================
+PetalburgCity_Gym_Text_NormanKantoIntro:
+	.string "DAD: {PLAYER}!\n"
+	.string "You came all the way to HOENN!\p"
+	.string "And four GYM BADGES already?\n"
+	.string "On top of everything you did\l"
+	.string "in KANTO… I'm impressed.\p"
+	.string "I've been waiting for this.\n"
+	.string "A real battle with my own child!\p"
+	.string "But don't expect me to go easy.\n"
+	.string "In this GYM, I'm a LEADER first\l"
+	.string "and your father second!\p"
+	.string "Give it everything you've got,\n"
+	.string "{PLAYER}!$"
+
+PetalburgCity_Gym_Text_NormanKantoNotReady:
+	.string "DAD: {PLAYER}!\n"
+	.string "You came to see your old man!\p"
+	.string "I'm glad you made it to HOENN\n"
+	.string "safely.\p"
+	.string "I know you want to challenge me,\n"
+	.string "but you're not ready yet.\p"
+	.string "Go earn four HOENN GYM BADGES\n"
+	.string "first, then come back.\p"
+	.string "I want our battle to be one\n"
+	.string "we'll both remember!$"
+
+PetalburgCity_Gym_Text_NormanKantoPostBattle:
+	.string "DAD: …I'm so proud, {PLAYER}.\p"
+	.string "Watching you battle just now…\n"
+	.string "I could see how far you've come.\p"
+	.string "Oh, I almost forgot.\n"
+	.string "Here, take this.$"
+
+PetalburgCity_Gym_Text_NormanKantoSurf:
+	.string "DAD: That's SURF.\n"
+	.string "It'll let your POKéMON carry you\l"
+	.string "across the water.\p"
+	.string "It'll open up a lot of new paths\n"
+	.string "for you here in HOENN.\p"
+	.string "Keep going, {PLAYER}.\n"
+	.string "I'll be cheering you on!$"
 

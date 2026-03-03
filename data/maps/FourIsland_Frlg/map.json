@@ -3,7 +3,7 @@
   "name": "FourIsland_Frlg",
   "layout": "LAYOUT_FOUR_ISLAND",
   "music": "MUS_RG_SEVII_45",
-  "region": "REGION_KANTO",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_FOUR_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -160,6 +160,20 @@
     },
     {
       "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "x": 35,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "FourIsland_EventScript_Anabel",
+      "flag": "FLAG_DEFEATED_SEVII_ANABEL"
+    },
+    {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN_FRLG",
       "x": 36,
       "y": 13,
@@ -184,6 +198,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FourIsland_EventScript_LittleGirl",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
+      "x": 20,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FourIsland_EventScript_JohtoElder",
       "flag": "0"
     }
   ],
@@ -245,9 +273,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

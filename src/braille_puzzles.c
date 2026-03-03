@@ -103,6 +103,33 @@ bool8 CheckRelicanthWailord(void)
     return FALSE;
 }
 
+bool8 CheckAllFiveRegis(void)
+{
+    bool8 hasRegirock = FALSE;
+    bool8 hasRegice = FALSE;
+    bool8 hasRegisteel = FALSE;
+    bool8 hasRegieleki = FALSE;
+    bool8 hasRegidrago = FALSE;
+    u8 i;
+
+    CalculatePlayerPartyCount();
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, 0);
+        if (species == SPECIES_REGIROCK)
+            hasRegirock = TRUE;
+        else if (species == SPECIES_REGICE)
+            hasRegice = TRUE;
+        else if (species == SPECIES_REGISTEEL)
+            hasRegisteel = TRUE;
+        else if (species == SPECIES_REGIELEKI)
+            hasRegieleki = TRUE;
+        else if (species == SPECIES_REGIDRAGO)
+            hasRegidrago = TRUE;
+    }
+    return hasRegirock && hasRegice && hasRegisteel && hasRegieleki && hasRegidrago;
+}
+
 // THEORY: this was caused by block commenting out all of the older R/S braille functions but leaving the call to it itself, which creates the nullsub.
 void ShouldDoBrailleRegirockEffectOld(void)
 {

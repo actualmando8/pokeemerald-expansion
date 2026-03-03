@@ -273,3 +273,24 @@ Braille_Text_ForYou::
 	brailleformat 3, 0, 25, 19, 6, 3
 	.braille "FOR YOU.$"
 
+NewMauville_Braille_Regieleki:
+	brailleformat 1, 0, 27, 19, 4, 3
+	.braille "THE SPARK\n"
+	.braille "OF ANCIENT\n"
+	.braille "POWER SLEEPS\n"
+	.braille "IN LIGHTNING.$"
+
+SkyPillar_Braille_Regidrago:
+	brailleformat 1, 0, 27, 19, 4, 3
+	.braille "THE DRAGON\n"
+	.braille "OF OLD RESTS\n"
+	.braille "BELOW THE\n"
+	.braille "PILLAR.$"
+
+TanobyRuins_Braille_Regigigas:
+	brailleformat 1, 0, 27, 19, 4, 3
+	.braille "THE COLOSSAL\n"
+	.braille "ONE SLEEPS.\n"
+	.braille "BRING THE FIVE\n"
+	.braille "WHO WERE SEALED.$"
+

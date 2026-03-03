@@ -2,8 +2,8 @@
   "id": "MAP_THREE_ISLAND_BOND_BRIDGE",
   "name": "ThreeIsland_BondBridge_Frlg",
   "layout": "LAYOUT_THREE_ISLAND_BOND_BRIDGE",
-  "music": "MUS_RG_ROUTE3",
-  "region": "REGION_KANTO",
+  "music": "MUS_RG_SEVII_ROUTE",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_BOND_BRIDGE",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -122,6 +122,20 @@
     },
     {
       "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_TUCKER",
+      "x": 55,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "ThreeIsland_BondBridge_EventScript_Tucker",
+      "flag": "FLAG_DEFEATED_SEVII_TUCKER"
+    },
+    {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
       "x": 72,
       "y": 8,
@@ -165,9 +179,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

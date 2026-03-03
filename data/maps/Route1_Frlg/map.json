@@ -3,7 +3,7 @@
   "name": "Route1_Frlg",
   "layout": "LAYOUT_ROUTE1",
   "music": "MUS_RG_ROUTE1",
-  "region": "REGION_KANTO",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_1",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

@@ -135,3 +135,34 @@ SevenIsland_SevaultCanyon_Text_BrunoTrainedWithBrawly::
 	.string "Even BRUNO…\n"
 	.string "He trained with a fellow by the\l"
 	.string "name of BRAWLY before.$"
+
+SevenIsland_SevaultCanyon_EventScript_Brandon::
+	trainerbattle_single TRAINER_SEVII_BRANDON, SevenIsland_SevaultCanyon_Text_BrandonIntro, SevenIsland_SevaultCanyon_Text_BrandonDefeat, SevenIsland_SevaultCanyon_EventScript_BrandonDefeated
+	msgbox SevenIsland_SevaultCanyon_Text_BrandonPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SevenIsland_SevaultCanyon_EventScript_BrandonDefeated::
+	setflag FLAG_DEFEATED_SEVII_BRANDON
+	msgbox SevenIsland_SevaultCanyon_Text_BrandonDefeat, MSGBOX_DEFAULT
+	release
+	end
+
+SevenIsland_SevaultCanyon_Text_BrandonIntro::
+	.string "I am BRANDON, the PYRAMID KING!\p"
+	.string "The TANOBY RUINS ahead hold\n"
+	.string "secrets of an ancient civilization.\p"
+	.string "I've explored ruins across the\n"
+	.string "world, and my ancient partners\l"
+	.string "are eager for battle!$"
+
+SevenIsland_SevaultCanyon_Text_BrandonDefeat::
+	.string "Magnificent! Your strength rivals\n"
+	.string "the legends of old!\p"
+	.string "The ancient ones would be\n"
+	.string "proud of such a warrior.$"
+
+SevenIsland_SevaultCanyon_Text_BrandonPostBattle::
+	.string "The TANOBY RUINS are filled with\n"
+	.string "the mysteries of UNOWN.\p"
+	.string "As an explorer, I couldn't resist\n"
+	.string "coming to investigate!$"
