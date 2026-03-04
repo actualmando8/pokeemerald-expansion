@@ -4,7 +4,10 @@ Route33_MapScripts::
 @ Johto map scripts (imported from HnS, stubs)
 
 AzaleaTown_EventScript_Trigger::
-	return
+	lockall
+	msgbox Route33_Text_AzaleaAhead, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route33_EventScript_HikerAnthony::
 	msgbox Route33_Text_HikerAnthony, MSGBOX_NPC
@@ -21,3 +24,8 @@ Route33_Text_Lass:
 
 Route33_Text_HikerAnthony:
 	.string "The caves around JOHTO are\nfull of surprises!$"
+
+Route33_Text_AzaleaAhead:
+	.string "The scent of flowers drifts\n"
+	.string "from AZALEA TOWN ahead...$"
+

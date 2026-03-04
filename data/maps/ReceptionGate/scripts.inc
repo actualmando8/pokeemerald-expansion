@@ -16,19 +16,26 @@ ReceptionGate_EventScript_KeepBlocker::
 @ Johto map scripts (imported from HnS, stubs)
 
 ReceptionGate_EventScript_Janine::
-	return
+	msgbox ReceptionGate_Text_Janine, MSGBOX_NPC
+	end
 
 ReceptionGate_EventScript_KantoGuard::
-	return
+	msgbox ReceptionGate_Text_KantoGuard, MSGBOX_NPC
+	end
 
 ReceptionGate_EventScript_Officer::
-	return
+	msgbox ReceptionGate_Text_Officer, MSGBOX_NPC
+	end
 
 ReceptionGate_EventScript_SilverGuard::
-	return
+	msgbox ReceptionGate_Text_SilverGuard, MSGBOX_NPC
+	end
 
 ReceptionGate_Trigger::
-	return
+	lockall
+	msgbox ReceptionGate_Text_Trigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 ReceptionGate_EventScript_JohtoBlocker::
 	lock
@@ -86,4 +93,35 @@ ReceptionGate_Text_NeedGiovanni::
 	.string "activity in the SEVII ISLANDS.\p"
 	.string "We can't open the southern passage\n"
 	.string "until the threat is dealt with.$"
+
+ReceptionGate_Text_Janine:
+	.string "JANINE: I'm training to be\n"
+	.string "as great as my father, KOGA.\p"
+	.string "He joined the ELITE FOUR, so\n"
+	.string "I took over the FUCHSIA GYM.\p"
+	.string "Are you heading to JOHTO?\n"
+	.string "I hear they have strong\l"
+	.string "TRAINERS there!$"
+
+ReceptionGate_Text_KantoGuard:
+	.string "GUARD: This gate connects\n"
+	.string "KANTO and JOHTO.\p"
+	.string "Have your POKeMON ready --\n"
+	.string "the routes ahead are tough.$"
+
+ReceptionGate_Text_Officer:
+	.string "OFFICER: We monitor traffic\n"
+	.string "between the two regions.\p"
+	.string "Please report anything\n"
+	.string "suspicious to the guards.$"
+
+ReceptionGate_Text_SilverGuard:
+	.string "GUARD: A red-haired young man\n"
+	.string "passed through here earlier.\p"
+	.string "He seemed to be in quite\n"
+	.string "a hurry... Do you know him?$"
+
+ReceptionGate_Text_Trigger:
+	.string "You've entered the RECEPTION\n"
+	.string "GATE between KANTO and JOHTO.$"
 

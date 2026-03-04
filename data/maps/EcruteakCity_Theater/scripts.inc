@@ -24,31 +24,38 @@ EcruteakCity_Theater_EventScript_Granny::
 	end
 
 EcruteakCity_Theater_EventScript_Naoko::
-	msgbox EcruteakCity_Theater_Text_Naoko, MSGBOX_NPC
+	trainerbattle_single TRAINER_JOHTO_KIMONO_NAOKO, EcruteakCity_Theater_Text_NaokoIntro, EcruteakCity_Theater_Text_NaokoDefeat
+	msgbox EcruteakCity_Theater_Text_Naoko, MSGBOX_AUTOCLOSE
 	end
 
 EcruteakCity_Theater_EventScript_Miki::
-	msgbox EcruteakCity_Theater_Text_Miki, MSGBOX_NPC
+	trainerbattle_single TRAINER_JOHTO_KIMONO_MIKI, EcruteakCity_Theater_Text_MikiIntro, EcruteakCity_Theater_Text_MikiDefeat
+	msgbox EcruteakCity_Theater_Text_Miki, MSGBOX_AUTOCLOSE
 	end
 
 EcruteakCity_Theater_EventScript_Sayo::
-	msgbox EcruteakCity_Theater_Text_Sayo, MSGBOX_NPC
+	trainerbattle_single TRAINER_JOHTO_KIMONO_SAYO, EcruteakCity_Theater_Text_SayoIntro, EcruteakCity_Theater_Text_SayoDefeat
+	msgbox EcruteakCity_Theater_Text_Sayo, MSGBOX_AUTOCLOSE
 	end
 
 EcruteakCity_Theater_EventScript_Kuni::
-	msgbox EcruteakCity_Theater_Text_Kuni, MSGBOX_NPC
+	trainerbattle_single TRAINER_JOHTO_KIMONO_KUNI, EcruteakCity_Theater_Text_KuniIntro, EcruteakCity_Theater_Text_KuniDefeat
+	msgbox EcruteakCity_Theater_Text_Kuni, MSGBOX_AUTOCLOSE
 	end
 
 EcruteakCity_Theater_EventScript_Koume::
-	msgbox EcruteakCity_Theater_Text_Koume, MSGBOX_NPC
+	trainerbattle_single TRAINER_JOHTO_KIMONO_KOUME, EcruteakCity_Theater_Text_KoumeIntro, EcruteakCity_Theater_Text_KoumeDefeat
+	msgbox EcruteakCity_Theater_Text_Koume, MSGBOX_AUTOCLOSE
 	end
 
 EcruteakCity_Theater_EventScript_Satsuki::
-	msgbox EcruteakCity_Theater_Text_Satsuki, MSGBOX_NPC
+	trainerbattle_single TRAINER_JOHTO_KIMONO_SATSUKI, EcruteakCity_Theater_Text_SatsukiIntro, EcruteakCity_Theater_Text_SatsukiDefeat
+	msgbox EcruteakCity_Theater_Text_Satsuki, MSGBOX_AUTOCLOSE
 	end
 
 EcruteakCity_Theater_EventScript_Sakura::
-	msgbox EcruteakCity_Theater_Text_Sakura, MSGBOX_NPC
+	trainerbattle_single TRAINER_JOHTO_KIMONO_SAKURA, EcruteakCity_Theater_Text_SakuraIntro, EcruteakCity_Theater_Text_SakuraDefeat
+	msgbox EcruteakCity_Theater_Text_Sakura, MSGBOX_AUTOCLOSE
 	end
 
 EcruteakCity_Theater_EventScript_Psyduck::
@@ -64,27 +71,43 @@ EcruteakCity_Theater_EventScript_Rocket::
 	end
 
 EcruteakCity_Theater_EventScript_RocketEventTrigger::
-	return
+	lockall
+	msgbox EcruteakCity_Theater_Text_RocketEvent, MSGBOX_DEFAULT
+	releaseall
+	end
 
 EcruteakCity_Theater_EventScript_SurfGuy::
 	msgbox EcruteakCity_Theater_Text_SurfGuy, MSGBOX_NPC
 	end
 
 EcruteakCity_Theater_EventScript_TriggerSurfGuy::
-	return
+	lockall
+	msgbox EcruteakCity_Theater_Text_SurfGuyTrigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 EcruteakCity_Theater_EventScript_Zuki::
-	msgbox EcruteakCity_Theater_Text_Zuki, MSGBOX_NPC
+	trainerbattle_single TRAINER_JOHTO_KIMONO_ZUKI, EcruteakCity_Theater_Text_ZukiIntro, EcruteakCity_Theater_Text_ZukiDefeat
+	msgbox EcruteakCity_Theater_Text_Zuki, MSGBOX_AUTOCLOSE
 	end
 
 EcruteakCity_Theater_Trigger_PreBattleCutsceneLeft::
-	return
+	lockall
+	msgbox EcruteakCity_Theater_Text_PreBattle, MSGBOX_DEFAULT
+	releaseall
+	end
 
 EcruteakCity_Theater_Trigger_PreBattleCutsceneRight::
-	return
+	lockall
+	msgbox EcruteakCity_Theater_Text_PreBattle, MSGBOX_DEFAULT
+	releaseall
+	end
 
 EcruteakCity_Theater_Trigger_PreBattleCutsceneTop::
-	return
+	lockall
+	msgbox EcruteakCity_Theater_Text_PreBattle, MSGBOX_DEFAULT
+	releaseall
+	end
 
 EcruteakCity_Theater_Text_Boy:
 	.string "Did you know there are POKeMON\n"
@@ -186,3 +209,103 @@ EcruteakCity_Theater_Text_Zuki:
 
 EcruteakCity_Theater_Text_Rocket:
 	.string "...$"
+
+EcruteakCity_Theater_Text_RocketEvent:
+	.string "ROCKET GRUNT: Heh heh...\n"
+	.string "We're commandeering this\l"
+	.string "theater for TEAM ROCKET!\p"
+	.string "The KIMONO GIRLS' POKeMON\n"
+	.string "will fetch a good price...$"
+
+EcruteakCity_Theater_Text_SurfGuyTrigger:
+	.string "GENTLEMAN: Oh! You helped save\n"
+	.string "the KIMONO GIRLS!\p"
+	.string "As thanks, take this -- it's\n"
+	.string "HM03 SURF! Teach it to your\l"
+	.string "POKeMON and you can travel\l"
+	.string "across water!$"
+
+EcruteakCity_Theater_Text_PreBattle:
+	.string "The KIMONO GIRLS stand ready\n"
+	.string "on the stage.\p"
+	.string "Their POKeMON are poised\n"
+	.string "for battle...\p"
+	.string "Prove your worth as a\n"
+	.string "TRAINER!$"
+
+EcruteakCity_Theater_Text_ZukiIntro:
+	.string "ZUKI: As the eldest, I shall\n"
+	.string "test you first.\p"
+	.string "My UMBREON and I dance in\n"
+	.string "the moonlight. En garde!$"
+
+EcruteakCity_Theater_Text_ZukiDefeat:
+	.string "The moon sets... You are\n"
+	.string "truly gifted.$"
+
+EcruteakCity_Theater_Text_NaokoIntro:
+	.string "NAOKO: My ESPEON has already\n"
+	.string "sensed your strength.\p"
+	.string "But can you prove it?$"
+
+EcruteakCity_Theater_Text_NaokoDefeat:
+	.string "ESPEON's gem dims...\n"
+	.string "You have won.$"
+
+EcruteakCity_Theater_Text_MikiIntro:
+	.string "MIKI: The flames of tradition\n"
+	.string "burn within FLAREON!\p"
+	.string "Can you withstand our fire?$"
+
+EcruteakCity_Theater_Text_MikiDefeat:
+	.string "The flames flicker out...\n"
+	.string "You are the victor.$"
+
+EcruteakCity_Theater_Text_SayoIntro:
+	.string "SAYO: JOLTEON and I strike\n"
+	.string "like lightning!\p"
+	.string "Try to keep up!$"
+
+EcruteakCity_Theater_Text_SayoDefeat:
+	.string "The storm passes...\n"
+	.string "Your speed surpasses ours.$"
+
+EcruteakCity_Theater_Text_KuniIntro:
+	.string "KUNI: VAPOREON and I flow\n"
+	.string "like the tides.\p"
+	.string "Can you swim against\n"
+	.string "the current?$"
+
+EcruteakCity_Theater_Text_KuniDefeat:
+	.string "The tide recedes...\n"
+	.string "Your strength runs deep.$"
+
+EcruteakCity_Theater_Text_KoumeIntro:
+	.string "KOUME: LEAFEON and I honor\n"
+	.string "the forests of JOHTO.\p"
+	.string "Nature's power is not to\n"
+	.string "be underestimated!$"
+
+EcruteakCity_Theater_Text_KoumeDefeat:
+	.string "The leaves fall gently...\n"
+	.string "You have bested nature.$"
+
+EcruteakCity_Theater_Text_SatsukiIntro:
+	.string "SATSUKI: GLACEON's beauty is\n"
+	.string "matched only by its power.\p"
+	.string "Prepare for a blizzard!$"
+
+EcruteakCity_Theater_Text_SatsukiDefeat:
+	.string "The ice melts...\n"
+	.string "Your warmth is undeniable.$"
+
+EcruteakCity_Theater_Text_SakuraIntro:
+	.string "SAKURA: I may be the youngest,\n"
+	.string "but don't underestimate me!\p"
+	.string "SYLVEON's ribbons will bind\n"
+	.string "your fate!$"
+
+EcruteakCity_Theater_Text_SakuraDefeat:
+	.string "The ribbons unravel...\n"
+	.string "You've proven your heart.$"
+

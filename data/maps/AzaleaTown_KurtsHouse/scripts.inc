@@ -16,7 +16,10 @@ AzaleaTown_KurtsHouse_EventScript_Kurt::
 	end
 
 AzaleaTown_KurtsHouse_EventScript_KurtBefore::
-	return
+	lockall
+	msgbox AzaleaTown_KurtsHouse_Text_KurtBefore, MSGBOX_DEFAULT
+	releaseall
+	end
 
 AzaleaTown_KurtsHouse_EventScript_OakPhoto::
 	msgbox AzaleaTown_KurtsHouse_Text_OakPhoto, MSGBOX_SIGN
@@ -42,4 +45,12 @@ AzaleaTown_KurtsHouse_Text_OakPhoto:
 	.string "A photo of KURT with\n"
 	.string "PROF. OAK.\p"
 	.string "They seem to be old friends.$"
+
+AzaleaTown_KurtsHouse_Text_KurtBefore:
+	.string "KURT: Those no-good ROCKETs\n"
+	.string "are back! They're cutting\l"
+	.string "SLOWPOKETAILS in the WELL!\p"
+	.string "I'm going down there to\n"
+	.string "put a stop to it!\p"
+	.string "Follow me if you dare!$"
 

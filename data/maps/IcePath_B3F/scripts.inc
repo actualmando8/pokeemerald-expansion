@@ -16,7 +16,12 @@ IcePath_B3F_EventScript_Swinub::
 	end
 
 IcePath_B3F_Trigger_Swinub_Jump::
-	return
+	lockall
+	playmoncry SPECIES_SWINUB, CRY_MODE_NORMAL
+	msgbox IcePath_B3F_Text_SwinubJump, MSGBOX_DEFAULT
+	waitmoncry
+	releaseall
+	end
 
 
 IcePath_B3F_Text_Delibird:
@@ -24,3 +29,8 @@ IcePath_B3F_Text_Delibird:
 
 IcePath_B3F_Text_Swinub:
 	.string "SWINUB looks content.$"
+
+IcePath_B3F_Text_SwinubJump:
+	.string "A wild SWINUB pops out of\n"
+	.string "the ice and scurries away!$"
+

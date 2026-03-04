@@ -17586,264 +17586,176 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earth Power
 - Stealth Rock
 
-=== TRAINER_SEVII_NOLAND ===
-Name: NOLAND
-Class: Factory Head
-Pic: Factory Head Noland
+=== TRAINER_JOHTO_SAGE_JIN ===
+Name: JIN
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Typhlosion @ Choice Specs
-Level: 50
-Ability: Blaze
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Eruption
-- Flamethrower
-- Focus Blast
-- Energy Ball
+Bellsprout @ None
+Level: 48
+Ability: Chlorophyll
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Vine Whip
+- Sleep Powder
+- Wrap
+- Growth
 
-Breloom @ Toxic Orb
-Level: 50
-Ability: Poison Heal
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Spore
-- Mach Punch
-- Seed Bomb
-- Swords Dance
-
-Starmie @ Life Orb
-Level: 50
-Ability: Natural Cure
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Psychic
-- Thunderbolt
-- Ice Beam
-
-=== TRAINER_SEVII_GRETA ===
-Name: GRETA
-Class: Arena Tycoon
-Pic: Arena Tycoon Greta
-Gender: Female
-Music: Female
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Heracross @ Choice Scarf
-Level: 50
-Ability: Guts
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Close Combat
-- Megahorn
-- Stone Edge
-- Earthquake
-
-Medicham @ Life Orb
-Level: 50
-Ability: Pure Power
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- High Jump Kick
-- Psycho Cut
-- Ice Punch
-- Thunder Punch
-
-Gengar @ Focus Sash
-Level: 50
-Ability: Levitate
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shadow Ball
-- Sludge Bomb
-- Focus Blast
-- Destiny Bond
-
-=== TRAINER_SEVII_TUCKER ===
-Name: TUCKER
-Class: Dome Ace
-Pic: Dome Ace Tucker
-Gender: Male
-Music: Male
-Items: Full Restore / Full Restore
-Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Salamence @ Lum Berry
-Level: 50
-Ability: Intimidate
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Dance
-- Earthquake
-- Dragon Claw
-- Aerial Ace
-
-Metagross @ Leftovers
-Level: 50
-Ability: Clear Body
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Meteor Mash
-- Earthquake
-- Bullet Punch
-- Zen Headbutt
-
-Swampert @ Sitrus Berry
-Level: 50
-Ability: Torrent
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Waterfall
-- Ice Punch
-- Protect
-
-=== TRAINER_SEVII_SPENSER ===
-Name: SPENSER
-Class: Palace Maven
-Pic: Palace Maven Spenser
-Gender: Male
-Music: Male
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Slaking @ Choice Band
-Level: 52
-Ability: Truant
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Return
-- Earthquake
-- Shadow Claw
-- Fire Punch
-
-Lapras @ Leftovers
-Level: 52
-Ability: Water Absorb
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Ice Beam
-- Thunderbolt
-- Psychic
-
-Crobat @ Black Sludge
-Level: 52
-Ability: Inner Focus
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Brave Bird
-- Cross Poison
-- U-turn
-- Roost
-
-=== TRAINER_SEVII_ANABEL ===
-Name: ANABEL
-Class: Salon Maiden
-Pic: Salon Maiden Anabel
-Gender: Female
-Music: Female
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Alakazam @ Focus Sash
-Level: 52
-Ability: Synchronize
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
-- Shadow Ball
-- Focus Blast
-- Energy Ball
-
-Espeon @ Light Clay
-Level: 52
-Ability: Synchronize
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
-- Shadow Ball
+Hoothoot @ None
+Level: 48
+Ability: Insomnia
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Confusion
+- Hypnosis
 - Reflect
-- Light Screen
+- Peck
 
-Snorlax @ Leftovers
-Level: 52
-Ability: Thick Fat
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Body Slam
-- Earthquake
-- Crunch
-- Curse
-
-=== TRAINER_SEVII_LUCY ===
-Name: LUCY
-Class: Pike Queen
-Pic: Pike Queen Lucy
-Gender: Female
-Music: Female
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Seviper @ Life Orb
-Level: 55
-Ability: Shed Skin
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sludge Bomb
-- Flamethrower
-- Dark Pulse
-- Giga Drain
-
-Milotic @ Leftovers
-Level: 55
-Ability: Marvel Scale
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Ice Beam
-- Recover
-- Toxic
-
-Steelix @ Leftovers
-Level: 55
-Ability: Sturdy
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Iron Tail
-- Stealth Rock
-- Toxic
-
-=== TRAINER_SEVII_BRANDON ===
-Name: BRANDON
-Class: Pyramid King
-Pic: Pyramid King Brandon
+=== TRAINER_JOHTO_SAGE_LI ===
+Name: LI
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Regirock @ Leftovers
-Level: 55
-Ability: Clear Body
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stone Edge
-- Earthquake
-- Thunder Punch
-- Stealth Rock
+Bellsprout @ Sitrus Berry
+Level: 50
+Ability: Chlorophyll
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Razor Leaf
+- Sleep Powder
+- Stun Spore
+- Growth
 
-Regice @ Choice Specs
-Level: 55
-Ability: Clear Body
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ice Beam
-- Thunderbolt
-- Focus Blast
-- Flash Cannon
+Hoothoot @ None
+Level: 50
+Ability: Insomnia
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Confusion
+- Hypnosis
+- Reflect
+- Air Slash
 
-Registeel @ Leftovers
-Level: 55
-Ability: Clear Body
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Head
-- Earthquake
-- Thunder Wave
-- Stealth Rock
+Noctowl @ Sitrus Berry
+Level: 50
+Ability: Insomnia
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Air Slash
+- Hypnosis
+- Reflect
+- Shadow Ball
+
+=== TRAINER_JOHTO_SAGE_NEAL ===
+Name: NEAL
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Bellsprout @ None
+Level: 48
+Ability: Chlorophyll
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Vine Whip
+- Wrap
+- Sleep Powder
+- Poison Powder
+
+Bellsprout @ None
+Level: 49
+Ability: Chlorophyll
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Razor Leaf
+- Sleep Powder
+- Stun Spore
+- Growth
+
+=== TRAINER_JOHTO_SAGE_TROY ===
+Name: TROY
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Weepinbell @ None
+Level: 50
+Ability: Chlorophyll
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Razor Leaf
+- Sleep Powder
+- Acid
+- Wrap
+
+Hoothoot @ None
+Level: 49
+Ability: Insomnia
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Confusion
+- Hypnosis
+- Peck
+- Reflect
+
+=== TRAINER_JOHTO_KIMONO_ZUKI ===
+Name: ZUKI
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Umbreon @ Leftovers
+Level: 57
+Ability: Synchronize
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dark Pulse
+- Confuse Ray
+- Moonlight
+- Toxic
+
+=== TRAINER_JOHTO_KIMONO_NAOKO ===
+Name: NAOKO
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Espeon @ Sitrus Berry
+Level: 57
+Ability: Synchronize
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Shadow Ball
+- Morning Sun
+- Calm Mind
+
+=== TRAINER_JOHTO_KIMONO_MIKI ===
+Name: MIKI
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Flareon @ Charcoal
+Level: 57
+Ability: Flash Fire
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Flamethrower
+- Quick Attack
+- Will-O-Wisp
+- Bite
 
 === TRAINER_JOHTO_FALKNER ===
 Name: FALKNER
@@ -17856,7 +17768,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Noctowl @ Sitrus Berry
-Level: 38
+Level: 50
 Ability: Tinted Lens
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Air Slash
@@ -17865,7 +17777,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Shadow Ball
 
 Pidgeot @ Sharp Beak
-Level: 40
+Level: 52
 Ability: Big Pecks
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Brave Bird
@@ -17874,7 +17786,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Roost
 
 Swellow @ Flame Orb
-Level: 39
+Level: 51
 Ability: Guts
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Facade
@@ -17893,7 +17805,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Scizor @ Occa Berry
-Level: 40
+Level: 52
 Ability: Technician
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Bullet Punch
@@ -17902,7 +17814,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Roost
 
 Heracross @ Choice Scarf
-Level: 41
+Level: 53
 Ability: Moxie
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Megahorn
@@ -17911,7 +17823,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Earthquake
 
 Yanmega @ Wide Lens
-Level: 40
+Level: 52
 Ability: Speed Boost
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Bug Buzz
@@ -17930,7 +17842,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Clefable @ Leftovers
-Level: 42
+Level: 54
 Ability: Magic Guard
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Moonblast
@@ -17939,7 +17851,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Soft-Boiled
 
 Miltank @ Lum Berry
-Level: 44
+Level: 56
 Ability: Scrappy
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Body Slam
@@ -17948,7 +17860,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Zen Headbutt
 
 Blissey @ Leftovers
-Level: 42
+Level: 54
 Ability: Natural Cure
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Seismic Toss
@@ -17957,7 +17869,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Ice Beam
 
 Ambipom @ Silk Scarf
-Level: 42
+Level: 54
 Ability: Technician
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Fake Out
@@ -17976,7 +17888,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Mismagius @ Leftovers
-Level: 44
+Level: 56
 Ability: Levitate
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Shadow Ball
@@ -17985,7 +17897,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Will-O-Wisp
 
 Gengar @ Life Orb
-Level: 46
+Level: 58
 Ability: Cursed Body
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Shadow Ball
@@ -17994,7 +17906,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Thunderbolt
 
 Dusclops @ Eviolite
-Level: 44
+Level: 56
 Ability: Pressure
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Shadow Punch
@@ -18003,7 +17915,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Ice Punch
 
 Sableye @ Leftovers
-Level: 44
+Level: 56
 Ability: Prankster
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Foul Play
@@ -18022,7 +17934,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Poliwrath @ Sitrus Berry
-Level: 46
+Level: 58
 Ability: Swift Swim
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Waterfall
@@ -18031,7 +17943,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Rain Dance
 
 Machamp @ Lum Berry
-Level: 48
+Level: 60
 Ability: No Guard
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Dynamic Punch
@@ -18040,7 +17952,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Bullet Punch
 
 Primeape @ Choice Band
-Level: 46
+Level: 58
 Ability: Defiant
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Close Combat
@@ -18049,7 +17961,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Earthquake
 
 Hitmontop @ Leftovers
-Level: 46
+Level: 58
 Ability: Intimidate
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Close Combat
@@ -18068,7 +17980,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Steelix @ Leftovers
-Level: 48
+Level: 60
 Ability: Sturdy
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Iron Tail
@@ -18077,7 +17989,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Thunder Fang
 
 Magnezone @ Air Balloon
-Level: 50
+Level: 62
 Ability: Magnet Pull
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Thunderbolt
@@ -18086,7 +17998,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Tri Attack
 
 Forretress @ Leftovers
-Level: 48
+Level: 60
 Ability: Sturdy
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Gyro Ball
@@ -18095,7 +18007,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Explosion
 
 Skarmory @ Rocky Helmet
-Level: 48
+Level: 60
 Ability: Sturdy
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Brave Bird
@@ -18114,7 +18026,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Mamoswine @ Life Orb
-Level: 52
+Level: 64
 Ability: Thick Fat
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Earthquake
@@ -18123,7 +18035,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Stealth Rock
 
 Dewgong @ Leftovers
-Level: 50
+Level: 62
 Ability: Thick Fat
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Ice Beam
@@ -18132,7 +18044,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Protect
 
 Weavile @ Choice Band
-Level: 52
+Level: 64
 Ability: Pressure
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Ice Shard
@@ -18141,7 +18053,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Low Kick
 
 Walrein @ Leftovers
-Level: 50
+Level: 62
 Ability: Thick Fat
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Blizzard
@@ -18160,7 +18072,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Kingdra @ Scope Lens
-Level: 54
+Level: 66
 Ability: Sniper
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Pulse
@@ -18169,7 +18081,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flash Cannon
 
 Dragonite @ Lum Berry
-Level: 56
+Level: 68
 Ability: Multiscale
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Dance
@@ -18178,7 +18090,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Extreme Speed
 
 Gyarados @ Sitrus Berry
-Level: 54
+Level: 66
 Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Waterfall
@@ -18187,7 +18099,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 
 Flygon @ Choice Scarf
-Level: 54
+Level: 66
 Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Outrage
@@ -18196,7 +18108,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stone Edge
 
 Charizard @ Charizardite X
-Level: 54
+Level: 66
 Ability: Blaze
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Claw
@@ -18215,7 +18127,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Sneasel @ Sitrus Berry
-Level: 36
+Level: 48
 Ability: Inner Focus
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Icy Wind
@@ -18224,7 +18136,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Quick Attack
 
 Haunter @ None
-Level: 36
+Level: 48
 Ability: Levitate
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Shadow Ball
@@ -18233,7 +18145,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Mean Look
 
 Golbat @ None
-Level: 35
+Level: 47
 Ability: Inner Focus
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Air Cutter
@@ -18252,7 +18164,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Weavile @ None
-Level: 42
+Level: 54
 Ability: Pressure
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Night Slash
@@ -18261,7 +18173,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Quick Attack
 
 Gengar @ None
-Level: 42
+Level: 54
 Ability: Cursed Body
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Shadow Ball
@@ -18270,7 +18182,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Hypnosis
 
 Crobat @ None
-Level: 41
+Level: 53
 Ability: Inner Focus
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Cross Poison
@@ -18279,7 +18191,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Confuse Ray
 
 Magneton @ None
-Level: 41
+Level: 53
 Ability: Magnet Pull
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Thunderbolt
@@ -18298,7 +18210,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Weavile @ Life Orb
-Level: 48
+Level: 60
 Ability: Pressure
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Night Slash
@@ -18307,7 +18219,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Swords Dance
 
 Gengar @ Focus Sash
-Level: 48
+Level: 60
 Ability: Cursed Body
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Shadow Ball
@@ -18316,7 +18228,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Destiny Bond
 
 Crobat @ Black Sludge
-Level: 47
+Level: 59
 Ability: Inner Focus
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Brave Bird
@@ -18325,7 +18237,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Roost
 
 Magnezone @ Air Balloon
-Level: 47
+Level: 59
 Ability: Magnet Pull
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Thunderbolt
@@ -18334,7 +18246,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Tri Attack
 
 Alakazam @ Choice Specs
-Level: 47
+Level: 59
 Ability: Magic Guard
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Psychic
@@ -18353,7 +18265,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Weavile @ Life Orb
-Level: 54
+Level: 66
 Ability: Pressure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Shard
@@ -18362,7 +18274,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Swords Dance
 
 Gengar @ Gengarite
-Level: 54
+Level: 66
 Ability: Cursed Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Ball
@@ -18371,7 +18283,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Destiny Bond
 
 Crobat @ Black Sludge
-Level: 53
+Level: 65
 Ability: Inner Focus
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Brave Bird
@@ -18380,7 +18292,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Roost
 
 Magnezone @ Choice Specs
-Level: 53
+Level: 65
 Ability: Magnet Pull
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunderbolt
@@ -18389,7 +18301,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hidden Power
 
 Alakazam @ Focus Sash
-Level: 53
+Level: 65
 Ability: Magic Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
@@ -18398,7 +18310,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nasty Plot
 
 Feraligatr @ Lum Berry
-Level: 54
+Level: 66
 Ability: Sheer Force
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Waterfall
@@ -18417,7 +18329,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Weavile @ Life Orb
-Level: 60
+Level: 72
 Ability: Pressure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Shard
@@ -18426,7 +18338,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Swords Dance
 
 Gengar @ Gengarite
-Level: 60
+Level: 72
 Ability: Cursed Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Ball
@@ -18435,7 +18347,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Perish Song
 
 Crobat @ Black Sludge
-Level: 59
+Level: 71
 Ability: Infiltrator
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Brave Bird
@@ -18444,7 +18356,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Roost
 
 Magnezone @ Choice Specs
-Level: 59
+Level: 71
 Ability: Magnet Pull
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunderbolt
@@ -18453,7 +18365,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hidden Power
 
 Alakazam @ Focus Sash
-Level: 59
+Level: 71
 Ability: Magic Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
@@ -18462,7 +18374,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nasty Plot
 
 Feraligatr @ Lum Berry
-Level: 60
+Level: 72
 Ability: Sheer Force
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Waterfall
@@ -18481,7 +18393,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Dugtrio @ Focus Sash
-Level: 58
+Level: 67
 Ability: Arena Trap
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
@@ -18490,7 +18402,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stealth Rock
 
 Nidoking @ Life Orb
-Level: 60
+Level: 69
 Ability: Sheer Force
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earth Power
@@ -18499,7 +18411,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunderbolt
 
 Nidoqueen @ Black Sludge
-Level: 58
+Level: 67
 Ability: Sheer Force
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earth Power
@@ -18508,7 +18420,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic Spikes
 
 Rhyperior @ Leftovers
-Level: 60
+Level: 69
 Ability: Solid Rock
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
@@ -18517,7 +18429,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Punch
 
 Honchkrow @ Scope Lens
-Level: 58
+Level: 67
 Ability: Super Luck
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Brave Bird
@@ -18526,7 +18438,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Heat Wave
 
 Persian @ Silk Scarf
-Level: 60
+Level: 69
 Ability: Technician
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
@@ -18544,7 +18456,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Pidgeot @ Sharp Beak
-Level: 36
+Level: 48
 Ability: Keen Eye
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Air Slash
@@ -18553,7 +18465,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Roost
 
 Fearow @ Scope Lens
-Level: 36
+Level: 48
 Ability: Sniper
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Drill Peck
@@ -18571,7 +18483,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Noctowl @ Sitrus Berry
-Level: 37
+Level: 49
 Ability: Insomnia
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Air Slash
@@ -18580,7 +18492,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Shadow Ball
 
 Xatu @ Twisted Spoon
-Level: 37
+Level: 49
 Ability: Synchronize
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Psychic
@@ -18598,7 +18510,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Beedrill @ Focus Sash
-Level: 38
+Level: 50
 Ability: Swarm
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Poison Jab
@@ -18607,7 +18519,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Endeavor
 
 Butterfree @ Silver Powder
-Level: 38
+Level: 50
 Ability: Compound Eyes
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Bug Buzz
@@ -18625,7 +18537,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Ariados @ Black Sludge
-Level: 39
+Level: 51
 Ability: Insomnia
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Poison Jab
@@ -18634,7 +18546,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Toxic Spikes
 
 Yanma @ Eviolite
-Level: 39
+Level: 51
 Ability: Speed Boost
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Bug Buzz
@@ -18652,7 +18564,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Wigglytuff @ Leftovers
-Level: 40
+Level: 52
 Ability: Cute Charm
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Dazzling Gleam
@@ -18661,7 +18573,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Sing
 
 Delcatty @ Silk Scarf
-Level: 40
+Level: 52
 Ability: Normalize
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Return
@@ -18679,7 +18591,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Granbull @ Sitrus Berry
-Level: 41
+Level: 53
 Ability: Intimidate
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Play Rough
@@ -18688,7 +18600,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Thunder Wave
 
 Furret @ Choice Band
-Level: 41
+Level: 53
 Ability: Frisk
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Return
@@ -18706,7 +18618,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Haunter @ Eviolite
-Level: 42
+Level: 54
 Ability: Levitate
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Shadow Ball
@@ -18715,7 +18627,7 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Dream Eater
 
 Misdreavus @ Spell Tag
-Level: 42
+Level: 54
 Ability: Levitate
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Shadow Ball
@@ -18733,7 +18645,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Banette @ Spell Tag
-Level: 43
+Level: 55
 Ability: Insomnia
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Shadow Claw
@@ -18742,7 +18654,7 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Curse
 
 Duskull @ Eviolite
-Level: 43
+Level: 55
 Ability: Levitate
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Shadow Ball
@@ -18760,7 +18672,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Hitmonlee @ Black Belt
-Level: 44
+Level: 56
 Ability: Limber
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - High Jump Kick
@@ -18769,7 +18681,7 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Fake Out
 
 Hitmonchan @ Black Belt
-Level: 44
+Level: 56
 Ability: Iron Fist
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Close Combat
@@ -18787,7 +18699,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Machoke @ Eviolite
-Level: 45
+Level: 57
 Ability: Guts
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Cross Chop
@@ -18796,7 +18708,7 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Bulk Up
 
 Primeape @ Choice Scarf
-Level: 45
+Level: 57
 Ability: Vital Spirit
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - Close Combat
@@ -18814,7 +18726,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Dewgong @ Leftovers
-Level: 50
+Level: 62
 Ability: Thick Fat
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Ice Beam
@@ -18823,7 +18735,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Toxic
 
 Piloswine @ Eviolite
-Level: 50
+Level: 62
 Ability: Oblivious
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Earthquake
@@ -18841,7 +18753,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Jynx @ Focus Sash
-Level: 51
+Level: 63
 Ability: Forewarn
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Ice Beam
@@ -18850,7 +18762,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Focus Blast
 
 Sneasel @ Eviolite
-Level: 51
+Level: 63
 Ability: Inner Focus
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Ice Punch
@@ -18868,7 +18780,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Dragonair @ Eviolite
-Level: 52
+Level: 64
 Ability: Shed Skin
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Dragon Pulse
@@ -18877,7 +18789,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Thunder Wave
 
 Gyarados @ Wacan Berry
-Level: 52
+Level: 64
 Ability: Intimidate
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Waterfall
@@ -18895,7 +18807,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Seadra @ Dragon Scale
-Level: 53
+Level: 65
 Ability: Poison Point
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Dragon Pulse
@@ -18904,10 +18816,164 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Signal Beam
 
 Altaria @ Leftovers
-Level: 53
+Level: 65
 Ability: Natural Cure
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Dragon Pulse
 - Flamethrower
 - Cotton Guard
 - Roost
+
+=== TRAINER_JOHTO_KIMONO_SAYO ===
+Name: SAYO
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Jolteon @ Magnet
+Level: 57
+Ability: Volt Absorb
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Thunderbolt
+- Shadow Ball
+- Thunder Wave
+- Quick Attack
+
+=== TRAINER_JOHTO_KIMONO_KUNI ===
+Name: KUNI
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Vaporeon @ Leftovers
+Level: 57
+Ability: Water Absorb
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Surf
+- Ice Beam
+- Acid Armor
+- Wish
+
+=== TRAINER_JOHTO_KIMONO_KOUME ===
+Name: KOUME
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Leafeon @ Miracle Seed
+Level: 57
+Ability: Leaf Guard
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Leaf Blade
+- X-Scissor
+- Swords Dance
+- Synthesis
+
+=== TRAINER_JOHTO_KIMONO_SATSUKI ===
+Name: SATSUKI
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Glaceon @ Never-Melt Ice
+Level: 57
+Ability: Snow Cloak
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Ice Beam
+- Shadow Ball
+- Mirror Coat
+- Wish
+
+=== TRAINER_JOHTO_KIMONO_SAKURA ===
+Name: SAKURA
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Sylveon @ Pixie Plate
+Level: 57
+Ability: Pixilate
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Moonblast
+- Shadow Ball
+- Calm Mind
+- Wish
+
+=== TRAINER_JOHTO_RED ===
+Name: RED
+Class: Champion
+Pic: Red
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Pikachu @ Light Ball
+Level: 88
+Ability: Static
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Tackle
+- Iron Tail
+- Quick Attack
+- Thunder
+
+Charizard @ Sitrus Berry
+Level: 84
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Air Slash
+- Dragon Pulse
+- Focus Blast
+
+Blastoise @ Leftovers
+Level: 84
+Ability: Torrent
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Aura Sphere
+- Flash Cannon
+
+Venusaur @ Black Sludge
+Level: 84
+Ability: Overgrow
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Sludge Bomb
+- Sleep Powder
+- Leech Seed
+
+Snorlax @ Leftovers
+Level: 82
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Earthquake
+- Crunch
+- Rest
+
+Lapras @ Mystic Water
+Level: 80
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Thunderbolt
+- Psychic

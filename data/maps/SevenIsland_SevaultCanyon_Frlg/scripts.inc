@@ -137,14 +137,7 @@ SevenIsland_SevaultCanyon_Text_BrunoTrainedWithBrawly::
 	.string "name of BRAWLY before.$"
 
 SevenIsland_SevaultCanyon_EventScript_Brandon::
-	trainerbattle_single TRAINER_SEVII_BRANDON, SevenIsland_SevaultCanyon_Text_BrandonIntro, SevenIsland_SevaultCanyon_Text_BrandonDefeat, SevenIsland_SevaultCanyon_EventScript_BrandonDefeated
-	msgbox SevenIsland_SevaultCanyon_Text_BrandonPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-SevenIsland_SevaultCanyon_EventScript_BrandonDefeated::
-	setflag FLAG_DEFEATED_SEVII_BRANDON
-	msgbox SevenIsland_SevaultCanyon_Text_BrandonDefeat, MSGBOX_DEFAULT
-	release
+	msgbox SevenIsland_SevaultCanyon_Text_BrandonIntro, MSGBOX_NPC
 	end
 
 SevenIsland_SevaultCanyon_Text_BrandonIntro::

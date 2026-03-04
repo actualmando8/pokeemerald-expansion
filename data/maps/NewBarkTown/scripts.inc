@@ -2,7 +2,10 @@ NewBarkTown_MapScripts::
 	.byte 0
 
 NewBarkTown_EventScript_Door::
-	return
+	lockall
+	msgbox NewBarkTown_Text_DoorLocked, MSGBOX_DEFAULT
+	releaseall
+	end
 
 NewBarkTown_EventScript_ElmsHouseMailbox::
 	msgbox NewBarkTown_Text_ElmsMailbox, MSGBOX_SIGN
@@ -21,14 +24,22 @@ NewBarkTown_EventScript_Lass::
 	end
 
 NewBarkTown_EventScript_LeaveTrigger::
-	return
+	lockall
+	msgbox NewBarkTown_Text_LeaveTrigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 NewBarkTown_EventScript_PlayersHouseMailbox::
 	msgbox NewBarkTown_Text_PlayersMailbox, MSGBOX_SIGN
 	end
 
 NewBarkTown_EventScript_Silver::
-	return
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox NewBarkTown_Text_SilverPeek, MSGBOX_DEFAULT
+	releaseall
+	end
 
 NewBarkTown_EventScript_TownSign::
 	msgbox NewBarkTown_Text_TownSign, MSGBOX_SIGN
@@ -60,4 +71,19 @@ NewBarkTown_Text_TownSign:
 	.string "NEW BARK TOWN\n"
 	.string "The Town Where the Wind of a\l"
 	.string "New Beginning Blows$"
+
+NewBarkTown_Text_DoorLocked:
+	.string "The door is locked.$"
+
+NewBarkTown_Text_LeaveTrigger:
+	.string "PROF. ELM's words echo...\p"
+	.string "Be careful out there!\n"
+	.string "The world is vast!$"
+
+NewBarkTown_Text_SilverPeek:
+	.string "...\p"
+	.string "A red-haired boy is peering\n"
+	.string "through the lab window.\p"
+	.string "He notices you and glares\n"
+	.string "before walking away...$"
 

@@ -12,7 +12,10 @@ SafariZoneGate_SafariZoneEntrance_EventScript_Boy::
 	end
 
 SafariZoneGate_SafariZoneEntrance_EventScript_EntranceCounterTrigger::
-	return
+	lockall
+	msgbox SafariZone_Text_EntranceCounter, MSGBOX_DEFAULT
+	releaseall
+	end
 
 SafariZoneGate_SafariZoneEntrance_Text_Boy:
 	.string "Did you know there are POKeMON\n"
@@ -21,3 +24,10 @@ SafariZoneGate_SafariZoneEntrance_Text_Boy:
 
 SafariZoneGate_SafariZoneEntrance_Text_Baoba:
 	.string "...$"
+
+SafariZone_Text_EntranceCounter:
+	.string "RECEPTIONIST: Welcome to the\n"
+	.string "SAFARI ZONE!\p"
+	.string "For just $500, you can catch\n"
+	.string "all kinds of rare POKeMON!$"
+

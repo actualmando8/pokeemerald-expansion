@@ -33,7 +33,7 @@ TinTower_RoofDay_EventScript_HoOh::
 	delay 40
 	waitmoncry
 	delay 20
-	seteventmon SPECIES_HO_OH, 70
+	seteventmon SPECIES_HO_OH, 65
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

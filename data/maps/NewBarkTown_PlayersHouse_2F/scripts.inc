@@ -6,13 +6,22 @@ NewBarkTown_PlayersHouse_2F_EventScript_NES::
 	end
 
 NewBarkTown_PlayersHouse_2F_Script_ClockSetupTrigger1::
-	return
+	lockall
+	msgbox NewBarkTown_PlayersHouse_2F_Text_Clock, MSGBOX_DEFAULT
+	releaseall
+	end
 
 NewBarkTown_PlayersHouse_2F_Script_ClockSetupTrigger2::
-	return
+	goto NewBarkTown_PlayersHouse_2F_Script_ClockSetupTrigger1
+	end
 
 NewBarkTown_PlayersHouse_2F_Text_NES:
 	.string "{PLAYER}'s game console.\n"
 	.string "Better get going -- no time\l"
 	.string "to play right now!$"
+
+NewBarkTown_PlayersHouse_2F_Text_Clock:
+	.string "Better set the clock before\n"
+	.string "heading out...\p"
+	.string "It's already set. Time to go!$"
 

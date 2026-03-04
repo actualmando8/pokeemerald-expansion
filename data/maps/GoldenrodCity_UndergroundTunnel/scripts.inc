@@ -4,7 +4,10 @@ GoldenrodCity_UndergroundTunnel_MapScripts::
 @ Johto map scripts (imported from HnS, stubs)
 
 GoldenrodCity_UndergroundTunnel_EventScript_Door::
-	return
+	lockall
+	msgbox GoldenrodCity_Underground_Text_Door, MSGBOX_DEFAULT
+	releaseall
+	end
 
 GoldenrodCity_UndergroundTunnel_EventScript_Item_Antidote::
 	finditem ITEM_ANTIDOTE
@@ -23,10 +26,16 @@ GoldenrodCity_UndergroundTunnel_EventScript_Item_SuperPotion::
 	end
 
 GoldenrodCity_UndergroundTunnel_EventScript_KimonoTriggerBot::
-	return
+	lockall
+	msgbox GoldenrodCity_Underground_Text_Kimono, MSGBOX_DEFAULT
+	releaseall
+	end
 
 GoldenrodCity_UndergroundTunnel_EventScript_KimonoTriggerTop::
-	return
+	lockall
+	msgbox GoldenrodCity_Underground_Text_Kimono, MSGBOX_DEFAULT
+	releaseall
+	end
 
 GoldenrodUnderground_EventScript_Brother_Haircut1::
 	msgbox GoldenrodUnderground_Text_Brother_Haircut1, MSGBOX_NPC
@@ -76,3 +85,16 @@ GoldenrodUnderground_Text_Issac:
 
 GoldenrodUnderground_Text_Teru:
 	.string "...$"
+
+GoldenrodCity_Underground_Text_Door:
+	.string "The door is locked from\n"
+	.string "the other side...$"
+
+GoldenrodCity_Underground_Text_Kimono:
+	.string "KIMONO GIRL: Oh my, this\n"
+	.string "tunnel is rather dark...\p"
+	.string "A group of ruffians tried\n"
+	.string "to take my POKeMON!\p"
+	.string "Would you help me get\n"
+	.string "past them?$"
+

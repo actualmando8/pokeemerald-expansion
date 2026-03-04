@@ -30,22 +30,36 @@ NewBarkTown_Lab_EventScript_TotodileBall::
 	end
 
 NewBarkTown_Lab_EventScript_TriggerAideGiveBalls::
-	return
+	lockall
+	msgbox NewBarkTown_Lab_Text_AideGiveBalls, MSGBOX_DEFAULT
+	releaseall
+	end
 
 NewBarkTown_Lab_EventScript_TriggerAideGivePotion::
-	return
+	lockall
+	msgbox NewBarkTown_Lab_Text_AideGivePotion, MSGBOX_DEFAULT
+	releaseall
+	end
 
 NewBarkTown_Lab_EventScript_TriggerReturnPlayer::
-	return
+	lockall
+	msgbox NewBarkTown_Lab_Text_ElmReturn, MSGBOX_DEFAULT
+	releaseall
+	end
 
 NewBarkTown_Lab_EventScript_TriggerStartLab::
-	return
+	lockall
+	msgbox NewBarkTown_Lab_Text_ElmGreet, MSGBOX_DEFAULT
+	releaseall
+	end
 
 NewBarkTown_Lab_EventScript_TriggerStartLabLeft::
-	return
+	goto NewBarkTown_Lab_EventScript_TriggerStartLab
+	end
 
 NewBarkTown_Lab_EventScript_TriggerStartLabRight::
-	return
+	goto NewBarkTown_Lab_EventScript_TriggerStartLab
+	end
 
 NewBarkTown_Lab_Text_Elm:
 	.string "ELM: Ah, {PLAYER}!\p"
@@ -70,4 +84,33 @@ NewBarkTown_Lab_Text_EmptyPlatform:
 
 NewBarkTown_Lab_Text_HealingMachine:
 	.string "It's a POKeMON healing machine.$"
+
+NewBarkTown_Lab_Text_ElmGreet:
+	.string "ELM: Ah, there you are!\p"
+	.string "I've been waiting for you.\n"
+	.string "I have a favor to ask...\p"
+	.string "Would you run an errand\n"
+	.string "for me? There's a man called\l"
+	.string "MR. POKeMON on ROUTE 30.\p"
+	.string "I need you to pick something\n"
+	.string "up from him. Take one of\l"
+	.string "these POKeMON for protection!$"
+
+NewBarkTown_Lab_Text_AideGiveBalls:
+	.string "AIDE: PROF. ELM asked me to\n"
+	.string "give you these.\p"
+	.string "Here, take some POKe BALLS!$"
+
+NewBarkTown_Lab_Text_AideGivePotion:
+	.string "AIDE: Wait! Take this with\n"
+	.string "you. It's a POTION.\p"
+	.string "Use it if your POKeMON gets\n"
+	.string "hurt on the way.$"
+
+NewBarkTown_Lab_Text_ElmReturn:
+	.string "ELM: You're back! Excellent!\p"
+	.string "So MR. POKeMON gave you a\n"
+	.string "POKeMON EGG? Fascinating!\p"
+	.string "I'll study it right away.\n"
+	.string "Thank you for your help!$"
 

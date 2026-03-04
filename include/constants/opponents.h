@@ -871,13 +871,16 @@
 #define TRAINER_DOME_PHOEBE                 861  // Custom: Battle Dome Phoebe
 #define TRAINER_DOME_LANCE                  862  // Custom: Battle Dome Lance
 #define TRAINER_DOME_STEVEN                 863  // Custom: Battle Dome Champion Steven
-#define TRAINER_SEVII_NOLAND                864  // Custom: Frontier Brain Noland on Sevii
-#define TRAINER_SEVII_GRETA                 865  // Custom: Frontier Brain Greta on Sevii
-#define TRAINER_SEVII_TUCKER                866  // Custom: Frontier Brain Tucker on Sevii
-#define TRAINER_SEVII_SPENSER               867  // Custom: Frontier Brain Spenser on Sevii
-#define TRAINER_SEVII_ANABEL                868  // Custom: Frontier Brain Anabel on Sevii
-#define TRAINER_SEVII_LUCY                  869  // Custom: Frontier Brain Lucy on Sevii
-#define TRAINER_SEVII_BRANDON               870  // Custom: Frontier Brain Brandon on Sevii
+// Johto Sprout Tower Sages (repurposed from Sevii Frontier Brains)
+#define TRAINER_JOHTO_SAGE_JIN              864  // Sprout Tower 3F Sage
+#define TRAINER_JOHTO_SAGE_LI               865  // Sprout Tower 3F Elder
+#define TRAINER_JOHTO_SAGE_NEAL             866  // Sprout Tower 3F Sage
+#define TRAINER_JOHTO_SAGE_TROY             867  // Sprout Tower 3F Sage
+
+// Johto Kimono Girls (864-870 repurposed, 899-903 new)
+#define TRAINER_JOHTO_KIMONO_ZUKI           868  // Ecruteak Theater - Umbreon
+#define TRAINER_JOHTO_KIMONO_NAOKO          869  // Ecruteak Theater - Espeon
+#define TRAINER_JOHTO_KIMONO_MIKI           870  // Ecruteak Theater - Flareon
 
 // Johto Gym Leaders
 #define TRAINER_JOHTO_FALKNER               871  // Custom: Violet City Gym (Flying)
@@ -914,9 +917,15 @@
 #define TRAINER_JOHTO_GYM_ROXANNE           896  // Mahogany Gym Skier
 #define TRAINER_JOHTO_GYM_CODY              897  // Blackthorn Gym Cooltrainer
 #define TRAINER_JOHTO_GYM_FRAN              898  // Blackthorn Gym Cooltrainer
+#define TRAINER_JOHTO_KIMONO_SAYO            899  // Ecruteak Theater - Jolteon
+#define TRAINER_JOHTO_KIMONO_KUNI            900  // Ecruteak Theater - Vaporeon
+#define TRAINER_JOHTO_KIMONO_KOUME           901  // Ecruteak Theater - Leafeon
+#define TRAINER_JOHTO_KIMONO_SATSUKI         902  // Ecruteak Theater - Glaceon
+#define TRAINER_JOHTO_KIMONO_SAKURA          903  // Ecruteak Theater - Sylveon
+#define TRAINER_JOHTO_RED                    904  // Mt. Silver Summit - Red
 
-#define TRAINERS_COUNT_EMERALD     899
-#define MAX_TRAINERS_COUNT_EMERALD 899
+#define TRAINERS_COUNT_EMERALD     905
+#define MAX_TRAINERS_COUNT_EMERALD 905
 
 // Combined: FRLG offset trainers always exceed Emerald count (900+624 > 855)
 #define TRAINERS_COUNT                 (FRLG_TRAINER_OFFSET + TRAINERS_COUNT_FRLG)

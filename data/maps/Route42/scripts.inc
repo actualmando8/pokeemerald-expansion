@@ -4,7 +4,10 @@ Route42_MapScripts::
 @ Johto map scripts (imported from HnS, stubs)
 
 MahoganyTown_EventScript_TownTrigger::
-	return
+	lockall
+	msgbox Route42_Text_MahoganyAhead, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route42_EventScript_Ben::
 	msgbox Route42_Text_Ben, MSGBOX_NPC
@@ -35,7 +38,10 @@ Route42_EventScript_Sign::
 	end
 
 Route42_EventScript_Suicune_Trigger::
-	return
+	lockall
+	msgbox Route42_Text_SuicuneFlash, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route42_EventScript_Tully::
 	msgbox Route42_Text_Tully, MSGBOX_NPC
@@ -59,3 +65,17 @@ Route42_Text_Sign:
 
 Route42_Text_Tully:
 	.string "...$"
+
+Route42_Text_MahoganyAhead:
+	.string "The quiet town of MAHOGANY\n"
+	.string "lies just ahead.\p"
+	.string "MT. MORTAR looms to the\n"
+	.string "north...$"
+
+Route42_Text_SuicuneFlash:
+	.string "A flash of blue streaks\n"
+	.string "across the water's surface!\p"
+	.string "A majestic POKeMON was there\n"
+	.string "for just an instant... then\l"
+	.string "vanished without a trace.$"
+

@@ -8,13 +8,22 @@ Route32_EventScript_BaldingMan::
 	end
 
 Route32_EventScript_BaldingManTriggerLeft::
-	return
+	lockall
+	msgbox Route32_Text_BaldingManApproach, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route32_EventScript_BaldingManTriggerMid::
-	return
+	lockall
+	msgbox Route32_Text_BaldingManApproach, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route32_EventScript_BaldingManTriggerRight::
-	return
+	lockall
+	msgbox Route32_Text_BaldingManApproach, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route32_EventScript_BirdkeeperPeter::
 	msgbox Route32_Text_BirdkeeperPeter, MSGBOX_NPC
@@ -81,13 +90,22 @@ Route32_EventScript_SlowpokeTail::
 	end
 
 Route32_EventScript_SlowpokeTail_TriggerLeft::
-	return
+	lockall
+	msgbox Route32_Text_SlowpokeTailSalesman, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route32_EventScript_SlowpokeTail_TriggerMid::
-	return
+	lockall
+	msgbox Route32_Text_SlowpokeTailSalesman, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route32_EventScript_SlowpokeTail_TriggerRight::
-	return
+	lockall
+	msgbox Route32_Text_SlowpokeTailSalesman, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route32_EventScript_SuperPotion::
 	msgbox Route32_Text_SuperPotion, MSGBOX_NPC
@@ -166,3 +184,17 @@ Route32_Text_YoungsterGordon:
 
 VioletCity_Text_LiquidJustice:
 	.string "...$"
+
+Route32_Text_BaldingManApproach:
+	.string "OLD MAN: Hey! Are you heading\n"
+	.string "to AZALEA TOWN?\p"
+	.string "Be careful in UNION CAVE.\n"
+	.string "Wild POKeMON are strong\l"
+	.string "in there!$"
+
+Route32_Text_SlowpokeTailSalesman:
+	.string "Shady Man: Psst! Want to buy\n"
+	.string "a SLOWPOKETAIL?\p"
+	.string "It's a million dollars!\n"
+	.string "...Just kidding! Ha!$"
+

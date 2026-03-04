@@ -28,7 +28,10 @@ VioletCity_EventScript_Earl::
 	end
 
 VioletCity_EventScript_ElmCall_Trigger::
-	return
+	lockall
+	msgbox VioletCity_Text_ElmCall, MSGBOX_DEFAULT
+	releaseall
+	end
 
 VioletCity_EventScript_Gramps::
 	msgbox VioletCity_Text_Gramps, MSGBOX_NPC
@@ -101,4 +104,12 @@ VioletCity_Text_Bellsprout:
 VioletCity_Text_Pichu:
 	.string "PICHU's cheeks are sparking\n"
 	.string "with electricity!$"
+
+VioletCity_Text_ElmCall:
+	.string "... ... ...\p"
+	.string "The POKeGEAR rings!\p"
+	.string "ELM: {PLAYER}! I heard\n"
+	.string "VIOLET CITY has a GYM.\p"
+	.string "It would be great experience\n"
+	.string "for you! Good luck!$"
 

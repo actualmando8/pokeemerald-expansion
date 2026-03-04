@@ -32,13 +32,22 @@ DragonsDen_Cavern_EventScript_TwinPia::
 	end
 
 DragonsDen_Cavern_Trigger_ClairLeft::
-	return
+	lockall
+	msgbox DragonsDen_Cavern_Text_ClairTrigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 DragonsDen_Cavern_Trigger_ClairMid::
-	return
+	lockall
+	msgbox DragonsDen_Cavern_Text_ClairTrigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 DragonsDen_Cavern_Trigger_ClairRight::
-	return
+	lockall
+	msgbox DragonsDen_Cavern_Text_ClairTrigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 DragonsDen_EventScript_ClairRematch::
 	msgbox DragonsDen_Text_ClairRematch, MSGBOX_NPC
@@ -69,3 +78,12 @@ DragonsDen_Text_ClairRematch:
 
 Text_Whirlpool:
 	.string "...$"
+
+DragonsDen_Cavern_Text_ClairTrigger:
+	.string "CLAIR: ...Fine. You beat me.\n"
+	.string "But I'm not giving you the\l"
+	.string "BADGE just yet.\p"
+	.string "Go to the DRAGON SHRINE and\n"
+	.string "prove yourself to the ELDER.\p"
+	.string "...I'll be watching.$"
+

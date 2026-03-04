@@ -59,13 +59,18 @@ CherryGroveCity_EventScript_Staryu::
 	end
 
 CherryGroveCity_EventScript_TriggerGent_Bottom::
-	return
+	lockall
+	msgbox CherryGroveCity_Text_GentGreeting, MSGBOX_DEFAULT
+	releaseall
+	end
 
 CherryGroveCity_EventScript_TriggerGent_Mid::
-	return
+	goto CherryGroveCity_EventScript_TriggerGent_Bottom
+	end
 
 CherryGroveCity_EventScript_TriggerGent_Top::
-	return
+	goto CherryGroveCity_EventScript_TriggerGent_Bottom
+	end
 
 CherryGroveCity_Text_SilverAppears:
 	.string "???: …Hey, you.\p"
@@ -116,3 +121,15 @@ CherryGroveCity_Text_Krabby:
 
 CherryGroveCity_Text_Staryu:
 	.string "STARYU looks content.$"
+
+CherryGroveCity_Text_GentGreeting:
+	.string "OLD MAN: Hey, you! You're a\n"
+	.string "new TRAINER, aren't you?\p"
+	.string "Let me show you around town!\n"
+	.string "Follow me!\p"
+	.string "...\p"
+	.string "Here's the POKeMON CENTER,\n"
+	.string "and over there is the MART.\p"
+	.string "And that's the sea! Isn't\n"
+	.string "the view wonderful?$"
+

@@ -20,7 +20,10 @@ IcePath_1F_EventScript_KimonoGirl::
 	end
 
 IcePath_1F_Trigger_KimonoGirl::
-	return
+	lockall
+	msgbox IcePath_1F_Text_KimonoGirl, MSGBOX_DEFAULT
+	releaseall
+	end
 
 
 IcePath_1F_Text_Item_HM_Waterfall:

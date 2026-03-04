@@ -12,7 +12,10 @@ Gate_Route31_VioletCity_EventScript_Policeman::
 	end
 
 VioletCity_EventScript_Trigger::
-	return
+	lockall
+	msgbox Gate_Route31_Text_Welcome, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Gate_Route31_VioletCity_Text_CooltrainerF:
 	.string "Training POKeMON isn't just\n"
@@ -21,3 +24,8 @@ Gate_Route31_VioletCity_Text_CooltrainerF:
 
 Gate_Route31_VioletCity_Text_Policeman:
 	.string "This is a nice place.\nThe people here are friendly.$"
+
+Gate_Route31_Text_Welcome:
+	.string "Welcome to VIOLET CITY!\n"
+	.string "The city of nostalgic scents.$"
+

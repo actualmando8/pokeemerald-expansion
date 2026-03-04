@@ -4,7 +4,10 @@ Route39_MapScripts::
 @ Johto map scripts (imported from HnS, stubs)
 
 OlivineCity_EventScript_CityTrigger::
-	return
+	lockall
+	msgbox Route39_Text_OlivineAhead, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route39_EventScript_Derek::
 	msgbox Route39_Text_Derek, MSGBOX_NPC
@@ -27,7 +30,10 @@ Route39_EventScript_Jamie::
 	end
 
 Route39_EventScript_LegendaryTrigger::
-	return
+	lockall
+	msgbox Route39_Text_LegendaryGust, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route39_EventScript_Miltank::
 	lock
@@ -95,3 +101,16 @@ Route39_Text_Sign2:
 
 Route39_Text_Sign3:
 	.string "Route39$"
+
+Route39_Text_OlivineAhead:
+	.string "The salty breeze from the sea\n"
+	.string "signals OLIVINE CITY ahead.\p"
+	.string "The LIGHTHOUSE beam can be\n"
+	.string "seen in the distance...$"
+
+Route39_Text_LegendaryGust:
+	.string "A powerful gust of wind\n"
+	.string "sweeps across the plains!\p"
+	.string "...Was that a shadow in\n"
+	.string "the clouds above?$"
+

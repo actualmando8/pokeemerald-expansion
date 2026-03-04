@@ -217,14 +217,7 @@ FourIsland_Text_LoreleisHouse::
 	.string "LORELEI'S HOUSE$"
 
 FourIsland_EventScript_Anabel::
-	trainerbattle_single TRAINER_SEVII_ANABEL, FourIsland_Text_AnabelIntro, FourIsland_Text_AnabelDefeat, FourIsland_EventScript_AnabelDefeated
-	msgbox FourIsland_Text_AnabelPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-FourIsland_EventScript_AnabelDefeated::
-	setflag FLAG_DEFEATED_SEVII_ANABEL
-	msgbox FourIsland_Text_AnabelDefeat, MSGBOX_DEFAULT
-	release
+	msgbox FourIsland_Text_AnabelIntro, MSGBOX_NPC
 	end
 
 FourIsland_Text_AnabelIntro::

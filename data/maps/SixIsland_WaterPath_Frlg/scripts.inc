@@ -112,14 +112,7 @@ SixIsland_WaterPath_Text_RouteSign::
 	.string "Leads to RUIN VALLEY$"
 
 SixIsland_WaterPath_EventScript_Lucy::
-	trainerbattle_single TRAINER_SEVII_LUCY, SixIsland_WaterPath_Text_LucyIntro, SixIsland_WaterPath_Text_LucyDefeat, SixIsland_WaterPath_EventScript_LucyDefeated
-	msgbox SixIsland_WaterPath_Text_LucyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-SixIsland_WaterPath_EventScript_LucyDefeated::
-	setflag FLAG_DEFEATED_SEVII_LUCY
-	msgbox SixIsland_WaterPath_Text_LucyDefeat, MSGBOX_DEFAULT
-	release
+	msgbox SixIsland_WaterPath_Text_LucyIntro, MSGBOX_NPC
 	end
 
 SixIsland_WaterPath_Text_LucyIntro::

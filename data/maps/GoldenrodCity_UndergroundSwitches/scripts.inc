@@ -52,10 +52,16 @@ GoldenrodCity_UndergroundSwitches_EventScript_Panel3::
 	end
 
 GoldenrodCity_UndergroundSwitches_EventScript_SilverTriggerBot::
-	return
+	lockall
+	msgbox GoldenrodCity_Underground_Text_Silver, MSGBOX_DEFAULT
+	releaseall
+	end
 
 GoldenrodCity_UndergroundSwitches_EventScript_SilverTriggerTop::
-	return
+	lockall
+	msgbox GoldenrodCity_Underground_Text_Silver, MSGBOX_DEFAULT
+	releaseall
+	end
 
 
 GoldenrodCity_UndergroundSwitches_Text_Duncan:
@@ -84,3 +90,13 @@ GoldenrodCity_UndergroundSwitches_Text_Panel2:
 
 GoldenrodCity_UndergroundSwitches_Text_Panel3:
 	.string "GoldenrodCity UndergroundSwitches$"
+
+GoldenrodCity_Underground_Text_Silver:
+	.string "SILVER: ...TEAM ROCKET is\n"
+	.string "nothing but a bunch of\l"
+	.string "cowards.\p"
+	.string "They hide underground like\n"
+	.string "the rats they are.\p"
+	.string "I'll deal with them my own\n"
+	.string "way. Don't slow me down.$"
+

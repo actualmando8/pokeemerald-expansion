@@ -40,7 +40,10 @@ UnionCave_1F_EventScript_PokemaniacLarry::
 	end
 
 UnionCave_1F_Trigger_Monview::
-	return
+	lockall
+	msgbox UnionCave_1F_Text_Monview, MSGBOX_DEFAULT
+	releaseall
+	end
 
 
 UnionCave_1F_Text_FirebreatherBill:
@@ -63,3 +66,8 @@ UnionCave_1F_Text_Item_GreatBall:
 
 UnionCave_1F_Text_PokemaniacLarry:
 	.string "This is a nice place.\nThe people here are friendly.$"
+
+UnionCave_1F_Text_Monview:
+	.string "The cave echoes with the\n"
+	.string "sounds of wild POKeMON...$"
+

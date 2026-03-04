@@ -111,14 +111,7 @@ ThreeIsland_BondBridge_Text_BondBridgeSign::
 	.string "BERRY FOREST AHEAD$"
 
 ThreeIsland_BondBridge_EventScript_Tucker::
-	trainerbattle_single TRAINER_SEVII_TUCKER, ThreeIsland_BondBridge_Text_TuckerIntro, ThreeIsland_BondBridge_Text_TuckerDefeat, ThreeIsland_BondBridge_EventScript_TuckerDefeated
-	msgbox ThreeIsland_BondBridge_Text_TuckerPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-ThreeIsland_BondBridge_EventScript_TuckerDefeated::
-	setflag FLAG_DEFEATED_SEVII_TUCKER
-	msgbox ThreeIsland_BondBridge_Text_TuckerDefeat, MSGBOX_DEFAULT
-	release
+	msgbox ThreeIsland_BondBridge_Text_TuckerIntro, MSGBOX_NPC
 	end
 
 ThreeIsland_BondBridge_Text_TuckerIntro::

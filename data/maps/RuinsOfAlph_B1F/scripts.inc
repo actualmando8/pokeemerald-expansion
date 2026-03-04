@@ -32,7 +32,8 @@ RuinsOfAlph_PuzzleAndRewardChambers_EventScript_OldAmber::
 	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_MapScript_UnownText::
-	return
+	msgbox RuinsOfAlph_Text_UnownMessage, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_B1F_Text_Gramps:
 	.string "These underground passages\n"
@@ -74,4 +75,12 @@ RuinsOfAlph_B1F_Text_OldAmber:
 	.string "embedded in the wall.\p"
 	.string "It contains the DNA of an\n"
 	.string "ancient flying POKeMON.$"
+
+RuinsOfAlph_Text_UnownMessage:
+	.string "Strange symbols are etched\n"
+	.string "into the wall...\p"
+	.string "They seem to spell something\n"
+	.string "in the UNOWN alphabet...\p"
+	.string "...but you can't quite\n"
+	.string "make it out.$"
 

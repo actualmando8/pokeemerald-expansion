@@ -10,10 +10,14 @@ NewBarkTown_PlayersHouse_1F_EventScript_MomsFriend::
 	end
 
 NewBarkTown_PlayersHouse_1F_EventScript_MomsIntroTrigger1::
-	return
+	lockall
+	msgbox NewBarkTown_PlayersHouse_Text_MomIntro, MSGBOX_DEFAULT
+	releaseall
+	end
 
 NewBarkTown_PlayersHouse_1F_EventScript_MomsIntroTrigger2::
-	return
+	goto NewBarkTown_PlayersHouse_1F_EventScript_MomsIntroTrigger1
+	end
 
 NewBarkTown_PlayersHouse_Text_Mom:
 	.string "MOM: Welcome home, dear!\p"
@@ -27,4 +31,12 @@ NewBarkTown_PlayersHouse_Text_MomsFriend:
 	.string "all the time!\p"
 	.string "She's so proud of everything\n"
 	.string "you've accomplished.$"
+
+NewBarkTown_PlayersHouse_Text_MomIntro:
+	.string "MOM: Oh, {PLAYER}! Good\n"
+	.string "morning!\p"
+	.string "PROF. ELM next door was\n"
+	.string "looking for you.\p"
+	.string "He seemed really excited\n"
+	.string "about something!$"
 

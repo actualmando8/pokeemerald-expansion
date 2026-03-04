@@ -68,44 +68,56 @@ RuinsOfAlph_EventScript_Item_WaterStone::
 	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_EventScript_AerodactylPuzzle::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_AerodactylPuzzle, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_EventScript_CheckAerodactyl::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_CheckAerodactyl, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_EventScript_CheckHooh::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_CheckHooh, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_EventScript_CheckKabuto::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_CheckKabuto, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_EventScript_CheckOmanyte::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_CheckOmanyte, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_EventScript_HooHPuzzle::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_HooHPuzzle, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_EventScript_KabutoPuzzle::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_KabutoPuzzle, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_EventScript_OmanytePuzzle::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_OmanytePuzzle, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_EventScript_Receptionist::
 	msgbox RuinsOfAlph_Puzzle_Text_Receptionist, MSGBOX_NPC
 	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_MapScript_AerodactylDescription::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_AerodactylDesc, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_MapScript_HoohDescription::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_HoohDesc, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_MapScript_KabutoDescripton::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_KabutoDesc, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_MapScript_OmanyteDescription::
-	return
+	msgbox RuinsOfAlph_Puzzle_Text_OmanyteDesc, MSGBOX_SIGN
+	end
 
 RuinsOfAlph_Puzzle_Text_Receptionist:
 	.string "Welcome to the PUZZLE\n"
@@ -113,4 +125,72 @@ RuinsOfAlph_Puzzle_Text_Receptionist:
 	.string "Solve the tile puzzles to\n"
 	.string "discover the UNOWN that\l"
 	.string "dwell within!$"
+
+RuinsOfAlph_Puzzle_Text_AerodactylPuzzle:
+	.string "A tile puzzle depicting an\n"
+	.string "ancient POKeMON.\p"
+	.string "Slide the tiles to complete\n"
+	.string "the image...$"
+
+RuinsOfAlph_Puzzle_Text_HooHPuzzle:
+	.string "A tile puzzle depicting an\n"
+	.string "ancient POKeMON.\p"
+	.string "Slide the tiles to complete\n"
+	.string "the image...$"
+
+RuinsOfAlph_Puzzle_Text_KabutoPuzzle:
+	.string "A tile puzzle depicting an\n"
+	.string "ancient POKeMON.\p"
+	.string "Slide the tiles to complete\n"
+	.string "the image...$"
+
+RuinsOfAlph_Puzzle_Text_OmanytePuzzle:
+	.string "A tile puzzle depicting an\n"
+	.string "ancient POKeMON.\p"
+	.string "Slide the tiles to complete\n"
+	.string "the image...$"
+
+RuinsOfAlph_Puzzle_Text_CheckAerodactyl:
+	.string "The completed puzzle depicts\n"
+	.string "AERODACTYL.\p"
+	.string "A passage opens in the\n"
+	.string "floor below!$"
+
+RuinsOfAlph_Puzzle_Text_CheckHooh:
+	.string "The completed puzzle depicts\n"
+	.string "HO-OH.\p"
+	.string "A passage opens in the\n"
+	.string "floor below!$"
+
+RuinsOfAlph_Puzzle_Text_CheckKabuto:
+	.string "The completed puzzle depicts\n"
+	.string "KABUTO.\p"
+	.string "A passage opens in the\n"
+	.string "floor below!$"
+
+RuinsOfAlph_Puzzle_Text_CheckOmanyte:
+	.string "The completed puzzle depicts\n"
+	.string "OMANYTE.\p"
+	.string "A passage opens in the\n"
+	.string "floor below!$"
+
+RuinsOfAlph_Puzzle_Text_AerodactylDesc:
+	.string "This chamber's puzzle depicts\n"
+	.string "AERODACTYL, the ancient\n"
+	.string "flying POKeMON.$"
+
+RuinsOfAlph_Puzzle_Text_HoohDesc:
+	.string "This chamber's puzzle depicts\n"
+	.string "HO-OH, the legendary\n"
+	.string "rainbow POKeMON.$"
+
+RuinsOfAlph_Puzzle_Text_KabutoDesc:
+	.string "This chamber's puzzle depicts\n"
+	.string "KABUTO, an ancient\n"
+	.string "shellfish POKeMON.$"
+
+RuinsOfAlph_Puzzle_Text_OmanyteDesc:
+	.string "This chamber's puzzle depicts\n"
+	.string "OMANYTE, an ancient\n"
+	.string "spiral POKeMON.$"
 

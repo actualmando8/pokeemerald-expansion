@@ -2,14 +2,7 @@ TwoIsland_CapeBrink_Frlg_MapScripts::
 	.byte 0
 
 TwoIsland_CapeBrink_EventScript_Noland::
-	trainerbattle_single TRAINER_SEVII_NOLAND, TwoIsland_CapeBrink_Text_NolandIntro, TwoIsland_CapeBrink_Text_NolandDefeat, TwoIsland_CapeBrink_EventScript_NolandDefeated
-	msgbox TwoIsland_CapeBrink_Text_NolandPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-TwoIsland_CapeBrink_EventScript_NolandDefeated::
-	setflag FLAG_DEFEATED_SEVII_NOLAND
-	msgbox TwoIsland_CapeBrink_Text_NolandDefeat, MSGBOX_DEFAULT
-	release
+	msgbox TwoIsland_CapeBrink_Text_NolandIntro, MSGBOX_NPC
 	end
 
 TwoIsland_CapeBrink_Text_NolandIntro::

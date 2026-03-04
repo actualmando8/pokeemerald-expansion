@@ -4,14 +4,20 @@ MahoganyTown_RocketHideout_B3F_MapScripts::
 @ Mahogany Town Rocket Hideout scripts (stubs)
 
 RocketHideout_B3F_EventScript_Door::
-	return
+	lockall
+	msgbox RocketHideout_B3F_Text_Door, MSGBOX_DEFAULT
+	releaseall
+	end
 
 RocketHideout_B3F_EventScript_Eto::
 	msgbox RocketHideout_B3F_Text_Eto, MSGBOX_NPC
 	end
 
 RocketHideout_B3F_EventScript_Giovanni::
-	return
+	lockall
+	msgbox RocketHideout_B3F_Text_Giovanni, MSGBOX_DEFAULT
+	releaseall
+	end
 
 RocketHideout_B3F_EventScript_GruntF5::
 	msgbox RocketHideout_B3F_Text_GruntF5, MSGBOX_NPC
@@ -51,10 +57,18 @@ RocketHideout_B3F_EventScript_Ross::
 	end
 
 RocketHideout_B3F_Trigger_MurkrowStairs::
-	return
+	lockall
+	playmoncry SPECIES_MURKROW, CRY_MODE_NORMAL
+	msgbox RocketHideout_B3F_Text_MurkrowStairsB3, MSGBOX_DEFAULT
+	waitmoncry
+	releaseall
+	end
 
 RocketHideout_B3F_Trigger_Silver::
-	return
+	lockall
+	msgbox RocketHideout_B3F_Text_Silver, MSGBOX_DEFAULT
+	releaseall
+	end
 
 RocketHideout_B3F_EventScript_Murkrow::
 	lock
@@ -88,3 +102,31 @@ RocketHideout_B3F_Text_Ross:
 
 RocketHideout_B3F_Text_Murkrow:
 	.string "MURKROW looks content.$"
+
+RocketHideout_B3F_Text_Door:
+	.string "The door is sealed with an\n"
+	.string "electronic lock.\p"
+	.string "It requires a password...$"
+
+RocketHideout_B3F_Text_Giovanni:
+	.string "The transmission room is\n"
+	.string "empty. The voice on the\l"
+	.string "radio crackles...\p"
+	.string "GIOVANNI: ...TEAM ROCKET\n"
+	.string "will return. This is not\l"
+	.string "the end.\p"
+	.string "The signal goes dead.$"
+
+RocketHideout_B3F_Text_MurkrowStairsB3:
+	.string "MURKROW shrieks a warning\n"
+	.string "from the darkness!$"
+
+RocketHideout_B3F_Text_Silver:
+	.string "SILVER: ...What are you\n"
+	.string "doing here?\p"
+	.string "TEAM ROCKET... They're\n"
+	.string "pathetic. Relying on cheap\l"
+	.string "tricks instead of real power.\p"
+	.string "I'll crush them myself. Stay\n"
+	.string "out of my way.$"
+

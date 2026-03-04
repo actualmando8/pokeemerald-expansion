@@ -4,7 +4,10 @@ Route34_MapScripts::
 @ Johto map scripts (imported from HnS, stubs)
 
 GoldenrodCity_EventScript_Trigger::
-	return
+	lockall
+	msgbox Route34_Text_GoldenrodAhead, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route34_EventScript_CamperTodd::
 	msgbox Route34_Text_CamperTodd, MSGBOX_NPC
@@ -112,3 +115,9 @@ Route34_Text_YoungsterIan:
 
 Route34_Text_YoungsterSamuel:
 	.string "I want to be the best TRAINER\nin all of JOHTO!$"
+
+Route34_Text_GoldenrodAhead:
+	.string "The towering buildings of\n"
+	.string "GOLDENROD CITY are visible\l"
+	.string "in the distance...$"
+

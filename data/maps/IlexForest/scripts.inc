@@ -103,7 +103,7 @@ IlexForest_EventScript_SecondCelebi::
 	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_CELEBI, 45
+	setwildbattle SPECIES_CELEBI, 55
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -186,10 +186,14 @@ IlexForest_EventScript_SuperPotion::
 	end
 
 IlexForest_EventScript_Trigger::
-	return
+	lockall
+	msgbox IlexForest_Text_Trigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 IlexForest_EventScript_TriggerBot::
-	return
+	goto IlexForest_EventScript_Trigger
+	end
 
 IlexForest_Text_Boss:
 	.string "This forest is a sacred place.\p"
@@ -235,3 +239,14 @@ IlexForest_Text_Sign:
 
 IlexForest_Text_Kimono:
 	.string "...$"
+
+IlexForest_Text_Trigger:
+	.string "The forest is dense and\n"
+	.string "dark... Strange sounds echo\l"
+	.string "from deep within.\p"
+	.string "A KIMONO GIRL appears!\p"
+	.string "KIMONO GIRL: This forest is\n"
+	.string "sacred. Please, help the\l"
+	.string "lost FARFETCH'D find its\l"
+	.string "way back to its owner.$"
+

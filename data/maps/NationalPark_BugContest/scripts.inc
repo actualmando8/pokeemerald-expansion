@@ -40,7 +40,10 @@ NationalPark_BugContest_EventScript_Trash::
 	end
 
 NationalPark_BugContest_EventScript_Trigger::
-	return
+	lockall
+	msgbox NationalPark_BugContest_Text_Trigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 NationalPark_BugContest_Text_Boy:
 	.string "Did you know there are POKeMON\n"
@@ -70,3 +73,11 @@ NationalPark_BugContest_Text_TrainerTips:
 
 NationalPark_BugContest_Text_Trash:
 	.string "...$"
+
+NationalPark_BugContest_Text_Trigger:
+	.string "ANNOUNCER: Welcome to the\n"
+	.string "BUG-CATCHING CONTEST!\p"
+	.string "You have 20 minutes to catch\n"
+	.string "the best BUG-type POKeMON!\p"
+	.string "Ready? GO!$"
+

@@ -76,7 +76,10 @@ EcruteakCity_EventScript_Youngster::
 	end
 
 EcruteakCity_Trigger_Silver::
-	return
+	lockall
+	msgbox EcruteakCity_Text_SilverAppears, MSGBOX_DEFAULT
+	releaseall
+	end
 
 EcruteakCity_Text_BurnedSign:
 	.string "BURNED TOWER\nA tower destroyed by fire long ago$"
@@ -136,3 +139,12 @@ EcruteakCity_Text_Eevee:
 
 EcruteakCity_Text_Vulpix:
 	.string "VULPIX is grooming its tails.$"
+
+EcruteakCity_Text_SilverAppears:
+	.string "SILVER: ...You again.\p"
+	.string "I've been training hard.\n"
+	.string "My POKeMON are stronger\l"
+	.string "than ever.\p"
+	.string "Next time we meet, I won't\n"
+	.string "hold back. Remember that.$"
+

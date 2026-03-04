@@ -170,14 +170,7 @@ OneIsland_KindleRoad_Text_RouteSign::
 	.string "Go straight for MT. EMBER.$"
 
 OneIsland_KindleRoad_EventScript_Greta::
-	trainerbattle_single TRAINER_SEVII_GRETA, OneIsland_KindleRoad_Text_GretaIntro, OneIsland_KindleRoad_Text_GretaDefeat, OneIsland_KindleRoad_EventScript_GretaDefeated
-	msgbox OneIsland_KindleRoad_Text_GretaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-OneIsland_KindleRoad_EventScript_GretaDefeated::
-	setflag FLAG_DEFEATED_SEVII_GRETA
-	msgbox OneIsland_KindleRoad_Text_GretaDefeat, MSGBOX_DEFAULT
-	release
+	msgbox OneIsland_KindleRoad_Text_GretaIntro, MSGBOX_NPC
 	end
 
 OneIsland_KindleRoad_Text_GretaIntro::

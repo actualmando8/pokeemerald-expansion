@@ -132,12 +132,13 @@
 - Guard NPC in Reception Gate has context-aware dialogue depending on which condition is missing
 - When both conditions met, guard steps aside, passage south to Route 26 opens
 - Full Johto region: 8 gym badges, Giovanni/Silver storyline, 20+ routes, dungeons
-- HGSS + Crystal wild Pokémon encounters (82 encounter areas, Lv35-65)
-- **Ho-Oh** — Tin Tower Roof (Lv70 legendary battle)
-- **Lugia** — Whirl Islands Lugia Chamber (Lv70 legendary battle)
+- HGSS + Crystal wild Pokémon encounters (96 encounter areas, Lv40-70, scaled for post-Champion)
+- **Ho-Oh** — Tin Tower Roof (Lv65 legendary battle)
+- **Lugia** — Whirl Islands Lugia Chamber (Lv65 legendary battle)
 - Silver appears as recurring rival throughout Johto (Giovanni's son, rejecting his father's path)
 - Johto story climax: Giovanni confrontation (Radio Tower or Team Rocket HQ)
-- Navel Rock can be repurposed or disabled
+- **Celebi** — Ilex Forest Shrine (Lv55, gated behind all 8 Johto badges)
+- Navel Rock DISABLED (Four Island elder gives Johto lore instead)
 
 ---
 
@@ -146,7 +147,7 @@
 - **Birth Island and Deoxys** — alien DNA extracted from meteor during Jirachi research triggers readings at Birth Island. Birth Island ticket unlocked through scientific findings. Details to be developed
 - **Faraway Island** — Mew
 - **Cerulean Cave** — Mewtwo, accessible post game
-- **Celebi** — Pattern Bush (Six Island), found in the middle of the bush area
+- **Celebi** — Ilex Forest Shrine (Johto, Lv55) and Pattern Bush (Six Island, Lv50)
 - **Regieleki** — New Mauville, Braille puzzle
 - **Regidrago** — Sky Pillar base (before entering the actual pillar), Braille puzzle
 - **Regigigas** — Tanoby Ruins (Seven Island). Requires all 5 Regis in party (Regirock, Regice, Registeel, Regieleki, Regidrago)
@@ -158,7 +159,6 @@
 Unlocks only after all of the following are completed:
 - Kanto Elite Four beaten
 - Hoenn Elite Four beaten
-- All seven Sevii Island Brains defeated
 - All 8 Johto gym badges (FLAG_ALL_JOHTO_BADGES)
 - Birth Island — Deoxys resolved
 - Faraway Island — Mew obtained
@@ -177,9 +177,10 @@ When every condition is met the Dome doors open. No fanfare. Just open.
 ## WILD POKÉMON NOTES
 
 - Sevii Islands use original FRLG wild Pokémon encounters (reverted from Johto species)
-- Johto has HGSS + Crystal wild Pokémon (82 encounter areas across routes, towns, dungeons, Safari Zone)
+- Johto has HGSS + Crystal wild Pokémon (96 encounter areas across routes, towns, dungeons, Safari Zone)
 - Cross-gen evolutions (Tangrowth, Weavile, Mamoswine, etc.) available through evolution only, not in wild
-- Johto levels scaled for mid-late game access: Lv35 (early routes) through Lv65 (Mt. Silver)
+- Johto levels scaled for post-Champion access: Lv40 (early routes) through Lv70 (Mt. Silver)
+- Sevii Islands scaled by visit tier: +8/+10/+13 level boosts for visits 1/2/3
 
 ---
 
@@ -198,7 +199,31 @@ When every condition is met the Dome doors open. No fanfare. Just open.
 5. Petalburg (Norman) ~Lv37
 6. Fortree (Winona) — after 5 Kanto + 5 Hoenn badges
 7. Mossdeep (Tate & Liza)
-8. Sootopolis (Wallace/Juan)
+8. Sootopolis (Juan) — Wallace is Hoenn Champion
+
+## JOHTO GYM ORDER (post-Champion scaling, +12 level boost)
+1. Falkner (Violet) — Ace Pidgeot Lv52
+2. Bugsy (Azalea) — Ace Heracross Lv53
+3. Whitney (Goldenrod) — Ace Miltank Lv56
+4. Morty (Ecruteak) — Ace Gengar Lv58
+5. Chuck (Cianwood) — Ace Machamp Lv60
+6. Jasmine (Olivine) — Ace Magnezone Lv62
+7. Pryce (Mahogany) — Ace Mamoswine/Weavile Lv64
+8. Clair (Blackthorn) — Ace Dragonite Lv68 (Mega Charizard X)
+
+## JOHTO MAJOR BATTLE SCALING
+- Silver 1 (Cherrygrove): Lv47-48
+- Silver 2 (Azalea): Lv53-54
+- Silver 3 (Radio Tower 3F): Lv59-60
+- Giovanni (Radio Tower 5F): Lv67-69 (+4 net boost)
+- Silver 4 (Radio Tower 5F): Lv65-66
+- Silver 5 (Mt. Silver): Lv71-72
+- Red (Mt. Silver): Lv80-88 (unchanged)
+- Sprout Tower Sages: Lv48-50
+- Kimono Girls: Lv57 each
+- Ho-Oh / Lugia: Lv65
+- Celebi: Lv55
+- Battle Dome E4: Lv72-78
 
 ---
 
@@ -223,11 +248,11 @@ When every condition is met the Dome doors open. No fanfare. Just open.
 - Phase 7: Trainer Card flip side shows Kanto front design with Kanto badges
 - Phase 8: Hoenn gyms 6-8 rebalanced (Winona/Tate&Liza/Juan) for post-5+5 badge difficulty
 - Sevii Island wild Pokémon → reverted to original FRLG encounters
-- 7 Frontier Brain battles on Sevii Islands (TRAINER_SEVII_* Lv50-55 teams)
+- 7 Frontier Brain NPCs on Sevii Islands (dialogue-only, slots repurposed for Johto trainers)
 - Navel Rock access DISABLED (Four Island elder now gives Johto lore only; Ho-Oh/Lugia in Johto)
 - Giovanni Sevii boss fight (Lv62 team in Rocket Warehouse, gated behind both E4s)
 - Hoenn rival encounter in Celadon City (post 8+8 badges, Brendan/May)
-- Battle Dome true-final unlock (14 conditions: both E4s, 7 Brains, 8 Johto badges, Deoxys, Mew, Jirachi, Mewtwo)
+- Battle Dome true-final unlock (7 conditions: both E4s, 8 Johto badges, Deoxys, Mew, Jirachi, Mewtwo)
 - Battle Dome E4 + Steven teams (Lorelei/Will/Phoebe/Lance/Steven, Lv72-78)
 - Jirachi in Meteor Falls (gated behind both E4s)
 - Deoxys on Birth Island (Aurora Ticket from Mauville meteor scientist after Jirachi)
@@ -259,12 +284,18 @@ When every condition is met the Dome doors open. No fanfare. Just open.
   - Silver 3: Radio Tower 3F (during Rocket takeover)
   - Silver 4: Radio Tower 5F (alongside Giovanni climax)
   - Silver 5: Mt. Silver Summit (final rival battle, character growth)
-- Giovanni Radio Tower climax (TRAINER_JOHTO_GIOVANNI, Lv58 team)
+- Giovanni Radio Tower climax (TRAINER_JOHTO_GIOVANNI, Lv67-69 team)
   - Radio Tower 5F: back-to-back Giovanni + Silver 4 battles
   - Narrative ties to Sevii Islands arc ("After our encounter in the SEVII ISLANDS...")
   - Silver revealed as Giovanni's son, rejects father's path
   - Giovanni disbands Team Rocket permanently
-- MAPSEC consolidation: 44 Johto MAPSECs + 11 landmark aliases via .set directives in data/maps.s (assembly-only, mapped to MAPSEC_NONE to avoid u8 enum overflow)
+- MAPSEC u16 widening: MapHeader.regionMapSectionId changed from mapsec_u8_t to mapsec_u16_t, assembly .byte→.2byte, mapjson tool updated
+  - 51 Johto MAPSECs promoted to proper C enum entries in region_map_sections.json (towns, routes, dungeons, sub-locations)
+  - 3 reserved entries at indices 253-255 to avoid collision with METLOC_SPECIAL_EGG/IN_GAME_TRADE/FATEFUL_ENCOUNTER
+  - All .set directive aliases removed from data/maps.s
+  - mapsec_u8_t→mapsec_u16_t widened in: landmark, region_map, map_preview_screen, pokenav_match_call, frontier_pass, region_map_layout (Hoenn+Kanto+Sevii arrays)
+  - Save data structs (global.tv.h) left as mapsec_u8_t (Hoenn/Kanto only, no overflow risk)
+  - MAPSEC_NONE = 275, MAPSEC_COUNT = 276
 - Custom Johto trainer sprites integrated from pokemonHnS project (Falkner, Bugsy, Whitney, Morty, Chuck, Jasmine, Pryce, Clair, Giovanni)
   - 9 PNGs copied to graphics/trainers/front_pics/
   - 9 TRAINER_PIC_FRONT_* enum entries added to trainers.h
@@ -274,11 +305,22 @@ When every condition is met the Dome doors open. No fanfare. Just open.
   - TRAINER_JOHTO_GYM_ROD (885) through TRAINER_JOHTO_GYM_FRAN (898)
   - Act 3 scaled parties (Lv36-53), custom movesets, held items
   - trainerbattle_single scripts in all 7 gym maps
-  - TRAINERS_COUNT_EMERALD = 899, MAX = 899 (all Emerald slots filled)
+  - TRAINERS_COUNT_EMERALD = 905, MAX = 905
+
+- 15 Johto gym trainer stubs fixed with unique per-NPC dialogue (Azalea, Goldenrod, Ecruteak, Cianwood, Mahogany, Blackthorn)
+- 700+ Johto map stubs fully resolved (0 remaining)
+  - Manual fixes: Ilex Forest, New Bark Town, 8 cities, Lake of Rage, city interiors
+  - Automated scripts: tools/fix_remaining_stubs.py (134 files), tools/fix_story_stubs.py (50 files, 121 story triggers)
+- 8 Kimono Girls in Ecruteak Theater (expanded from 5: added Leafeon, Glaceon, Sylveon Eeveelutions)
+- 4 Sprout Tower Sage battles (TRAINER_JOHTO_SAGE_JIN through TRAINER_JOHTO_SAGE_TROY, Lv36-38)
+- 8 Kimono Girl battles (TRAINER_JOHTO_KIMONO_ZUKI through TRAINER_JOHTO_KIMONO_SAKURA, Lv45 single Eeveelution each)
+- Red battle at Mt. Silver Summit (TRAINER_JOHTO_RED, Lv80-88 full HGSS team: Pikachu/Charizard/Blastoise/Venusaur/Snorlax/Lapras)
+- Celebi at Ilex Forest Shrine (Lv45, gated behind FLAG_ALL_JOHTO_BADGES)
+- Eon Ticket from Steven's letter in Mossdeep (gated behind both E4s)
+- Sevii wild encounter enhancement (level scaling by visit tier, species variety added)
 
 ### 🔧 Pending
 - Silver trainer sprites (currently using Rival Late Frlg placeholder)
-- Remaining gym trainer stubs (Amy, Josh, May in Azalea; Samantha, Victoria in Goldenrod; Grace, Ping in Ecruteak; Lao, Lung in Cianwood; Brad, Clarissa, Douglas in Mahogany; Lola, Mike, Paul in Blackthorn) — NPC dialogue only, no trainer slots available
 
 ### Badge Flags
 - Hoenn badges: `FLAG_BADGE01_GET` through `FLAG_BADGE08_GET` (Emerald system flags)
@@ -294,8 +336,12 @@ When every condition is met the Dome doors open. No fanfare. Just open.
 - `FLAG_ALL_JOHTO_BADGES` (0x1F6) — Battle Dome unlock condition
 - `FLAG_DEFEATED_JOHTO_SILVER_1`, `FLAG_DEFEATED_JOHTO_SILVER_2` — Silver encounter gating
 
-### Johto Trainer Constants (opponents.h 871-898)
+### Johto Trainer Constants (opponents.h 864-904)
+- `TRAINER_JOHTO_SAGE_JIN` (864) through `TRAINER_JOHTO_SAGE_TROY` (867) — 4 Sprout Tower sages
+- `TRAINER_JOHTO_KIMONO_ZUKI` (868) through `TRAINER_JOHTO_KIMONO_MIKI` (870) — Kimono Girls (repurposed Sevii slots)
 - `TRAINER_JOHTO_FALKNER` (871) through `TRAINER_JOHTO_CLAIR` (878) — 8 gym leaders
 - `TRAINER_JOHTO_SILVER_1` (879) through `TRAINER_JOHTO_SILVER_5` (883) — rival encounters
 - `TRAINER_JOHTO_GIOVANNI` (884) — Radio Tower climax
 - `TRAINER_JOHTO_GYM_ROD` (885) through `TRAINER_JOHTO_GYM_FRAN` (898) — 14 gym trainers
+- `TRAINER_JOHTO_KIMONO_SAYO` (899) through `TRAINER_JOHTO_KIMONO_SAKURA` (903) — Kimono Girls (new slots)
+- `TRAINER_JOHTO_RED` (904) — Mt. Silver Summit

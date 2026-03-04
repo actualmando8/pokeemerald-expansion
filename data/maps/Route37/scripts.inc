@@ -4,7 +4,10 @@ Route37_MapScripts::
 @ Johto map scripts (imported from HnS, stubs)
 
 EcruteakCity_EventScript_Trigger::
-	return
+	lockall
+	msgbox Route37_Text_EcruteakAhead, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route37_EventScript_Greg::
 	msgbox Route37_Text_Greg, MSGBOX_NPC
@@ -41,3 +44,10 @@ Route37_Text_TwinAnn:
 
 Route37_Text_TwinAnne:
 	.string "My sibling and I both love\nPOKeMON!$"
+
+Route37_Text_EcruteakAhead:
+	.string "The ancient rooftops of\n"
+	.string "ECRUTEAK CITY come into view.\p"
+	.string "A faint aura of legend\n"
+	.string "hangs over the city...$"
+

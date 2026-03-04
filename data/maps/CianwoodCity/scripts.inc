@@ -36,7 +36,10 @@ CianwoodCity_EventScript_PokefanM::
 	end
 
 CianwoodCity_EventScript_SuicuneTrigger::
-	return
+	lockall
+	msgbox CianwoodCity_Text_SuicuneTrigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 CianwoodCity_EventScript_Youngster::
 	msgbox CianwoodCity_Text_Youngster, MSGBOX_NPC
@@ -82,3 +85,13 @@ CianwoodCity_Text_Pharmacy:
 	.string "rare herbs found only in\l"
 	.string "CIANWOOD. They're bitter,\l"
 	.string "but very effective!$"
+
+CianwoodCity_Text_SuicuneTrigger:
+	.string "A beautiful, regal POKeMON\n"
+	.string "stands at the water's edge!\p"
+	.string "Its crystalline mane shimmers\n"
+	.string "in the light...\p"
+	.string "SUICUNE gazes at you for a\n"
+	.string "moment, then leaps across\l"
+	.string "the sea and vanishes!$"
+

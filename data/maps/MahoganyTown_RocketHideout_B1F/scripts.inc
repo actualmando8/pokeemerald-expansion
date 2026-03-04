@@ -42,7 +42,8 @@ RocketHideout_B1F_EventScript_Item_Revive::
 	end
 
 RocketHideout_B1F_EventScript_Rocket16::
-	return
+	msgbox RocketHideout_B1F_Text_Rocket16, MSGBOX_NPC
+	end
 
 RocketHideout_B1F_EventScript_Switch::
 	msgbox RocketHideout_B1F_Text_Switch, MSGBOX_NPC
@@ -53,37 +54,60 @@ RocketHideout_B1F_EventScript_TrainerJed::
 	end
 
 RocketHideout_B1F_TriggerTest::
-	return
+	lockall
+	msgbox RocketHideout_B1F_Text_TriggerTest, MSGBOX_DEFAULT
+	releaseall
+	end
 
 RocketHideout_B1F_Trigger_SpawnGruntStatue1::
-	return
+	lockall
+	msgbox RocketHideout_B1F_Text_StatueAlarm, MSGBOX_DEFAULT
+	releaseall
+	end
 
 RocketHideout_B1F_Trigger_SpawnGruntStatue2::
-	return
+	lockall
+	msgbox RocketHideout_B1F_Text_StatueAlarm, MSGBOX_DEFAULT
+	releaseall
+	end
 
 RocketHideout_B1F_Trigger_SpawnGruntStatue3::
-	return
+	lockall
+	msgbox RocketHideout_B1F_Text_StatueAlarm, MSGBOX_DEFAULT
+	releaseall
+	end
 
 RocketHideout_B1F_Trigger_SpawnGruntStatue4::
-	return
+	lockall
+	msgbox RocketHideout_B1F_Text_StatueAlarm, MSGBOX_DEFAULT
+	releaseall
+	end
 
 RocketHideout_B1F_Trigger_SpawnGruntStatue5::
-	return
+	lockall
+	msgbox RocketHideout_B1F_Text_StatueAlarm, MSGBOX_DEFAULT
+	releaseall
+	end
 
 RocketHideout_B1F_Trigger_Statue1::
-	return
+	msgbox RocketHideout_B1F_Text_StatueExamine, MSGBOX_SIGN
+	end
 
 RocketHideout_B1F_Trigger_Statue2::
-	return
+	msgbox RocketHideout_B1F_Text_StatueExamine, MSGBOX_SIGN
+	end
 
 RocketHideout_B1F_Trigger_Statue3::
-	return
+	msgbox RocketHideout_B1F_Text_StatueExamine, MSGBOX_SIGN
+	end
 
 RocketHideout_B1F_Trigger_Statue4::
-	return
+	msgbox RocketHideout_B1F_Text_StatueExamine, MSGBOX_SIGN
+	end
 
 RocketHideout_B1F_Trigger_Statue5::
-	return
+	msgbox RocketHideout_B1F_Text_StatueExamine, MSGBOX_SIGN
+	end
 
 
 RocketHideout_B1F_Text_Persian:
@@ -97,3 +121,25 @@ RocketHideout_B1F_Text_Switch:
 
 RocketHideout_B1F_Text_TrainerJed:
 	.string "...$"
+
+RocketHideout_B1F_Text_Rocket16:
+	.string "ROCKET GRUNT: You'll never\n"
+	.string "make it past our defenses!\p"
+	.string "The passwords to the doors\n"
+	.string "are hidden in the statues!$"
+
+RocketHideout_B1F_Text_TriggerTest:
+	.string "An alarm sounds!\p"
+	.string "Security has been triggered!$"
+
+RocketHideout_B1F_Text_StatueAlarm:
+	.string "The statue's eyes glow red!\p"
+	.string "An alarm sounds -- a GRUNT\n"
+	.string "rushes in to investigate!$"
+
+RocketHideout_B1F_Text_StatueExamine:
+	.string "A suspicious-looking statue.\n"
+	.string "Its eyes seem to follow you.\p"
+	.string "There might be a camera\n"
+	.string "hidden inside...$"
+

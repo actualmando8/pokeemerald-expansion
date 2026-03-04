@@ -110,14 +110,7 @@ FiveIsland_Meadow_Text_Rocket3PostBattle::
 	.string "the passwords anyway.$"
 
 FiveIsland_Meadow_EventScript_Spenser::
-	trainerbattle_single TRAINER_SEVII_SPENSER, FiveIsland_Meadow_Text_SpenserIntro, FiveIsland_Meadow_Text_SpenserDefeat, FiveIsland_Meadow_EventScript_SpenserDefeated
-	msgbox FiveIsland_Meadow_Text_SpenserPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-FiveIsland_Meadow_EventScript_SpenserDefeated::
-	setflag FLAG_DEFEATED_SEVII_SPENSER
-	msgbox FiveIsland_Meadow_Text_SpenserDefeat, MSGBOX_DEFAULT
-	release
+	msgbox FiveIsland_Meadow_Text_SpenserIntro, MSGBOX_NPC
 	end
 
 FiveIsland_Meadow_Text_SpenserIntro::

@@ -28,7 +28,10 @@ MahoganyTown_EventScript_Merchant::
 	end
 
 MahoganyTown_EventScript_MerchantTrigger::
-	return
+	lockall
+	msgbox MahoganyTown_Text_MerchantTrigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 MahoganyTown_EventScript_Sign::
 	msgbox MahoganyTown_Text_Sign, MSGBOX_SIGN
@@ -67,3 +70,13 @@ MahoganyTown_Text_Sign:
 	.string "MAHOGANY TOWN\n"
 	.string "Welcome to the Home of\l"
 	.string "the Ninja$"
+
+MahoganyTown_Text_MerchantTrigger:
+	.string "MERCHANT: Hey! Looking for\n"
+	.string "souvenirs? RageCandyBars\l"
+	.string "are the local specialty!\p"
+	.string "...Wait, you look like a\n"
+	.string "strong TRAINER. Something\l"
+	.string "strange is going on at the\l"
+	.string "LAKE OF RAGE up north...$"
+

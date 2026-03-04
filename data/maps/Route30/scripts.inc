@@ -12,7 +12,10 @@ Route30_EventScript_Bugcatcher_Don::
 	end
 
 Route30_EventScript_ElmCall_Trigger::
-	return
+	lockall
+	msgbox Route30_Text_ElmCall, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route30_EventScript_Girl::
 	msgbox Route30_Text_Girl, MSGBOX_NPC
@@ -71,3 +74,12 @@ Route30_Text_Youngster_Joey_Fighting:
 
 Route30_Text_Youngster_Mikey:
 	.string "I want to be the best TRAINER\nin all of JOHTO!$"
+
+Route30_Text_ElmCall:
+	.string "... ... ...\p"
+	.string "The POKeGEAR rings!\p"
+	.string "ELM: {PLAYER}? Are you\n"
+	.string "OK? MR. POKeMON's house\l"
+	.string "is just ahead on ROUTE 30.\p"
+	.string "Be careful out there!$"
+

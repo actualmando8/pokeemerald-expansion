@@ -6,7 +6,10 @@ BlackThornCity_EventScript_Sage::
 	end
 
 BlackThornCity_Trigger_Sage::
-	return
+	lockall
+	msgbox BlackthornCity_Text_SageTrigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 BlackthornCity_EventScript_BlackBelt::
 	msgbox BlackthornCity_Text_BlackBelt, MSGBOX_NPC
@@ -101,4 +104,10 @@ BlackthornCity_Text_Santos:
 BlackthornCity_Text_Youngster:
 	.string "I want to catch every kind of\n"
 	.string "POKeMON in JOHTO!$"
+
+BlackthornCity_Text_SageTrigger:
+	.string "SAGE: The DRAGON's DEN lies\n"
+	.string "behind the GYM.\p"
+	.string "Only those who earn the\n"
+	.string "RISING BADGE may enter.$"
 

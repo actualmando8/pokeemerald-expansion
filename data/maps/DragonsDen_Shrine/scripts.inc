@@ -16,13 +16,22 @@ DragonsDen_Shrine_EventScript_Elder3::
 	end
 
 DragonsDen_Shrine_Trigger_ElderQuizLeft::
-	return
+	lockall
+	msgbox DragonsDen_Shrine_Text_ElderQuiz, MSGBOX_DEFAULT
+	releaseall
+	end
 
 DragonsDen_Shrine_Trigger_ElderQuizRight::
-	return
+	lockall
+	msgbox DragonsDen_Shrine_Text_ElderQuiz, MSGBOX_DEFAULT
+	releaseall
+	end
 
 DragonsDen_Shrine_Trigger_ElderQuizTop::
-	return
+	lockall
+	msgbox DragonsDen_Shrine_Text_ElderQuiz, MSGBOX_DEFAULT
+	releaseall
+	end
 
 DragonsDen_Shrine_Text_Elder:
 	.string "The legends say that a great\n"
@@ -35,3 +44,16 @@ DragonsDen_Shrine_Text_Elder2:
 
 DragonsDen_Shrine_Text_Elder3:
 	.string "...$"
+
+DragonsDen_Shrine_Text_ElderQuiz:
+	.string "ELDER: Welcome, young one.\n"
+	.string "I will test your heart.\p"
+	.string "Tell me... What are POKeMON\n"
+	.string "to you?\p"
+	.string "...\p"
+	.string "I see. Your answer reveals\n"
+	.string "a pure heart. You truly care\l"
+	.string "for your POKeMON.\p"
+	.string "CLAIR! Give this TRAINER\n"
+	.string "the RISING BADGE at once!$"
+

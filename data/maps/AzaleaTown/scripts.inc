@@ -43,10 +43,12 @@ AzaleaTown_EventScript_Lass::
 	end
 
 AzaleaTown_EventScript_Rocket1::
-	return
+	msgbox AzaleaTown_Text_Rocket, MSGBOX_NPC
+	end
 
 AzaleaTown_EventScript_Rocket2::
-	return
+	msgbox AzaleaTown_Text_Rocket, MSGBOX_NPC
+	end
 
 AzaleaTown_EventScript_Slowpoke::
 	lock
@@ -128,3 +130,10 @@ AzaleaTown_Text_YoungsterHint:
 AzaleaTown_Text_Slowpoke:
 	.string "SLOWPOKE is yawning lazily.\n"
 	.string "... ... ... ...$"
+
+AzaleaTown_Text_Rocket:
+	.string "ROCKET GRUNT: Get lost, kid!\n"
+	.string "We're harvesting SLOWPOKE\l"
+	.string "TAILS here!\p"
+	.string "It's none of your business!$"
+

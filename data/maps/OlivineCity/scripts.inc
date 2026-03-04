@@ -48,7 +48,10 @@ OlivineCity_EventScript_Sign::
 	end
 
 OlivineCity_EventScript_SilverTrigger::
-	return
+	lockall
+	msgbox OlivineCity_Text_SilverTrigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 OlivineCity_EventScript_Youngster::
 	msgbox OlivineCity_Text_Youngster, MSGBOX_NPC
@@ -96,3 +99,13 @@ OlivineCity_Text_Sailor2:
 	.string "The WHIRL ISLANDS are out\n"
 	.string "there too -- watch for\l"
 	.string "whirlpools!$"
+
+OlivineCity_Text_SilverTrigger:
+	.string "SILVER: ...The GYM LEADER\n"
+	.string "here isn't in the GYM.\p"
+	.string "She's off tending to some\n"
+	.string "sick POKeMON. What a waste\l"
+	.string "of time.\p"
+	.string "I'm going to CIANWOOD.\n"
+	.string "Don't follow me.$"
+

@@ -38,22 +38,28 @@ GoldenrodCity_EventScript_PokefanM::
 	end
 
 GoldenrodCity_EventScript_Rocket1::
-	return
+	msgbox GoldenrodCity_Text_Rocket1, MSGBOX_NPC
+	end
 
 GoldenrodCity_EventScript_Rocket2::
-	return
+	msgbox GoldenrodCity_Text_Rocket2, MSGBOX_NPC
+	end
 
 GoldenrodCity_EventScript_Rocket3::
-	return
+	msgbox GoldenrodCity_Text_Rocket3, MSGBOX_NPC
+	end
 
 GoldenrodCity_EventScript_Rocket4::
-	return
+	msgbox GoldenrodCity_Text_Rocket4, MSGBOX_NPC
+	end
 
 GoldenrodCity_EventScript_Rocket5::
-	return
+	msgbox GoldenrodCity_Text_Rocket5, MSGBOX_NPC
+	end
 
 GoldenrodCity_EventScript_Rocket6::
-	return
+	msgbox GoldenrodCity_Text_Rocket6, MSGBOX_NPC
+	end
 
 GoldenrodCity_EventScript_RocketScout::
 	msgbox GoldenrodCity_Text_RocketScout, MSGBOX_NPC
@@ -112,7 +118,10 @@ GoldenrodCity_EventScript_Youngster2::
 	end
 
 GoldenrodCity_Trigger_Music::
-	return
+	lockall
+	msgbox GoldenrodCity_Text_MusicTrigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 GoldenrodCity_Text_BeautyHint:
 	.string "GOLDENROD is the biggest city\n"
@@ -196,3 +205,44 @@ GoldenrodCity_Text_Snubbull:
 
 GoldenrodCity_Text_RocketScout:
 	.string "...$"
+
+GoldenrodCity_Text_MusicTrigger:
+	.string "The hustle and bustle of\n"
+	.string "GOLDENROD CITY fills the air!$"
+
+GoldenrodCity_Text_Rocket1:
+	.string "ROCKET GRUNT: TEAM ROCKET\n"
+	.string "has taken over this city!\p"
+	.string "Don't get in our way if you\n"
+	.string "know what's good for you!$"
+
+GoldenrodCity_Text_Rocket2:
+	.string "ROCKET GRUNT: TEAM ROCKET\n"
+	.string "has taken over this city!\p"
+	.string "Don't get in our way if you\n"
+	.string "know what's good for you!$"
+
+GoldenrodCity_Text_Rocket3:
+	.string "ROCKET GRUNT: TEAM ROCKET\n"
+	.string "has taken over this city!\p"
+	.string "Don't get in our way if you\n"
+	.string "know what's good for you!$"
+
+GoldenrodCity_Text_Rocket4:
+	.string "ROCKET GRUNT: TEAM ROCKET\n"
+	.string "has taken over this city!\p"
+	.string "Don't get in our way if you\n"
+	.string "know what's good for you!$"
+
+GoldenrodCity_Text_Rocket5:
+	.string "ROCKET GRUNT: TEAM ROCKET\n"
+	.string "has taken over this city!\p"
+	.string "Don't get in our way if you\n"
+	.string "know what's good for you!$"
+
+GoldenrodCity_Text_Rocket6:
+	.string "ROCKET GRUNT: TEAM ROCKET\n"
+	.string "has taken over this city!\p"
+	.string "Don't get in our way if you\n"
+	.string "know what's good for you!$"
+

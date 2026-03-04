@@ -32,7 +32,10 @@ GoldenrodCity_RadioTower_4F4_EventScript_Sign2::
 	end
 
 GoldenrodCity_RadioTower_5F_EventScript_Trigger_NPCS::
-	return
+	lockall
+	msgbox GoldenrodCity_RadioTower_Text_TriggerNPCS, MSGBOX_DEFAULT
+	releaseall
+	end
 
 GoldenrodRaidoTower4_EventScript_Grunt28::
 	msgbox GoldenrodRaidoTower4_Text_Grunt28, MSGBOX_NPC
@@ -75,3 +78,10 @@ GoldenrodRaidoTower4_Text_Grunt9:
 
 GoldenrodRaidoTower4_Text_Proton:
 	.string "...$"
+
+GoldenrodCity_RadioTower_Text_TriggerNPCS:
+	.string "DIRECTOR: Thank you for\n"
+	.string "saving the RADIO TOWER!\p"
+	.string "TEAM ROCKET has been driven\n"
+	.string "out! You're a true hero!$"
+

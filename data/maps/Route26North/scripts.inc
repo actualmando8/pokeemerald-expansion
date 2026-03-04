@@ -4,7 +4,10 @@ Route26North_MapScripts::
 @ Johto map scripts (imported from HnS, stubs)
 
 Route26North_Trigger::
-	return
+	lockall
+	msgbox Route26North_Text_Trigger, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route26_EventScript_Beth::
 	msgbox Route26_Text_Beth, MSGBOX_NPC
@@ -13,3 +16,9 @@ Route26_EventScript_Beth::
 
 Route26_Text_Beth:
 	.string "...$"
+
+Route26North_Text_Trigger:
+	.string "VICTORY ROAD lies ahead.\n"
+	.string "Only the strongest TRAINERS\l"
+	.string "may pass...$"
+

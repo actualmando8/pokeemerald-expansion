@@ -4,37 +4,31 @@ MtSilver_SummitDay_MapScripts::
 MtSilver_SummitDay_EventScript_Red::
 	lock
 	faceplayer
-	msgbox MtSilver_Text_SilverAppears
-	trainerbattle_no_intro TRAINER_JOHTO_SILVER_5, MtSilver_Text_SilverDefeat5
-	msgbox MtSilver_Text_SilverPostBattle5
+	msgbox MtSilver_Text_RedAppears
+	trainerbattle_no_intro TRAINER_JOHTO_RED, MtSilver_Text_RedDefeat
+	msgbox MtSilver_Text_RedPostBattle
 	release
 	end
 
-MtSilver_Text_SilverAppears:
-	.string "SILVER: …{PLAYER}.\p"
-	.string "I knew you'd make it here.\p"
-	.string "MT. SILVER… The strongest\n"
-	.string "TRAINERS in the world come\l"
-	.string "here to train.\p"
-	.string "I've been training here ever\n"
-	.string "since the RADIO TOWER.\p"
-	.string "I've learned what it truly\n"
-	.string "means to be strong.\p"
-	.string "This time, I won't lose.\n"
-	.string "Let's battle!$"
+MtSilver_Text_RedAppears:
+	.string "…\p"
+	.string "A young man stands silently\n"
+	.string "at the summit.\p"
+	.string "His cap is pulled low, but\n"
+	.string "his eyes burn with intensity.\p"
+	.string "Without a word, he reaches\n"
+	.string "for a POKé BALL…$"
 
-MtSilver_Text_SilverDefeat5:
-	.string "…I lost again.\n"
-	.string "But this time, it's different.$"
+MtSilver_Text_RedDefeat:
+	.string "…$"
 
-MtSilver_Text_SilverPostBattle5:
-	.string "SILVER: …Thank you, {PLAYER}.\p"
-	.string "I finally understand.\n"
-	.string "The reason you're strong…\p"
-	.string "It's because you truly care\n"
-	.string "about your POKéMON.\p"
-	.string "I'll keep training. And one day,\n"
-	.string "I'll surpass you.\p"
-	.string "…Until then, take care of\n"
-	.string "yourself.$"
+MtSilver_Text_RedPostBattle:
+	.string "…\p"
+	.string "RED smiles faintly.\p"
+	.string "He tips his cap to you,\n"
+	.string "then turns and walks away\l"
+	.string "into the falling snow.\p"
+	.string "The strongest TRAINER in\n"
+	.string "the world has acknowledged\l"
+	.string "you as an equal.$"
 

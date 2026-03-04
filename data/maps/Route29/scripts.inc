@@ -36,7 +36,10 @@ Route29_EventScript_Youngster::
 	end
 
 Route29_Trigger_Monview::
-	return
+	lockall
+	msgbox Route29_Text_Monview, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Route29_Text_Boy:
 	.string "Did you know there are POKeMON\n"
@@ -63,3 +66,8 @@ Route29_Text_Sign:
 
 Route29_Text_Tuscany:
 	.string "...$"
+
+Route29_Text_Monview:
+	.string "Wild POKeMON are rustling in\n"
+	.string "the tall grass nearby...$"
+
