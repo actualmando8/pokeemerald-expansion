@@ -551,6 +551,14 @@ bool32 TryRunFromBattle(enum BattlerId battler)
     if (FlagGet(B_FLAG_NO_RUNNING))
         return effect;
 
+    // Always allow running from wild battles.
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+    {
+        gCurrentTurnActionNumber = gBattlersCount;
+        gBattleOutcome = B_OUTCOME_RAN;
+        return TRUE;
+    }
+
     if (gBattleMons[battler].item == ITEM_ENIGMA_BERRY_E_READER)
         holdEffect = gEnigmaBerries[battler].holdEffect;
     else

@@ -25,7 +25,7 @@ FiveIsland_ResortGorgeous_House_EventScript_RequestTookTooLong::
 	end
 
 FiveIsland_ResortGorgeous_House_EventScript_CheckForRequestedMon::
-	copyvar VAR_0x8004, VAR_RESORT_GORGEOUS_REQUESTED_MON
+	setorcopyvar VAR_0x8004, VAR_RESORT_GORGEOUS_REQUESTED_MON
 	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
 	goto_if_eq VAR_RESULT, TRUE, FiveIsland_ResortGorgeous_House_EventScript_ShowRequestedMon
 	goto FiveIsland_ResortGorgeous_House_EventScript_RequestMon

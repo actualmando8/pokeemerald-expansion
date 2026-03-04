@@ -1,5 +1,10 @@
 Mahoganytown_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Mahoganytown_OnTransition
 	.byte 0
+
+Mahoganytown_OnTransition::
+	setflag FLAG_WORLD_MAP_MAHOGANY_TOWN
+	end
 
 @ Johto map scripts (imported from HnS, stubs)
 

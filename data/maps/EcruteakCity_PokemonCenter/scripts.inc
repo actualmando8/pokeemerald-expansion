@@ -1,5 +1,10 @@
 EcruteakCity_PokemonCenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, EcruteakCity_PokemonCenter_OnTransition
 	.byte 0
+
+EcruteakCity_PokemonCenter_OnTransition::
+	setrespawn HEAL_LOCATION_ECRUTEAK_CITY
+	end
 
 @ Johto map scripts (imported from HnS, stubs)
 

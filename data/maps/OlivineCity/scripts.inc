@@ -1,5 +1,10 @@
 OlivineCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, OlivineCity_OnTransition
 	.byte 0
+
+OlivineCity_OnTransition::
+	setflag FLAG_WORLD_MAP_OLIVINE_CITY
+	end
 
 @ Johto map scripts (imported from HnS, stubs)
 

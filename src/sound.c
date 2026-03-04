@@ -5,6 +5,7 @@
 #include "m4a.h"
 #include "main.h"
 #include "pokemon.h"
+#include "regions.h"
 #include "constants/cries.h"
 #include "constants/songs.h"
 #include "task.h"
@@ -624,4 +625,14 @@ bool8 IsSpecialSEPlaying(void)
     if (!(gMPlayInfo_SE3.status & MUSICPLAYER_STATUS_TRACK))
         return FALSE;
     return TRUE;
+}
+
+void Script_PlayRegionFanfareObtainItem(void)
+{
+    PlayFanfare(GetCurrentRegion() == REGION_KANTO ? MUS_RG_OBTAIN_KEY_ITEM : MUS_OBTAIN_ITEM);
+}
+
+void Script_PlayRegionFanfareObtainTMHM(void)
+{
+    PlayFanfare(GetCurrentRegion() == REGION_KANTO ? MUS_RG_OBTAIN_KEY_ITEM : MUS_OBTAIN_TMHM);
 }

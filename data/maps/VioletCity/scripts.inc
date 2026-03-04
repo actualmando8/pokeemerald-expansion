@@ -1,5 +1,10 @@
 VioletCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, VioletCity_OnTransition
 	.byte 0
+
+VioletCity_OnTransition::
+	setflag FLAG_WORLD_MAP_VIOLET_CITY
+	end
 
 @ Johto map scripts (imported from HnS, stubs)
 

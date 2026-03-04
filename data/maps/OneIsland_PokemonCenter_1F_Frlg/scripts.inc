@@ -243,7 +243,7 @@ OneIsland_PokemonCenter_1F_EventScript_CelioJustGivenSapphire::
 
 OneIsland_PokemonCenter_1F_EventScript_GiveCelioSapphire::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_OBTAIN_TMHM
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message OneIsland_PokemonCenter_1F_Text_HandedSapphireToCelio
 	waitmessage
 	waitfanfare
@@ -289,7 +289,7 @@ OneIsland_PokemonCenter_1F_EventScript_ExplainRainbowPass::
 OneIsland_PokemonCenter_1F_EventScript_GiveCelioRuby::
 	msgbox OneIsland_PokemonCenter_1F_Text_OhThats
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_OBTAIN_TMHM
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message OneIsland_PokemonCenter_1F_Text_HandedRubyToCelio
 	waitmessage
 	waitfanfare

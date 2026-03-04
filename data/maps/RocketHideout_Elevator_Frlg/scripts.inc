@@ -6,7 +6,7 @@ RocketHideout_Elevator_EventScript_FloorSelect::
 	goto_if_unset FLAG_CAN_USE_ROCKET_HIDEOUT_LIFT, RocketHideout_Elevator_EventScript_NeedKey
 	setvar VAR_0x8004, 2
 	call_if_unset FLAG_TEMP_2, EventScript_GetElevatorFloor
-	copyvar VAR_0x8005, VAR_ELEVATOR_FLOOR
+	setorcopyvar VAR_0x8005, VAR_ELEVATOR_FLOOR
 	special DrawElevatorCurrentFloorWindow
 	message gText_WantWhichFloor
 	waitmessage

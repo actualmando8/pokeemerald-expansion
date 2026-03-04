@@ -1,5 +1,10 @@
 CianwoodPokecenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CianwoodPokecenter_OnTransition
 	.byte 0
+
+CianwoodPokecenter_OnTransition::
+	setrespawn HEAL_LOCATION_CIANWOOD_CITY
+	end
 
 @ Johto map scripts (imported from HnS, stubs)
 

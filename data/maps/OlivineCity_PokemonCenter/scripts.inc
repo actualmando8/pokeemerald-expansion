@@ -1,5 +1,10 @@
 OlivineCity_PokemonCenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, OlivineCity_PokemonCenter_OnTransition
 	.byte 0
+
+OlivineCity_PokemonCenter_OnTransition::
+	setrespawn HEAL_LOCATION_OLIVINE_CITY
+	end
 
 @ Johto map scripts (imported from HnS, stubs)
 

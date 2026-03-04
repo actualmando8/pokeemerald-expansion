@@ -1,5 +1,10 @@
 VioletCity_PokemonCenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, VioletCity_PokemonCenter_OnTransition
 	.byte 0
+
+VioletCity_PokemonCenter_OnTransition::
+	setrespawn HEAL_LOCATION_VIOLET_CITY
+	end
 
 VioletCity_PokemonCenter_EVentScript_Kid::
 	msgbox VioletCity_PokemonCenter_Text_Kid, MSGBOX_NPC

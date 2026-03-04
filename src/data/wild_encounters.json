@@ -43038,9 +43038,9 @@
                 "species": "SPECIES_GOLBAT"
               },
               {
-                "min_level": 57,
-                "max_level": 60,
-                "species": "SPECIES_SWINUB"
+                "min_level": 56,
+                "max_level": 59,
+                "species": "SPECIES_VULPIX_ALOLA"
               },
               {
                 "min_level": 56,
@@ -43132,9 +43132,9 @@
                 "species": "SPECIES_ZUBAT"
               },
               {
-                "min_level": 58,
-                "max_level": 61,
-                "species": "SPECIES_SWINUB"
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_VULPIX_ALOLA"
               },
               {
                 "min_level": 57,
@@ -43188,7 +43188,7 @@
               {
                 "min_level": 58,
                 "max_level": 61,
-                "species": "SPECIES_SWINUB"
+                "species": "SPECIES_VULPIX_ALOLA"
               },
               {
                 "min_level": 58,
@@ -43257,7 +43257,7 @@
               {
                 "min_level": 58,
                 "max_level": 61,
-                "species": "SPECIES_SWINUB"
+                "species": "SPECIES_VULPIX_ALOLA"
               },
               {
                 "min_level": 58,

@@ -7,7 +7,7 @@ TrainerTower_Elevator_EventScript_FloorSelect::
 	lockall
 	setvar VAR_0x8004, 6
 	call_if_unset FLAG_TEMP_2, EventScript_GetElevatorFloor
-	copyvar VAR_0x8005, VAR_ELEVATOR_FLOOR
+	setorcopyvar VAR_0x8005, VAR_ELEVATOR_FLOOR
 	special DrawElevatorCurrentFloorWindow
 	message gText_WantWhichFloor
 	waitmessage

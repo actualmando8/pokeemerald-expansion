@@ -54,7 +54,7 @@ PokemonLeague_ChampionsRoom_EventScript_EnterRoom::
 	call_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_ChampionsRoom_EventScript_RematchIntro
 	setflag FLAG_TEMP_3
 	setflag FLAG_TEMP_5
-	savebgm MUS_VICTORY_GYM_LEADER
+	savebgm MUS_RG_VICTORY_GYM_LEADER
 	call_if_unset FLAG_IS_CHAMPION, PokemonLeague_ChampionsRoom_EventScript_Battle
 	call_if_set FLAG_IS_CHAMPION, PokemonLeague_ChampionsRoom_EventScript_Rematch
 	setflag FLAG_TEMP_4

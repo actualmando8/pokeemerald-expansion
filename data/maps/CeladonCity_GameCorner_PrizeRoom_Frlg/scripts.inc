@@ -208,7 +208,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_ReceivedMonParty::
 	removecoins VAR_TEMP_2
 	updatecoinsbox 0, 5
 	bufferspeciesname STR_VAR_1, VAR_TEMP_1
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message gText_PlayerObtainedTheMon
 	waitmessage
 	waitfanfare
@@ -221,7 +221,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_ReceivedMonPC::
 	removecoins VAR_TEMP_2
 	updatecoinsbox 0, 5
 	bufferspeciesname STR_VAR_1, VAR_TEMP_1
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message gText_PlayerObtainedTheMon
 	waitmessage
 	waitfanfare

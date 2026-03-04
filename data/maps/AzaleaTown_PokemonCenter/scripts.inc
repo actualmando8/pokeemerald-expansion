@@ -1,5 +1,10 @@
 AzaleaTown_PokemonCenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, AzaleaTown_PokemonCenter_OnTransition
 	.byte 0
+
+AzaleaTown_PokemonCenter_OnTransition::
+	setrespawn HEAL_LOCATION_AZALEA_TOWN
+	end
 
 @ Johto map scripts (imported from HnS, stubs)
 

@@ -1,5 +1,10 @@
 BlackthornCity_PokemonCenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, BlackthornCity_PokemonCenter_OnTransition
 	.byte 0
+
+BlackthornCity_PokemonCenter_OnTransition::
+	setrespawn HEAL_LOCATION_BLACKTHORN_CITY
+	end
 
 @ Johto map scripts (imported from HnS, stubs)
 

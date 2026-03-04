@@ -127,7 +127,7 @@ SilphCo_7F_EventScript_LaprasGuy::
 
 SilphCo_7F_EventScript_ReceiveLaprasParty::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message SilphCo_7F_Text_ObtainedLaprasFromEmployee
 	waitmessage
 	waitfanfare
@@ -141,7 +141,7 @@ SilphCo_7F_EventScript_ReceiveLaprasParty::
 
 SilphCo_7F_EventScript_ReceiveLaprasPC::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	message SilphCo_7F_Text_ObtainedLaprasFromEmployee
 	waitmessage
 	waitfanfare

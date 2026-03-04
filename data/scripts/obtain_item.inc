@@ -72,11 +72,11 @@ EventScript_NoRoomForItem::
 	return
 
 EventScript_PlayFanfareObtainedItem::
-	playfanfare MUS_OBTAIN_ITEM
+	callnative Script_PlayRegionFanfareObtainItem
 	return
 
 EventScript_PlayFanfareObtainedTMHM::
-	playfanfare MUS_OBTAIN_TMHM
+	callnative Script_PlayRegionFanfareObtainTMHM
 	return
 
 Std_ObtainDecoration::
@@ -92,7 +92,7 @@ EventScript_ObtainDecorationMessage::
 	return
 
 EventScript_ObtainedDecor::
-	playfanfare MUS_OBTAIN_ITEM
+	callnative Script_PlayRegionFanfareObtainItem
 	message gText_ObtainedTheDecor
 	waitfanfare
 	msgbox gText_TheDecorWasTransferredToThePC, MSGBOX_DEFAULT
