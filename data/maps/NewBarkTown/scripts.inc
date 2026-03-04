@@ -54,11 +54,11 @@ NewBarkTown_Text_ElmsMailbox:
 	.string "PROF. ELM's HOUSE$"
 
 NewBarkTown_Text_FatMan:
-	.string "NEW BARK TOWN is small, but\n"
-	.string "PROF. ELM's lab puts us on\l"
-	.string "the map!\p"
-	.string "He's always researching\n"
-	.string "POKeMON evolution patterns.$"
+	.string "You came from KANTO? Wow!\p"
+	.string "PROF. ELM has been expecting\n"
+	.string "someone important.\p"
+	.string "You should go see him\n"
+	.string "at his lab right away!$"
 
 NewBarkTown_Text_LabSign:
 	.string "PROF. ELM's POKeMON LAB$"
@@ -66,8 +66,9 @@ NewBarkTown_Text_LabSign:
 NewBarkTown_Text_Lass:
 	.string "The wind blows a new beginning\n"
 	.string "from this town every day.\p"
-	.string "That's why it's called\n"
-	.string "NEW BARK TOWN!$"
+	.string "A red-haired boy came through\n"
+	.string "not long ago. He seemed\l"
+	.string "really intense...$"
 
 NewBarkTown_Text_PlayersMailbox:
 	.string "{PLAYER}'s house.$"
@@ -81,9 +82,9 @@ NewBarkTown_Text_DoorLocked:
 	.string "The door is locked.$"
 
 NewBarkTown_Text_LeaveTrigger:
-	.string "PROF. ELM's words echo...\p"
-	.string "Be careful out there!\n"
-	.string "The world is vast!$"
+	.string "ROUTE 29 lies ahead.\p"
+	.string "The path leads west toward\n"
+	.string "CHERRYGROVE CITY.$"
 
 NewBarkTown_Text_SilverPeek:
 	.string "...\p"
@@ -91,4 +92,7 @@ NewBarkTown_Text_SilverPeek:
 	.string "through the lab window.\p"
 	.string "He notices you and glares\n"
 	.string "before walking away...$"
+
+NewBarkTown_Text_Wooper:
+	.string "WOOPER: Woop!$"
 

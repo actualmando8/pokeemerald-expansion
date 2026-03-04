@@ -69,37 +69,67 @@ Route27_Text_Fatman:
 
 
 Route27_Text_BaobaCall:
-	.string "...$"
+	.string "... ... ...\p"
+	.string "BAOBA here! I run the\n"
+	.string "SAFARI ZONE in JOHTO!\p"
+	.string "Come visit sometime!$"
 
 Route27_Text_Blake:
-	.string "...$"
+	.string "ROUTE 27 connects KANTO\n"
+	.string "and JOHTO.\p"
+	.string "The POKeMON here are tough.\n"
+	.string "You'd better be prepared!$"
 
 Route27_Text_Brian:
-	.string "...$"
+	.string "I came from JOHTO to fish\n"
+	.string "in KANTO's waters.\p"
+	.string "But the fishing here isn't\n"
+	.string "half as good as back home!$"
 
 Route27_Text_FirstSteps:
-	.string "...$"
+	.string "This is where KANTO ends\n"
+	.string "and JOHTO begins.\p"
+	.string "Your first steps into a\n"
+	.string "whole new region!$"
 
 Route27_Text_Gilbert:
-	.string "...$"
+	.string "The waterfall up ahead leads\n"
+	.string "to TOHJO FALLS.\p"
+	.string "It's a natural border between\n"
+	.string "the two regions.$"
 
 Route27_Text_Item_Moonstone:
-	.string "...$"
+	.string "{PLAYER} found a MOON STONE!$"
 
 Route27_Text_Item_SolarBeam:
-	.string "...$"
+	.string "{PLAYER} found TM SOLARBEAM!$"
 
 Route27_Text_Jose:
-	.string "...$"
+	.string "I've been training on this\n"
+	.string "route for years.\p"
+	.string "The POKeMON near the border\n"
+	.string "are stronger than most!$"
 
 Route27_Text_Megan:
-	.string "...$"
+	.string "Are you heading to JOHTO?\p"
+	.string "NEW BARK TOWN is just ahead.\n"
+	.string "It's small, but PROF. ELM's\l"
+	.string "lab is there.$"
 
 Route27_Text_Reena:
-	.string "...$"
+	.string "A red-haired boy rushed past\n"
+	.string "here not long ago.\p"
+	.string "He didn't even stop to battle.\n"
+	.string "He seemed... angry.$"
 
 Route27_Text_Scott:
-	.string "...$"
+	.string "SCOTT: {PLAYER}! Fancy\n"
+	.string "meeting you here!\p"
+	.string "JOHTO, huh? I've heard the\n"
+	.string "GYM LEADERS here are no joke.\p"
+	.string "I'll be watching your\n"
+	.string "progress with great interest!$"
 
 Route27_Text_TohjoFallsSign:
-	.string "Route27$"
+	.string "ROUTE 27\n"
+	.string "TOHJO FALLS ahead$"

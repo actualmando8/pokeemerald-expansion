@@ -18153,6 +18153,15 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Confuse Ray
 - Poison Fang
 
+Croconaw @ None
+Level: 48
+Ability: Sheer Force
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Water Pulse
+- Bite
+- Ice Fang
+- Slash
+
 === TRAINER_JOHTO_SILVER_2 ===
 Name: SILVER
 Class: Rival
@@ -18198,6 +18207,15 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Flash Cannon
 - Volt Switch
 - Thunder Wave
+
+Feraligatr @ None
+Level: 54
+Ability: Sheer Force
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Waterfall
+- Ice Fang
+- Crunch
+- Agility
 
 === TRAINER_JOHTO_SILVER_3 ===
 Name: SILVER
@@ -18253,6 +18271,15 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Shadow Ball
 - Focus Blast
 - Energy Ball
+
+Feraligatr @ Lum Berry
+Level: 60
+Ability: Sheer Force
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Waterfall
+- Ice Punch
+- Dragon Dance
+- Crunch
 
 === TRAINER_JOHTO_SILVER_4 ===
 Name: SILVER

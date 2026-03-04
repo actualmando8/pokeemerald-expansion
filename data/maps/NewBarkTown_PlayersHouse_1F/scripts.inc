@@ -21,22 +21,26 @@ NewBarkTown_PlayersHouse_1F_EventScript_MomsIntroTrigger2::
 
 NewBarkTown_PlayersHouse_Text_Mom:
 	.string "MOM: Welcome home, dear!\p"
-	.string "You must be tired from all\n"
-	.string "your adventuring.\p"
-	.string "Make sure you rest up before\n"
-	.string "heading out again!$"
+	.string "PROF. ELM has been so kind,\n"
+	.string "letting us stay here.\p"
+	.string "JOHTO is lovely. Make sure\n"
+	.string "you rest up before heading\l"
+	.string "out again!$"
 
 NewBarkTown_PlayersHouse_Text_MomsFriend:
-	.string "Your mother talks about you\n"
-	.string "all the time!\p"
+	.string "Your mother moved here from\n"
+	.string "KANTO just to be near you!\p"
 	.string "She's so proud of everything\n"
-	.string "you've accomplished.$"
+	.string "you've accomplished.\p"
+	.string "A real CHAMPION's mother!$"
 
 NewBarkTown_PlayersHouse_Text_MomIntro:
-	.string "MOM: Oh, {PLAYER}! Good\n"
-	.string "morning!\p"
-	.string "PROF. ELM next door was\n"
-	.string "looking for you.\p"
-	.string "He seemed really excited\n"
-	.string "about something!$"
+	.string "MOM: {PLAYER}! You made it!\p"
+	.string "PROF. ELM told me you'd be\n"
+	.string "coming to JOHTO.\p"
+	.string "He arranged this house for\n"
+	.string "us. Isn't that wonderful?\p"
+	.string "He's waiting for you at his\n"
+	.string "lab next door. You should\l"
+	.string "go see him!$"
 
