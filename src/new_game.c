@@ -237,6 +237,11 @@ void NewGameInitData(void)
     // Enable Gen 9 Exp Share All from game start
     FlagSet(FLAG_EXP_SHARE_ALL);
 
+    // QoL: Give player competitive training items from the start
+    AddBagItem(ITEM_GOLD_BOTTLE_CAP, 99);
+    for (u32 mint = ITEM_LONELY_MINT; mint <= ITEM_SERIOUS_MINT; mint++)
+        AddBagItem(mint, 99);
+
     // Restore player name/gender from intro naming screen
     StringCopy(gSaveBlock2Ptr->playerName, playerName);
     gSaveBlock2Ptr->playerGender = playerGender;

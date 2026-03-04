@@ -4,18 +4,10 @@ SixIsland_PatternBush_Frlg_MapScripts::
 	.byte 0
 
 SixIsland_PatternBush_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, SixIsland_PatternBush_EventScript_TryRemoveCelebi
 	end
-
-SixIsland_PatternBush_EventScript_TryRemoveCelebi::
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
-	removeobject VAR_LAST_TALKED
-	return
 
 SixIsland_PatternBush_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_SIX_ISLAND_PATTERN_BUSH
-	call_if_unset FLAG_DEFEATED_CELEBI, SixIsland_PatternBush_EventScript_ShowCelebi
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 	call_if_ge VAR_TEMP_1, 50, SixIsland_PatternBush_EventScript_SetEscapeRightExit
 	call_if_le VAR_TEMP_1, 49, SixIsland_PatternBush_EventScript_SetEscapeLeftExit
@@ -245,36 +237,3 @@ SixIsland_PatternBush_Text_LaytonPostBattle::
 	.string "What could be the cause of such\n"
 	.string "a phenomenon?$"
 
-SixIsland_PatternBush_EventScript_ShowCelebi::
-	clearflag FLAG_HIDE_CELEBI
-	return
-
-SixIsland_PatternBush_EventScript_Celebi::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setwildbattle SPECIES_CELEBI, 30
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartLegendaryBattle
-	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SixIsland_PatternBush_EventScript_DefeatedCelebi
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SixIsland_PatternBush_EventScript_RanFromCelebi
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SixIsland_PatternBush_EventScript_RanFromCelebi
-	setflag FLAG_DEFEATED_CELEBI
-	release
-	end
-
-SixIsland_PatternBush_EventScript_DefeatedCelebi::
-	setflag FLAG_DEFEATED_CELEBI
-	goto Common_EventScript_RemoveStaticPokemon
-	end
-
-SixIsland_PatternBush_EventScript_RanFromCelebi::
-	setvar VAR_0x8004, SPECIES_CELEBI
-	goto Common_EventScript_LegendaryFlewAway
-	end
