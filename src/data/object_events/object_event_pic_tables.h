@@ -3027,3 +3027,6 @@ static const struct SpriteFrameImage sPicTable_MomFrlg[] = {
     overworld_frame(gObjectEventPic_MomFrlg, 2, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_Silver[] = {
+    overworld_ascending_frames(gObjectEventPic_Silver, 2, 4),
+};

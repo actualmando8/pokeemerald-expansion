@@ -247,53 +247,24 @@ FourIsland_Text_AnabelPostBattle::
 	.string "POKéMON here is extraordinary.$"
 
 @ ========================================
-@ Johto Elder - Navel Rock / Ho-Oh & Lugia story
+@ Johto Elder - Lore NPC (Navel Rock access disabled; Ho-Oh/Lugia in Johto)
 @ ========================================
 FourIsland_EventScript_JohtoElder::
 	lock
 	faceplayer
-	goto_if_set FLAG_NAVEL_ROCK_COMPLETED, FourIsland_EventScript_ElderPostNavelRock
-	goto_if_set FLAG_ENABLE_SHIP_NAVEL_ROCK, FourIsland_EventScript_ElderGoToNavelRock
-	goto_if_set FLAG_DEFEATED_SEVII_BRANDON, FourIsland_EventScript_ElderCheckAllBrains
+	goto_if_set FLAG_ALL_JOHTO_BADGES, FourIsland_EventScript_ElderPostJohto
+	goto_if_set FLAG_DEFEATED_SEVII_BRANDON, FourIsland_EventScript_ElderAllBrains
 	msgbox FourIsland_Text_ElderEarlyLore
 	release
 	end
 
-FourIsland_EventScript_ElderCheckAllBrains::
-	goto_if_unset FLAG_DEFEATED_SEVII_NOLAND, FourIsland_EventScript_ElderNotReady
-	goto_if_unset FLAG_DEFEATED_SEVII_GRETA, FourIsland_EventScript_ElderNotReady
-	goto_if_unset FLAG_DEFEATED_SEVII_TUCKER, FourIsland_EventScript_ElderNotReady
-	goto_if_unset FLAG_DEFEATED_SEVII_SPENSER, FourIsland_EventScript_ElderNotReady
-	goto_if_unset FLAG_DEFEATED_SEVII_ANABEL, FourIsland_EventScript_ElderNotReady
-	goto_if_unset FLAG_DEFEATED_SEVII_LUCY, FourIsland_EventScript_ElderNotReady
-	goto_if_lt VAR_SOOTOPOLIS_CITY_STATE, 6, FourIsland_EventScript_ElderNotReady
-	goto FourIsland_EventScript_ElderGiveMysticTicket
-	end
-
-FourIsland_EventScript_ElderNotReady::
+FourIsland_EventScript_ElderAllBrains::
 	msgbox FourIsland_Text_ElderMidLore
 	release
 	end
 
-FourIsland_EventScript_ElderGiveMysticTicket::
-	msgbox FourIsland_Text_ElderAllBrainsDefeated
-	msgbox FourIsland_Text_ElderNavelRockLegend
-	additem ITEM_MYSTIC_TICKET
-	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox FourIsland_Text_ElderReceivedMysticTicket
-	waitfanfare
-	msgbox FourIsland_Text_ElderGoSeek
-	release
-	end
-
-FourIsland_EventScript_ElderGoToNavelRock::
-	msgbox FourIsland_Text_ElderNavelRockReminder
-	release
-	end
-
-FourIsland_EventScript_ElderPostNavelRock::
-	msgbox FourIsland_Text_ElderPostNavelRock
+FourIsland_EventScript_ElderPostJohto::
+	msgbox FourIsland_Text_ElderPostJohto
 	release
 	end
 
@@ -306,65 +277,27 @@ FourIsland_Text_ElderEarlyLore:
 	.string "about two great POKéMON…\p"
 	.string "One soared above the skies.\n"
 	.string "The other ruled the deep seas.\p"
-	.string "They say those legends are\n"
-	.string "connected to these very islands.$"
+	.string "If you ever travel to JOHTO,\n"
+	.string "seek TIN TOWER and the\l"
+	.string "WHIRL ISLANDS.$"
 
 FourIsland_Text_ElderMidLore:
-	.string "The legends say that only one\n"
-	.string "who has proven their worth to\l"
-	.string "every guardian of these islands\l"
-	.string "may seek the sacred rock.\p"
-	.string "And one who has calmed the raging\n"
-	.string "forces of nature itself…\p"
-	.string "Only then will the path to\n"
-	.string "HO-OH and LUGIA reveal itself.$"
+	.string "You've proven yourself against\n"
+	.string "the guardians of these islands.\p"
+	.string "In JOHTO, there are legends of\n"
+	.string "HO-OH and LUGIA…\p"
+	.string "HO-OH roosts atop TIN TOWER\n"
+	.string "in ECRUTEAK CITY.\p"
+	.string "LUGIA slumbers deep within the\n"
+	.string "WHIRL ISLANDS.\p"
+	.string "If you journey to JOHTO, perhaps\n"
+	.string "you will meet them.$"
 
-FourIsland_Text_ElderAllBrainsDefeated:
-	.string "I can see it in your eyes…\p"
-	.string "You have bested every guardian\n"
-	.string "across these islands.\p"
-	.string "And you calmed the great storm\n"
-	.string "that raged over HOENN's seas.\p"
-	.string "You are the one the legends\n"
-	.string "speak of.$"
-
-FourIsland_Text_ElderNavelRockLegend:
-	.string "Long ago in JOHTO, there was a\n"
-	.string "great tower where HO-OH roosted.\p"
-	.string "And in the WHIRL ISLANDS, LUGIA\n"
-	.string "slumbered beneath the waves.\p"
-	.string "But there is a place far older\n"
-	.string "than either of those…\p"
-	.string "NAVEL ROCK. The place where sky\n"
-	.string "and sea first met.\p"
-	.string "HO-OH awaits at its summit.\n"
-	.string "LUGIA dwells in its depths.\p"
-	.string "Take this. It will grant you\n"
-	.string "passage to NAVEL ROCK.$"
-
-FourIsland_Text_ElderReceivedMysticTicket:
-	.string "{PLAYER} received the\n"
-	.string "MYSTICTICKET from the elder!$"
-
-FourIsland_Text_ElderGoSeek:
-	.string "Show the ticket at any SEVII\n"
-	.string "ISLANDS harbor.\p"
-	.string "The guardians of sky and sea\n"
-	.string "await you, young one.\p"
-	.string "Treat them with respect. They\n"
-	.string "are among the most ancient\l"
-	.string "POKéMON in existence.$"
-
-FourIsland_Text_ElderNavelRockReminder:
-	.string "Have you visited NAVEL ROCK yet?\p"
-	.string "HO-OH roosts at the summit.\n"
-	.string "LUGIA rests in the deep.\p"
-	.string "Show your MYSTICTICKET at any\n"
-	.string "SEVII harbor to reach it.$"
-
-FourIsland_Text_ElderPostNavelRock:
-	.string "So you met them… The guardians\n"
-	.string "of sky and sea.\p"
+FourIsland_Text_ElderPostJohto:
+	.string "So you conquered all of JOHTO…\p"
+	.string "Did you meet them? HO-OH atop\n"
+	.string "TIN TOWER, and LUGIA beneath\l"
+	.string "the WHIRL ISLANDS?\p"
 	.string "In JOHTO, they say HO-OH brings\n"
 	.string "happiness to all who see it.\p"
 	.string "And LUGIA's power calms even\n"

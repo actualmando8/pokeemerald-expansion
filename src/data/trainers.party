@@ -17330,69 +17330,69 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Spikes
 - Destiny Bond
 
-=== TRAINER_DOME_BRUNO ===
-Name: BRUNO
-Class: Elite Four Frlg
-Pic: Elite Four Bruno Frlg
+=== TRAINER_DOME_WILL ===
+Name: WILL
+Class: Elite Four
+Pic: Elite Four Will
 Gender: Male
-Music: Aqua
+Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Machamp @ Assault Vest
+Xatu @ Light Clay
 Level: 72
-Ability: No Guard
+Ability: Magic Bounce
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dynamic Punch
-- Stone Edge
-- Knock Off
-- Bullet Punch
+- Reflect
+- Light Screen
+- Psychic
+- U-turn
 
-Hitmonlee @ Life Orb
+Alakazam @ Focus Sash
 Level: 72
-Ability: Reckless
+Ability: Magic Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- High Jump Kick
-- Knock Off
-- Stone Edge
-- Mach Punch
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Nasty Plot
 
-Hitmonchan @ Assault Vest
+Gardevoir @ Gardevoirite
 Level: 72
-Ability: Iron Fist
+Ability: Trace
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Drain Punch
-- Ice Punch
-- Thunder Punch
-- Mach Punch
+- Hyper Voice
+- Psychic
+- Focus Blast
+- Calm Mind
 
-Steelix @ Steelixite
+Espeon @ Life Orb
 Level: 72
-Ability: Sturdy
+Ability: Magic Bounce
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Dazzling Gleam
+- Calm Mind
+
+Exeggutor @ Sitrus Berry
+Level: 72
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Leaf Storm
+- Sleep Powder
+- Leech Seed
+
+Bronzong @ Leftovers
+Level: 72
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Gyro Ball
 - Earthquake
-- Heavy Slam
-- Stone Edge
 - Stealth Rock
-
-Heracross @ Choice Scarf
-Level: 72
-Ability: Moxie
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Close Combat
-- Megahorn
-- Stone Edge
-- Knock Off
-
-Hariyama @ Flame Orb
-Level: 72
-Ability: Guts
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Close Combat
-- Knock Off
-- Heavy Slam
-- Bullet Punch
 
 === TRAINER_DOME_PHOEBE ===
 Name: PHOEBE
@@ -17844,3 +17844,1070 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Thunder Wave
 - Stealth Rock
+
+=== TRAINER_JOHTO_FALKNER ===
+Name: FALKNER
+Class: Leader
+Pic: Leader Falkner
+Gender: Male
+Music: Male
+Items: Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Noctowl @ Sitrus Berry
+Level: 38
+Ability: Tinted Lens
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Air Slash
+- Hypnosis
+- Reflect
+- Shadow Ball
+
+Pidgeot @ Sharp Beak
+Level: 40
+Ability: Big Pecks
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Brave Bird
+- U-turn
+- Steel Wing
+- Roost
+
+Swellow @ Flame Orb
+Level: 39
+Ability: Guts
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Facade
+- Brave Bird
+- U-turn
+- Quick Attack
+
+=== TRAINER_JOHTO_BUGSY ===
+Name: BUGSY
+Class: Leader
+Pic: Leader Bugsy
+Gender: Male
+Music: Male
+Items: Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Scizor @ Occa Berry
+Level: 40
+Ability: Technician
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bullet Punch
+- X-Scissor
+- Swords Dance
+- Roost
+
+Heracross @ Choice Scarf
+Level: 41
+Ability: Moxie
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Megahorn
+- Close Combat
+- Stone Edge
+- Earthquake
+
+Yanmega @ Wide Lens
+Level: 40
+Ability: Speed Boost
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bug Buzz
+- Air Slash
+- Ancient Power
+- Protect
+
+=== TRAINER_JOHTO_WHITNEY ===
+Name: WHITNEY
+Class: Leader
+Pic: Leader Whitney
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Clefable @ Leftovers
+Level: 42
+Ability: Magic Guard
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Moonblast
+- Flamethrower
+- Thunder Wave
+- Soft-Boiled
+
+Miltank @ Lum Berry
+Level: 44
+Ability: Scrappy
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Body Slam
+- Milk Drink
+- Earthquake
+- Zen Headbutt
+
+Blissey @ Leftovers
+Level: 42
+Ability: Natural Cure
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Seismic Toss
+- Soft-Boiled
+- Thunder Wave
+- Ice Beam
+
+Ambipom @ Silk Scarf
+Level: 42
+Ability: Technician
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Fake Out
+- Return
+- U-turn
+- Low Kick
+
+=== TRAINER_JOHTO_MORTY ===
+Name: MORTY
+Class: Leader
+Pic: Leader Morty
+Gender: Male
+Music: Male
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Mismagius @ Leftovers
+Level: 44
+Ability: Levitate
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Mystical Fire
+- Nasty Plot
+- Will-O-Wisp
+
+Gengar @ Life Orb
+Level: 46
+Ability: Cursed Body
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+- Thunderbolt
+
+Dusclops @ Eviolite
+Level: 44
+Ability: Pressure
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Punch
+- Will-O-Wisp
+- Pain Split
+- Ice Punch
+
+Sableye @ Leftovers
+Level: 44
+Ability: Prankster
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Foul Play
+- Will-O-Wisp
+- Recover
+- Knock Off
+
+=== TRAINER_JOHTO_CHUCK ===
+Name: CHUCK
+Class: Leader
+Pic: Leader Chuck
+Gender: Male
+Music: Male
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Poliwrath @ Sitrus Berry
+Level: 46
+Ability: Swift Swim
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Waterfall
+- Close Combat
+- Ice Punch
+- Rain Dance
+
+Machamp @ Lum Berry
+Level: 48
+Ability: No Guard
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dynamic Punch
+- Stone Edge
+- Ice Punch
+- Bullet Punch
+
+Primeape @ Choice Band
+Level: 46
+Ability: Defiant
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Close Combat
+- U-turn
+- Stone Edge
+- Earthquake
+
+Hitmontop @ Leftovers
+Level: 46
+Ability: Intimidate
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Close Combat
+- Sucker Punch
+- Rapid Spin
+- Mach Punch
+
+=== TRAINER_JOHTO_JASMINE ===
+Name: JASMINE
+Class: Leader
+Pic: Leader Jasmine Johto
+Gender: Female
+Music: Female
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Steelix @ Leftovers
+Level: 48
+Ability: Sturdy
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Iron Tail
+- Earthquake
+- Stealth Rock
+- Thunder Fang
+
+Magnezone @ Air Balloon
+Level: 50
+Ability: Magnet Pull
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Tri Attack
+
+Forretress @ Leftovers
+Level: 48
+Ability: Sturdy
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Gyro Ball
+- Spikes
+- Volt Switch
+- Explosion
+
+Skarmory @ Rocky Helmet
+Level: 48
+Ability: Sturdy
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Brave Bird
+- Iron Head
+- Whirlwind
+- Roost
+
+=== TRAINER_JOHTO_PRYCE ===
+Name: PRYCE
+Class: Leader
+Pic: Leader Pryce
+Gender: Male
+Music: Male
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Mamoswine @ Life Orb
+Level: 52
+Ability: Thick Fat
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Earthquake
+- Ice Shard
+- Icicle Crash
+- Stealth Rock
+
+Dewgong @ Leftovers
+Level: 50
+Ability: Thick Fat
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Ice Beam
+- Surf
+- Toxic
+- Protect
+
+Weavile @ Choice Band
+Level: 52
+Ability: Pressure
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Ice Shard
+- Knock Off
+- Ice Punch
+- Low Kick
+
+Walrein @ Leftovers
+Level: 50
+Ability: Thick Fat
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Blizzard
+- Surf
+- Earthquake
+- Toxic
+
+=== TRAINER_JOHTO_CLAIR ===
+Name: CLAIR
+Class: Leader
+Pic: Leader Clair
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Kingdra @ Scope Lens
+Level: 54
+Ability: Sniper
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Pulse
+- Hydro Pump
+- Ice Beam
+- Flash Cannon
+
+Dragonite @ Lum Berry
+Level: 56
+Ability: Multiscale
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Outrage
+- Earthquake
+- Extreme Speed
+
+Gyarados @ Sitrus Berry
+Level: 54
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Waterfall
+- Dragon Dance
+- Ice Fang
+- Earthquake
+
+Flygon @ Choice Scarf
+Level: 54
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Outrage
+- Earthquake
+- U-turn
+- Stone Edge
+
+Charizard @ Charizardite X
+Level: 54
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Flare Blitz
+- Dragon Dance
+- Roost
+
+=== TRAINER_JOHTO_SILVER_1 ===
+Name: SILVER
+Class: Rival
+Pic: Rival Late Frlg
+Gender: Male
+Music: Male
+Items: Super Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Sneasel @ Sitrus Berry
+Level: 36
+Ability: Inner Focus
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Icy Wind
+- Feint Attack
+- Metal Claw
+- Quick Attack
+
+Haunter @ None
+Level: 36
+Ability: Levitate
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Ball
+- Sludge Bomb
+- Hypnosis
+- Mean Look
+
+Golbat @ None
+Level: 35
+Ability: Inner Focus
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Air Cutter
+- Bite
+- Confuse Ray
+- Poison Fang
+
+=== TRAINER_JOHTO_SILVER_2 ===
+Name: SILVER
+Class: Rival
+Pic: Rival Late Frlg
+Gender: Male
+Music: Male
+Items: Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Weavile @ None
+Level: 42
+Ability: Pressure
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Night Slash
+- Ice Punch
+- Brick Break
+- Quick Attack
+
+Gengar @ None
+Level: 42
+Ability: Cursed Body
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Sludge Bomb
+- Thunderbolt
+- Hypnosis
+
+Crobat @ None
+Level: 41
+Ability: Inner Focus
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Cross Poison
+- Brave Bird
+- U-turn
+- Confuse Ray
+
+Magneton @ None
+Level: 41
+Ability: Magnet Pull
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
+
+=== TRAINER_JOHTO_SILVER_3 ===
+Name: SILVER
+Class: Rival
+Pic: Rival Late Frlg
+Gender: Male
+Music: Male
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Weavile @ Life Orb
+Level: 48
+Ability: Pressure
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Night Slash
+- Ice Punch
+- Low Kick
+- Swords Dance
+
+Gengar @ Focus Sash
+Level: 48
+Ability: Cursed Body
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+- Destiny Bond
+
+Crobat @ Black Sludge
+Level: 47
+Ability: Inner Focus
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Magnezone @ Air Balloon
+Level: 47
+Ability: Magnet Pull
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Tri Attack
+
+Alakazam @ Choice Specs
+Level: 47
+Ability: Magic Guard
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Energy Ball
+
+=== TRAINER_JOHTO_SILVER_4 ===
+Name: SILVER
+Class: Rival
+Pic: Rival Late Frlg
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Weavile @ Life Orb
+Level: 54
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Shard
+- Knock Off
+- Low Kick
+- Swords Dance
+
+Gengar @ Gengarite
+Level: 54
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+- Destiny Bond
+
+Crobat @ Black Sludge
+Level: 53
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Magnezone @ Choice Specs
+Level: 53
+Ability: Magnet Pull
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Hidden Power
+
+Alakazam @ Focus Sash
+Level: 53
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Nasty Plot
+
+Feraligatr @ Lum Berry
+Level: 54
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Waterfall
+- Ice Punch
+- Dragon Dance
+- Crunch
+
+=== TRAINER_JOHTO_SILVER_5 ===
+Name: SILVER
+Class: Rival
+Pic: Rival Late Frlg
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Weavile @ Life Orb
+Level: 60
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Shard
+- Knock Off
+- Low Kick
+- Swords Dance
+
+Gengar @ Gengarite
+Level: 60
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+- Perish Song
+
+Crobat @ Black Sludge
+Level: 59
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Magnezone @ Choice Specs
+Level: 59
+Ability: Magnet Pull
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Hidden Power
+
+Alakazam @ Focus Sash
+Level: 59
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Nasty Plot
+
+Feraligatr @ Lum Berry
+Level: 60
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Waterfall
+- Ice Punch
+- Dragon Dance
+- Crunch
+
+=== TRAINER_JOHTO_GIOVANNI ===
+Name: GIOVANNI
+Class: Boss Frlg
+Pic: Leader Giovanni
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Dugtrio @ Focus Sash
+Level: 58
+Ability: Arena Trap
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Stone Edge
+- Sucker Punch
+- Stealth Rock
+
+Nidoking @ Life Orb
+Level: 60
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Sludge Wave
+- Ice Beam
+- Thunderbolt
+
+Nidoqueen @ Black Sludge
+Level: 58
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Sludge Bomb
+- Flamethrower
+- Toxic Spikes
+
+Rhyperior @ Leftovers
+Level: 60
+Ability: Solid Rock
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Stone Edge
+- Megahorn
+- Ice Punch
+
+Honchkrow @ Scope Lens
+Level: 58
+Ability: Super Luck
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Night Slash
+- Sucker Punch
+- Heat Wave
+
+Persian @ Silk Scarf
+Level: 60
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Return
+- U-turn
+- Hypnosis
+
+=== TRAINER_JOHTO_GYM_ROD ===
+Name: ROD
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Pidgeot @ Sharp Beak
+Level: 36
+Ability: Keen Eye
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Air Slash
+- Quick Attack
+- Feather Dance
+- Roost
+
+Fearow @ Scope Lens
+Level: 36
+Ability: Sniper
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Drill Peck
+- Pursuit
+- Aerial Ace
+- Mirror Move
+
+=== TRAINER_JOHTO_GYM_ABE ===
+Name: ABE
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Noctowl @ Sitrus Berry
+Level: 37
+Ability: Insomnia
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Air Slash
+- Hypnosis
+- Reflect
+- Shadow Ball
+
+Xatu @ Twisted Spoon
+Level: 37
+Ability: Synchronize
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Psychic
+- Air Slash
+- Shadow Ball
+- Wish
+
+=== TRAINER_JOHTO_GYM_AL ===
+Name: AL
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Beedrill @ Focus Sash
+Level: 38
+Ability: Swarm
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Poison Jab
+- X-Scissor
+- Brick Break
+- Endeavor
+
+Butterfree @ Silver Powder
+Level: 38
+Ability: Compound Eyes
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bug Buzz
+- Sleep Powder
+- Psychic
+- Energy Ball
+
+=== TRAINER_JOHTO_GYM_BENNY ===
+Name: BENNY
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Ariados @ Black Sludge
+Level: 39
+Ability: Insomnia
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Poison Jab
+- Sucker Punch
+- Sticky Web
+- Toxic Spikes
+
+Yanma @ Eviolite
+Level: 39
+Ability: Speed Boost
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bug Buzz
+- Air Slash
+- Ancient Power
+- Detect
+
+=== TRAINER_JOHTO_GYM_CARRIE ===
+Name: CARRIE
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Wigglytuff @ Leftovers
+Level: 40
+Ability: Cute Charm
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dazzling Gleam
+- Hyper Voice
+- Flamethrower
+- Sing
+
+Delcatty @ Silk Scarf
+Level: 40
+Ability: Normalize
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Return
+- Thunder Wave
+- Fake Out
+- Zen Headbutt
+
+=== TRAINER_JOHTO_GYM_BRIDGET ===
+Name: BRIDGET
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Granbull @ Sitrus Berry
+Level: 41
+Ability: Intimidate
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Play Rough
+- Crunch
+- Close Combat
+- Thunder Wave
+
+Furret @ Choice Band
+Level: 41
+Ability: Frisk
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Return
+- Sucker Punch
+- U-turn
+- Trick
+
+=== TRAINER_JOHTO_GYM_JEFFREY ===
+Name: JEFFREY
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Haunter @ Eviolite
+Level: 42
+Ability: Levitate
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Shadow Ball
+- Sludge Bomb
+- Hypnosis
+- Dream Eater
+
+Misdreavus @ Spell Tag
+Level: 42
+Ability: Levitate
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Shadow Ball
+- Psybeam
+- Pain Split
+- Perish Song
+
+=== TRAINER_JOHTO_GYM_MARTHA ===
+Name: MARTHA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Banette @ Spell Tag
+Level: 43
+Ability: Insomnia
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Shadow Claw
+- Will-O-Wisp
+- Sucker Punch
+- Curse
+
+Duskull @ Eviolite
+Level: 43
+Ability: Levitate
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Shadow Ball
+- Will-O-Wisp
+- Pain Split
+- Confuse Ray
+
+=== TRAINER_JOHTO_GYM_YOSHI ===
+Name: YOSHI
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Hitmonlee @ Black Belt
+Level: 44
+Ability: Limber
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- High Jump Kick
+- Blaze Kick
+- Rock Slide
+- Fake Out
+
+Hitmonchan @ Black Belt
+Level: 44
+Ability: Iron Fist
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Close Combat
+- Ice Punch
+- Thunder Punch
+- Mach Punch
+
+=== TRAINER_JOHTO_GYM_NOB ===
+Name: NOB
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Machoke @ Eviolite
+Level: 45
+Ability: Guts
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Cross Chop
+- Knock Off
+- Rock Slide
+- Bulk Up
+
+Primeape @ Choice Scarf
+Level: 45
+Ability: Vital Spirit
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Close Combat
+- U-turn
+- Ice Punch
+- Stone Edge
+
+=== TRAINER_JOHTO_GYM_RONALD ===
+Name: RONALD
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Dewgong @ Leftovers
+Level: 50
+Ability: Thick Fat
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Ice Beam
+- Surf
+- Signal Beam
+- Toxic
+
+Piloswine @ Eviolite
+Level: 50
+Ability: Oblivious
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Ice Shard
+- Icicle Crash
+- Stealth Rock
+
+=== TRAINER_JOHTO_GYM_ROXANNE ===
+Name: ROXANNE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Jynx @ Focus Sash
+Level: 51
+Ability: Forewarn
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Ice Beam
+- Psychic
+- Lovely Kiss
+- Focus Blast
+
+Sneasel @ Eviolite
+Level: 51
+Ability: Inner Focus
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Ice Punch
+- Night Slash
+- Brick Break
+- Swords Dance
+
+=== TRAINER_JOHTO_GYM_CODY ===
+Name: CODY
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Dragonair @ Eviolite
+Level: 52
+Ability: Shed Skin
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Thunderbolt
+- Ice Beam
+- Thunder Wave
+
+Gyarados @ Wacan Berry
+Level: 52
+Ability: Intimidate
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Waterfall
+- Dragon Dance
+- Ice Fang
+- Earthquake
+
+=== TRAINER_JOHTO_GYM_FRAN ===
+Name: FRAN
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Seadra @ Dragon Scale
+Level: 53
+Ability: Poison Point
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Ice Beam
+- Hydro Pump
+- Signal Beam
+
+Altaria @ Leftovers
+Level: 53
+Ability: Natural Cure
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Flamethrower
+- Cotton Guard
+- Roost

@@ -867,7 +867,7 @@
 #define TRAINER_RIVAL_BRENDAN_CELADON       857  // Custom: Hoenn rival Brendan in Celadon
 #define TRAINER_RIVAL_MAY_CELADON           858  // Custom: Hoenn rival May in Celadon
 #define TRAINER_DOME_LORELEI                859  // Custom: Battle Dome Lorelei
-#define TRAINER_DOME_BRUNO                  860  // Custom: Battle Dome Bruno
+#define TRAINER_DOME_WILL                   860  // Custom: Battle Dome Will (Johto E4 Psychic)
 #define TRAINER_DOME_PHOEBE                 861  // Custom: Battle Dome Phoebe
 #define TRAINER_DOME_LANCE                  862  // Custom: Battle Dome Lance
 #define TRAINER_DOME_STEVEN                 863  // Custom: Battle Dome Champion Steven
@@ -879,12 +879,44 @@
 #define TRAINER_SEVII_LUCY                  869  // Custom: Frontier Brain Lucy on Sevii
 #define TRAINER_SEVII_BRANDON               870  // Custom: Frontier Brain Brandon on Sevii
 
-// NOTE: Trainer flag space has been fully used. To add more trainers, shift flags in constants/flags.h
-//       or change how trainer flags are handled.
-//       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
+// Johto Gym Leaders
+#define TRAINER_JOHTO_FALKNER               871  // Custom: Violet City Gym (Flying)
+#define TRAINER_JOHTO_BUGSY                 872  // Custom: Azalea Town Gym (Bug)
+#define TRAINER_JOHTO_WHITNEY               873  // Custom: Goldenrod City Gym (Normal)
+#define TRAINER_JOHTO_MORTY                 874  // Custom: Ecruteak City Gym (Ghost)
+#define TRAINER_JOHTO_CHUCK                 875  // Custom: Cianwood City Gym (Fighting)
+#define TRAINER_JOHTO_JASMINE               876  // Custom: Olivine City Gym (Steel)
+#define TRAINER_JOHTO_PRYCE                 877  // Custom: Mahogany Town Gym (Ice)
+#define TRAINER_JOHTO_CLAIR                 878  // Custom: Blackthorn City Gym (Dragon)
 
-#define TRAINERS_COUNT_EMERALD     871
-#define MAX_TRAINERS_COUNT_EMERALD 879
+// Silver rival encounters
+#define TRAINER_JOHTO_SILVER_1              879  // Custom: Silver encounter 1 (Cherrygrove)
+#define TRAINER_JOHTO_SILVER_2              880  // Custom: Silver encounter 2 (Azalea)
+#define TRAINER_JOHTO_SILVER_3              881  // Custom: Silver encounter 3 (Goldenrod)
+#define TRAINER_JOHTO_SILVER_4              882  // Custom: Silver encounter 4 (Radio Tower)
+#define TRAINER_JOHTO_SILVER_5              883  // Custom: Silver encounter 5 (Victory Road/Mt. Silver)
+
+// Giovanni Johto
+#define TRAINER_JOHTO_GIOVANNI              884  // Custom: Giovanni at Radio Tower climax
+
+// Johto Gym Trainers (2 per gym, 7 gyms — Olivine has no trainers)
+#define TRAINER_JOHTO_GYM_ROD               885  // Violet Gym Bird Keeper
+#define TRAINER_JOHTO_GYM_ABE               886  // Violet Gym Bird Keeper
+#define TRAINER_JOHTO_GYM_AL                887  // Azalea Gym Bug Catcher
+#define TRAINER_JOHTO_GYM_BENNY             888  // Azalea Gym Bug Catcher
+#define TRAINER_JOHTO_GYM_CARRIE            889  // Goldenrod Gym Lass
+#define TRAINER_JOHTO_GYM_BRIDGET           890  // Goldenrod Gym Lass
+#define TRAINER_JOHTO_GYM_JEFFREY           891  // Ecruteak Gym Sage
+#define TRAINER_JOHTO_GYM_MARTHA            892  // Ecruteak Gym Medium
+#define TRAINER_JOHTO_GYM_YOSHI             893  // Cianwood Gym Black Belt
+#define TRAINER_JOHTO_GYM_NOB               894  // Cianwood Gym Black Belt
+#define TRAINER_JOHTO_GYM_RONALD            895  // Mahogany Gym Boarder
+#define TRAINER_JOHTO_GYM_ROXANNE           896  // Mahogany Gym Skier
+#define TRAINER_JOHTO_GYM_CODY              897  // Blackthorn Gym Cooltrainer
+#define TRAINER_JOHTO_GYM_FRAN              898  // Blackthorn Gym Cooltrainer
+
+#define TRAINERS_COUNT_EMERALD     899
+#define MAX_TRAINERS_COUNT_EMERALD 899
 
 // Combined: FRLG offset trainers always exceed Emerald count (900+624 > 855)
 #define TRAINERS_COUNT                 (FRLG_TRAINER_OFFSET + TRAINERS_COUNT_FRLG)

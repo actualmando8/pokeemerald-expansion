@@ -56,10 +56,10 @@
 
 ### SEVII — FIRST VISIT (after defeating Blaine, same as vanilla)
 - Tri-Pass unlocks One through Three Islands from Vermilion
-- Johto atmosphere immediately apparent — heavy Johto Pokémon encounters, Johto people who settled here, folklore
+- Original FRLG story and wild Pokémon encounters preserved
 - Noland, Greta, Tucker as island gatekeepers (reusing Frontier Brain characters with new teams)
-- Rocket activity visible but purpose unclear as of now
-- Navel Rock mystery established
+- Rocket hints planted: shipments from the south, a grunt spotted near Bond Bridge
+- NPCs on One Island mention strangers arriving by boat at night
 - Return to main game with more questions than answers
 
 ---
@@ -67,8 +67,8 @@
 ### SEVII — SECOND VISIT (7th badge in either region)
 - Four and Five Islands unlock
 - Spenser and Anabel as gatekeepers
-- Rocket's operation becomes much clearer
-- Johto residents share stories and knowledge of the islands and their connection to Johto legends
+- Icefall Cave: Lorelei confronts Rockets, hints someone is reorganizing them
+- Rocket scientist on Five Island Meadow drops document: "Project Rebirth — Johto Division" and "the boss's son refuses to cooperate" (first Silver breadcrumb)
 - Can be accessed before or after Rayquaza event
 
 ---
@@ -120,13 +120,28 @@
 ### SEVII — THIRD VISIT (8th badge in both regions)
 - Six and Seven Islands unlock
 - Lucy and Brandon as gatekeepers
-- Rocket's full plan regarding Navel Rock exposed
-- World is post crisis, seas calmed, path to Navel Rock becoming clear
+- Rocket Warehouse climax: Giovanni reveals Johto as the real target, is defeated, escapes south
+- Grunt confirms Giovanni fled toward Johto
+- FLAG_JOHTO_ACCESS_UNLOCKED set (first of two Johto gate conditions)
+- World is post crisis, seas calmed
+
+---
+
+### JOHTO — UNLOCKS AFTER KANTO CHAMPION + SEVII GIOVANNI
+- Requires BOTH: FLAG_IS_KANTO_CHAMPION AND FLAG_JOHTO_ACCESS_UNLOCKED (Sevii Giovanni defeated)
+- Guard NPC in Reception Gate has context-aware dialogue depending on which condition is missing
+- When both conditions met, guard steps aside, passage south to Route 26 opens
+- Full Johto region: 8 gym badges, Giovanni/Silver storyline, 20+ routes, dungeons
+- HGSS + Crystal wild Pokémon encounters (82 encounter areas, Lv35-65)
+- **Ho-Oh** — Tin Tower Roof (Lv70 legendary battle)
+- **Lugia** — Whirl Islands Lugia Chamber (Lv70 legendary battle)
+- Silver appears as recurring rival throughout Johto (Giovanni's son, rejecting his father's path)
+- Johto story climax: Giovanni confrontation (Radio Tower or Team Rocket HQ)
+- Navel Rock can be repurposed or disabled
 
 ---
 
 ### POST GAME ISLANDS AND LEGENDARIES
-- **Navel Rock** — requires all seven Island Brains defeated and post Rayquaza. Ho-Oh and Lugia encountered in meaningful story context. Johto residents in Sevii acknowledge the significance. Man in Vermilion has closure moment if revisited
 - **Jirachi** — Mauville meteor research thread. Scientists study meteor, discoveries made, player battles a scientist, Jirachi unlocked through research findings. Details to be developed
 - **Birth Island and Deoxys** — alien DNA extracted from meteor during Jirachi research triggers readings at Birth Island. Birth Island ticket unlocked through scientific findings. Details to be developed
 - **Faraway Island** — Mew
@@ -144,27 +159,27 @@ Unlocks only after all of the following are completed:
 - Kanto Elite Four beaten
 - Hoenn Elite Four beaten
 - All seven Sevii Island Brains defeated
-- Navel Rock completed
+- All 8 Johto gym badges (FLAG_ALL_JOHTO_BADGES)
 - Birth Island — Deoxys resolved
 - Faraway Island — Mew obtained
 - Jirachi resolved
 - Cerulean Cave — Mewtwo
 
 When every condition is met the Dome doors open. No fanfare. Just open.
-- Lorelei
-- Bruno
-- Phoebe
-- Lance
-- Champion: Steven
-
-Teams to be planned later. Steven's team will draw from both Kanto and Hoenn Pokémon reflecting the full journey.
+- Lorelei (Ice, Lv72)
+- Will (Psychic, Lv72 — Johto E4 member, replaced Bruno)
+- Phoebe (Ghost, Lv72)
+- Lance (Dragon, Lv75)
+- Champion: Steven (Lv78)
 
 ---
 
 ## WILD POKÉMON NOTES
 
-- Sevii Islands function as Johto — large majority of wild encounters should be Johto Pokémon
-- Some Kanto and Hoenn included where thematically appropriate and for variety
+- Sevii Islands use original FRLG wild Pokémon encounters (reverted from Johto species)
+- Johto has HGSS + Crystal wild Pokémon (82 encounter areas across routes, towns, dungeons, Safari Zone)
+- Cross-gen evolutions (Tangrowth, Weavile, Mamoswine, etc.) available through evolution only, not in wild
+- Johto levels scaled for mid-late game access: Lv35 (early routes) through Lv65 (Mt. Silver)
 
 ---
 
@@ -207,13 +222,13 @@ Teams to be planned later. Steven's team will draw from both Kanto and Hoenn Pok
 - Phase 6: All 417 FRLG maps enabled in Emerald build
 - Phase 7: Trainer Card flip side shows Kanto front design with Kanto badges
 - Phase 8: Hoenn gyms 6-8 rebalanced (Winona/Tate&Liza/Juan) for post-5+5 badge difficulty
-- Sevii Island wild Pokémon → Johto species (all routes/caves/water/fishing)
+- Sevii Island wild Pokémon → reverted to original FRLG encounters
 - 7 Frontier Brain battles on Sevii Islands (TRAINER_SEVII_* Lv50-55 teams)
-- Navel Rock unlock gating (Four Island elder — all 7 Brains + post-Rayquaza → Mystic Ticket)
+- Navel Rock access DISABLED (Four Island elder now gives Johto lore only; Ho-Oh/Lugia in Johto)
 - Giovanni Sevii boss fight (Lv62 team in Rocket Warehouse, gated behind both E4s)
 - Hoenn rival encounter in Celadon City (post 8+8 badges, Brendan/May)
-- Battle Dome true-final unlock (14 conditions: both E4s, 7 Brains, Navel Rock, Deoxys, Mew, Jirachi, Mewtwo)
-- Battle Dome E4 + Steven teams (Lorelei/Bruno/Phoebe/Lance/Steven at Lv78)
+- Battle Dome true-final unlock (14 conditions: both E4s, 7 Brains, 8 Johto badges, Deoxys, Mew, Jirachi, Mewtwo)
+- Battle Dome E4 + Steven teams (Lorelei/Will/Phoebe/Lance/Steven, Lv72-78)
 - Jirachi in Meteor Falls (gated behind both E4s)
 - Deoxys on Birth Island (Aurora Ticket from Mauville meteor scientist after Jirachi)
 - Mauville meteor scientist questline (Jirachi → Deoxys progression)
@@ -225,15 +240,62 @@ Teams to be planned later. Steven's team will draw from both Kanto and Hoenn Pok
 - Mew on Faraway Island (vanilla script, fully functional)
 - Story NPC dialogue (Vermilion ticket man, Celadon weather NPC, Saffron Rocket escalation)
 
+- 257 Johto maps integrated (towns, routes, dungeons, indoor maps)
+- 82 Johto wild encounter areas (HGSS + Crystal species, Lv35-65)
+- Ho-Oh at Tin Tower Roof (Lv70 scripted legendary battle)
+- Lugia at Whirl Islands Lugia Chamber (Lv70 scripted legendary battle)
+- Johto access gated by DUAL condition: FLAG_IS_KANTO_CHAMPION + FLAG_JOHTO_ACCESS_UNLOCKED
+- Reception Gate blocker NPC with context-aware dialogue (3 states: neither, need champion, need Giovanni)
+- Battle Dome unlock: Navel Rock replaced with FLAG_ALL_JOHTO_BADGES (8 Johto gym badges)
+
+- 8 Johto gym leaders implemented (TRAINER_JOHTO_FALKNER through TRAINER_JOHTO_CLAIR, Act 3 difficulty Lv38-54)
+- 8 Johto badge flags (FLAG_JOHTO_BADGE01_GET through FLAG_JOHTO_BADGE08_GET)
+- 8 Johto gym TM gift flags (FLAG_GOT_TM40_FROM_FALKNER through FLAG_GOT_TM59_FROM_CLAIR)
+- 8 Johto gym scripts with trainer battles, badge awards, TM gifts, NPC dialogue
+- FLAG_ALL_JOHTO_BADGES set by Clair's defeat script (Blackthorn City Gym)
+- 5 Silver rival encounters (TRAINER_JOHTO_SILVER_1 through TRAINER_JOHTO_SILVER_5, Lv35-60)
+  - Silver 1: Cherrygrove City (trigger encounter)
+  - Silver 2: Azalea Town (post-Slowpoke Well)
+  - Silver 3: Radio Tower 3F (during Rocket takeover)
+  - Silver 4: Radio Tower 5F (alongside Giovanni climax)
+  - Silver 5: Mt. Silver Summit (final rival battle, character growth)
+- Giovanni Radio Tower climax (TRAINER_JOHTO_GIOVANNI, Lv58 team)
+  - Radio Tower 5F: back-to-back Giovanni + Silver 4 battles
+  - Narrative ties to Sevii Islands arc ("After our encounter in the SEVII ISLANDS...")
+  - Silver revealed as Giovanni's son, rejects father's path
+  - Giovanni disbands Team Rocket permanently
+- MAPSEC consolidation: 44 Johto MAPSECs + 11 landmark aliases via .set directives in data/maps.s (assembly-only, mapped to MAPSEC_NONE to avoid u8 enum overflow)
+- Custom Johto trainer sprites integrated from pokemonHnS project (Falkner, Bugsy, Whitney, Morty, Chuck, Jasmine, Pryce, Clair, Giovanni)
+  - 9 PNGs copied to graphics/trainers/front_pics/
+  - 9 TRAINER_PIC_FRONT_* enum entries added to trainers.h
+  - 9 INCBIN + TRAINER_SPRITE entries in src/data/graphics/trainers.h
+  - trainers.party Pic fields updated for all 8 gym leaders + Giovanni
+- 14 Johto gym trainer NPCs (2 per gym × 7 gyms, Olivine has none)
+  - TRAINER_JOHTO_GYM_ROD (885) through TRAINER_JOHTO_GYM_FRAN (898)
+  - Act 3 scaled parties (Lv36-53), custom movesets, held items
+  - trainerbattle_single scripts in all 7 gym maps
+  - TRAINERS_COUNT_EMERALD = 899, MAX = 899 (all Emerald slots filled)
+
 ### 🔧 Pending
-- (None currently identified)
+- Silver trainer sprites (currently using Rival Late Frlg placeholder)
+- Remaining gym trainer stubs (Amy, Josh, May in Azalea; Samantha, Victoria in Goldenrod; Grace, Ping in Ecruteak; Lao, Lung in Cianwood; Brad, Clarissa, Douglas in Mahogany; Lola, Mike, Paul in Blackthorn) — NPC dialogue only, no trainer slots available
 
 ### Badge Flags
 - Hoenn badges: `FLAG_BADGE01_GET` through `FLAG_BADGE08_GET` (Emerald system flags)
 - Kanto badges: `FLAG_KANTO_BADGE01_GET` through `FLAG_KANTO_BADGE08_GET` (unique system flags 0x21-0x27, 0x2E)
-- Both sets tracked separately; FRLG gym scripts set both
+- Johto badges: `FLAG_JOHTO_BADGE01_GET` through `FLAG_JOHTO_BADGE08_GET` (system flags 0x86-0x8D)
+- All three sets tracked separately
 
 ### Key Custom Flags
 - `FLAG_HIDE_ROUTE118_BLOCKER` — Fortree gate
 - `FLAG_MET_PROF_BIRCH` — Optional Littleroot visit
 - `FLAG_KANTO_BADGE01_GET` through `FLAG_KANTO_BADGE08_GET` — Kanto badge tracking
+- `FLAG_JOHTO_BADGE01_GET` through `FLAG_JOHTO_BADGE08_GET` — Johto badge tracking
+- `FLAG_ALL_JOHTO_BADGES` (0x1F6) — Battle Dome unlock condition
+- `FLAG_DEFEATED_JOHTO_SILVER_1`, `FLAG_DEFEATED_JOHTO_SILVER_2` — Silver encounter gating
+
+### Johto Trainer Constants (opponents.h 871-898)
+- `TRAINER_JOHTO_FALKNER` (871) through `TRAINER_JOHTO_CLAIR` (878) — 8 gym leaders
+- `TRAINER_JOHTO_SILVER_1` (879) through `TRAINER_JOHTO_SILVER_5` (883) — rival encounters
+- `TRAINER_JOHTO_GIOVANNI` (884) — Radio Tower climax
+- `TRAINER_JOHTO_GYM_ROD` (885) through `TRAINER_JOHTO_GYM_FRAN` (898) — 14 gym trainers

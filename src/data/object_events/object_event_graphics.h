@@ -633,3 +633,6 @@ const u16 gObjectEventPic_JigglypuffOld[] = INCBIN_U16("graphics/object_events/p
 const u16 gObjectEventPic_PidgeyOld[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/pidgey.4bpp");
 const u16 gObjectEventPic_ClefairyOld[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/clefairy.4bpp");
 
+// Silver (Johto rival) overworld sprite
+const u32 gObjectEventPic_Silver[] = INCBIN_U32("graphics/object_events/pics/people/special/silver.4bpp");
+const u16 gObjectEventPal_Silver[] = INCBIN_U16("graphics/object_events/palettes/silver.gbapal");

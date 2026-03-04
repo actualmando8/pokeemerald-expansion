@@ -324,6 +324,7 @@ FiveIsland_RocketWarehouse_EventScript_Giovanni::
 	msgbox FiveIsland_RocketWarehouse_Text_GiovanniIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GIOVANNI_SEVII, FiveIsland_RocketWarehouse_Text_GiovanniDefeat
 	setflag FLAG_DEFEATED_SEVII_GIOVANNI
+	setflag FLAG_JOHTO_ACCESS_UNLOCKED
 	msgbox FiveIsland_RocketWarehouse_Text_GiovanniPostBattle, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_WAREHOUSE_GIOVANNI, FiveIsland_RocketWarehouse_Movement_GiovanniExit

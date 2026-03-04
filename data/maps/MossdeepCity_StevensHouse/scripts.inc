@@ -137,7 +137,27 @@ MossdeepCity_StevensHouse_EventScript_Steven::
 
 MossdeepCity_StevensHouse_EventScript_Letter::
 	lockall
+	goto_if_set FLAG_ENABLE_SHIP_SOUTHERN_ISLAND, MossdeepCity_StevensHouse_EventScript_LetterPostTicket
+	goto_if_unset FLAG_IS_KANTO_CHAMPION, MossdeepCity_StevensHouse_EventScript_LetterNormal
 	msgbox MossdeepCity_StevensHouse_Text_LetterFromSteven, MSGBOX_DEFAULT
+	msgbox MossdeepCity_StevensHouse_Text_LetterPostscript, MSGBOX_DEFAULT
+	additem ITEM_EON_TICKET
+	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox MossdeepCity_StevensHouse_Text_ReceivedEonTicket, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox MossdeepCity_StevensHouse_Text_LetterEonTicketHint, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MossdeepCity_StevensHouse_EventScript_LetterNormal::
+	msgbox MossdeepCity_StevensHouse_Text_LetterFromSteven, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MossdeepCity_StevensHouse_EventScript_LetterPostTicket::
+	msgbox MossdeepCity_StevensHouse_Text_LetterFromSteven, MSGBOX_DEFAULT
+	msgbox MossdeepCity_StevensHouse_Text_LetterPostscript, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -207,6 +227,31 @@ MossdeepCity_StevensHouse_Text_LetterFromSteven:
 	.string "I'm counting on you.\p"
 	.string "May our paths cross someday.\p"
 	.string "STEVEN STONE$"
+
+MossdeepCity_StevensHouse_Text_LetterPostscript:
+	.string "… … … … … …\p"
+	.string "P.S.\p"
+	.string "During my travels, I visited a place\n"
+	.string "called SOUTHERN ISLAND.\p"
+	.string "I sensed the presence of an\n"
+	.string "extraordinary POKéMON there\l"
+	.string "unlike anything in my collection.\p"
+	.string "I've enclosed a ticket I obtained\n"
+	.string "on my journey. Use it at\l"
+	.string "LILYCOVE HARBOR.\p"
+	.string "I believe you're the only TRAINER\n"
+	.string "worthy of meeting what awaits\l"
+	.string "on that island.\p"
+	.string "… … … STEVEN STONE$"
+
+MossdeepCity_StevensHouse_Text_ReceivedEonTicket:
+	.string "{PLAYER} found an EON TICKET\n"
+	.string "tucked inside the letter!$"
+
+MossdeepCity_StevensHouse_Text_LetterEonTicketHint:
+	.string "The EON TICKET allows passage\n"
+	.string "to SOUTHERN ISLAND from\l"
+	.string "LILYCOVE HARBOR.$"
 
 MossdeepCity_StevensHouse_Text_CollectionOfRareRocks:
 	.string "It's a collection of rare rocks and\n"

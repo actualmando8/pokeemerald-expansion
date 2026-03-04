@@ -233,7 +233,10 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
-    
+
+    // Enable Gen 9 Exp Share All from game start
+    FlagSet(FLAG_EXP_SHARE_ALL);
+
     // Restore player name/gender from intro naming screen
     StringCopy(gSaveBlock2Ptr->playerName, playerName);
     gSaveBlock2Ptr->playerGender = playerGender;

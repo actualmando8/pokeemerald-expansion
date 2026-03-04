@@ -583,6 +583,10 @@
 #define FLAG_DEFEATED_REGIELEKI              0x1E1
 #define FLAG_DEFEATED_REGIDRAGO              0x1E2
 #define FLAG_DEFEATED_REGIGIGAS              0x1E3
+#define FLAG_JOHTO_ACCESS_UNLOCKED           0x1F4 // Custom: Johto accessible after Sevii Rocket sidequest
+#define FLAG_HIDE_RECEPTION_GATE_BLOCKER     0x1F5 // Custom: NPC blocking Johto entrance in Reception Gate
+#define FLAG_ALL_JOHTO_BADGES                0x1F6 // Custom: All 8 Johto gym badges obtained
+#define FLAG_DEFEATED_ILEX_CELEBI            0x1F7 // Custom: Defeated/caught Celebi at Ilex Forest shrine
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -738,17 +742,19 @@
 #define FLAG_HIDE_JIRACHI                   0x276 // Custom: Hide Jirachi in Meteor Falls
 #define FLAG_HIDE_GIOVANNI_SEVII            0x277 // Custom: Hide Giovanni in Rocket Warehouse
 #define FLAG_HIDE_HOENN_RIVAL_CELADON       0x278 // Custom: Hide Hoenn rival in Celadon City
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
+// Johto Gym TM gift flags
+#define FLAG_GOT_TM40_FROM_FALKNER   0x279 // Zephyr Badge TM (Aerial Ace)
+#define FLAG_GOT_TM89_FROM_BUGSY     0x27A // Hive Badge TM (U-turn)
+#define FLAG_GOT_TM45_FROM_WHITNEY   0x27B // Plain Badge TM (Attract)
+#define FLAG_GOT_TM30_FROM_MORTY     0x27C // Fog Badge TM (Shadow Ball)
+#define FLAG_GOT_TM01_FROM_CHUCK     0x27D // Storm Badge TM (Focus Punch)
+#define FLAG_GOT_TM23_FROM_JASMINE   0x27E // Mineral Badge TM (Iron Tail)
+#define FLAG_GOT_TM07_FROM_PRYCE     0x27F // Glacier Badge TM (Hail)
+#define FLAG_GOT_TM59_FROM_CLAIR     0x280 // Rising Badge TM (Dragon Pulse)
+// Johto story flags
+#define FLAG_DEFEATED_JOHTO_SILVER_1 0x281 // Silver encounter 1
+#define FLAG_DEFEATED_JOHTO_SILVER_2 0x282 // Silver encounter 2
+#define FLAG_EXP_SHARE_ALL  0x283 // Exp Share All: always on from game start
 #define FLAG_UNUSED_0x284  0x284 // Unused Flag
 #define FLAG_UNUSED_0x285  0x285 // Unused Flag
 #define FLAG_UNUSED_0x286  0x286 // Unused Flag
@@ -1562,14 +1568,16 @@
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
 #define FLAG_SYS_REGIDRAGO_PUZZLE_COMPLETED        (SYSTEM_FLAGS + 0x85)
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
-#define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
-#define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
-#define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
+// Johto badge flags
+#define FLAG_JOHTO_BADGE01_GET                      (SYSTEM_FLAGS + 0x86) // Zephyr (Falkner)
+#define FLAG_JOHTO_BADGE02_GET                      (SYSTEM_FLAGS + 0x87) // Hive (Bugsy)
+#define FLAG_JOHTO_BADGE03_GET                      (SYSTEM_FLAGS + 0x88) // Plain (Whitney)
+#define FLAG_JOHTO_BADGE04_GET                      (SYSTEM_FLAGS + 0x89) // Fog (Morty)
+#define FLAG_JOHTO_BADGE05_GET                      (SYSTEM_FLAGS + 0x8A) // Storm (Chuck)
+#define FLAG_JOHTO_BADGE06_GET                      (SYSTEM_FLAGS + 0x8B) // Mineral (Jasmine)
+#define FLAG_JOHTO_BADGE07_GET                      (SYSTEM_FLAGS + 0x8C) // Glacier (Pryce)
+#define FLAG_JOHTO_BADGE08_GET                      (SYSTEM_FLAGS + 0x8D) // Rising (Clair)
+#define NUM_JOHTO_BADGES                            (1 + FLAG_JOHTO_BADGE08_GET - FLAG_JOHTO_BADGE01_GET)
 #define FLAG_UNUSED_0x8EE                           (SYSTEM_FLAGS + 0x8E) // Unused Flag
 #define FLAG_UNUSED_0x8EF                           (SYSTEM_FLAGS + 0x8F) // Unused Flag
 #define FLAG_UNUSED_0x8F0                           (SYSTEM_FLAGS + 0x90) // Unused Flag

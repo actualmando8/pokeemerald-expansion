@@ -90,7 +90,8 @@ Route121_SafariZoneEntrance_EventScript_CheckHasRoomForPokemon::
 	end
 
 Route121_SafariZoneEntrance_EventScript_HasRoomForPokemon::
-	return
+	msgbox Route121_SafariZoneEntrance_Text_HasRoomForPokemon, MSGBOX_NPC
+	end
 
 Route121_SafariZoneEntrance_EventScript_NoPokeblockCase::
 	msgbox Route121_SafariZoneEntrance_Text_YouNeedPokeblockCase, MSGBOX_DEFAULT
@@ -129,3 +130,6 @@ Route121_SafariZoneEntrance_EventScript_TrainerTipSign::
 	msgbox Route121_SafariZoneEntrance_Text_TrainerTip, MSGBOX_SIGN
 	end
 
+
+Route121_SafariZoneEntrance_Text_HasRoomForPokemon:
+	.string "...$"
