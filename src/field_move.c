@@ -10,57 +10,58 @@
 
 static bool32 IsFieldMoveUnlocked_Cut(void)
 {
-    if (IS_FRLG)
-        return FlagGet(FLAG_BADGE02_GET);
-
-    return FlagGet(FLAG_BADGE01_GET);
+    if (FlagGet(FLAG_IS_KANTO_CHAMPION))
+        return TRUE;
+    return FlagGet(FLAG_BADGE01_GET) || FlagGet(FLAG_KANTO_BADGE02_GET) || FlagGet(FLAG_JOHTO_BADGE01_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Flash(void)
 {
-    if (IS_FRLG)
-        return FlagGet(FLAG_BADGE01_GET);
-
-    return FlagGet(FLAG_BADGE02_GET);
+    if (FlagGet(FLAG_IS_KANTO_CHAMPION))
+        return TRUE;
+    return FlagGet(FLAG_BADGE02_GET) || FlagGet(FLAG_KANTO_BADGE01_GET) || FlagGet(FLAG_JOHTO_BADGE02_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_RockSmash(void)
 {
-    if (IS_FRLG)
-        return FlagGet(FLAG_BADGE06_GET);
-
-    return FlagGet(FLAG_BADGE03_GET);
+    if (FlagGet(FLAG_IS_KANTO_CHAMPION))
+        return TRUE;
+    return FlagGet(FLAG_BADGE03_GET) || FlagGet(FLAG_KANTO_BADGE06_GET) || FlagGet(FLAG_JOHTO_BADGE03_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Strength(void)
 {
-    return FlagGet(FLAG_BADGE04_GET);
+    if (FlagGet(FLAG_IS_KANTO_CHAMPION))
+        return TRUE;
+    return FlagGet(FLAG_BADGE04_GET) || FlagGet(FLAG_KANTO_BADGE04_GET) || FlagGet(FLAG_JOHTO_BADGE04_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Surf(void)
 {
-    return FlagGet(FLAG_BADGE05_GET);
+    if (FlagGet(FLAG_IS_KANTO_CHAMPION))
+        return TRUE;
+    return FlagGet(FLAG_BADGE05_GET) || FlagGet(FLAG_KANTO_BADGE05_GET) || FlagGet(FLAG_JOHTO_BADGE05_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Fly(void)
 {
-    if (IS_FRLG)
-        return FlagGet(FLAG_BADGE03_GET);
-
-    return FlagGet(FLAG_BADGE06_GET);
+    if (FlagGet(FLAG_IS_KANTO_CHAMPION))
+        return TRUE;
+    return FlagGet(FLAG_BADGE06_GET) || FlagGet(FLAG_KANTO_BADGE03_GET) || FlagGet(FLAG_JOHTO_BADGE06_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Dive(void)
 {
-    return FlagGet(FLAG_BADGE07_GET);
+    if (FlagGet(FLAG_IS_KANTO_CHAMPION))
+        return TRUE;
+    return FlagGet(FLAG_BADGE07_GET) || FlagGet(FLAG_KANTO_BADGE07_GET) || FlagGet(FLAG_JOHTO_BADGE07_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Waterfall(void)
 {
-    if (IS_FRLG)
-        return FlagGet(FLAG_BADGE07_GET);
-
-    return FlagGet(FLAG_BADGE08_GET);
+    if (FlagGet(FLAG_IS_KANTO_CHAMPION))
+        return TRUE;
+    return FlagGet(FLAG_BADGE08_GET) || FlagGet(FLAG_KANTO_BADGE07_GET) || FlagGet(FLAG_JOHTO_BADGE08_GET);
 }
 
 #if OW_ROCK_CLIMB_FIELD_MOVE == TRUE

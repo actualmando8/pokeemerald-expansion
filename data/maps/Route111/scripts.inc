@@ -719,3 +719,11 @@ Route111_Text_TrainerHillSign:
 	.string "“Scale the heights, you hot-blooded\n"
 	.string "TRAINERS!”$"
 
+Route111_EventScript_TrainerHillBlocked::
+	msgbox Route111_Text_TrainerHillClosed, MSGBOX_NPC
+	end
+
+Route111_Text_TrainerHillClosed:
+	.string "Sorry, TRAINER HILL is closed\n"
+	.string "for renovations.\p"
+	.string "Please come back another time!$"

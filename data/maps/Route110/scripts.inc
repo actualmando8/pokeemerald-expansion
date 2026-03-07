@@ -370,6 +370,7 @@ Route110_EventScript_RivalTrigger3::
 
 Route110_EventScript_RivalScene::
 	lockall
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, Route110_EventScript_RivalSkip
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, Route110_EventScript_PlayMayMusic
 	call_if_eq VAR_RESULT, FEMALE, Route110_EventScript_PlayBrendanMusic
@@ -478,6 +479,11 @@ Route110_EventScript_RivalExit::
 	setvar VAR_ROUTE110_STATE, 1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
+	releaseall
+	end
+
+Route110_EventScript_RivalSkip::
+	setvar VAR_ROUTE110_STATE, 1
 	releaseall
 	end
 
@@ -591,6 +597,7 @@ Route110_EventScript_BirchScene4::
 	goto Route110_EventScript_BirchScene
 
 Route110_EventScript_BirchScene::
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, Route110_EventScript_BirchSkip
 	addobject LOCALID_ROUTE110_BIRCH
 	applymovement LOCALID_ROUTE110_BIRCH, Route110_Movement_BirchEntrance
 	waitmovement 0
@@ -631,6 +638,11 @@ Route110_EventScript_BirchScene::
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_BirchExit3
 	call_if_eq VAR_0x8008, 4, Route110_EventScript_BirchExit4
 	removeobject LOCALID_ROUTE110_BIRCH
+	setvar VAR_REGISTER_BIRCH_STATE, 2
+	releaseall
+	end
+
+Route110_EventScript_BirchSkip::
 	setvar VAR_REGISTER_BIRCH_STATE, 2
 	releaseall
 	end
