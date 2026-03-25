@@ -5,11 +5,24 @@ SlateportCity_MapScripts::
 
 SlateportCity_OnTransition:
 	setvar VAR_SLATEPORT_MUSEUM_1F_STATE, 0
+	setflag FLAG_HIDE_SLATEPORT_MUSEUM_THUG
+	call Common_EventScript_SetupRivalGfxId
 	call SlateportCity_EventScript_EnterSlateport
 	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
 	call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
 	call SlateportCity_EventScript_TryShowBriney
+	call SlateportCity_EventScript_TryShowRival
 	end
+
+SlateportCity_EventScript_TryShowRival::
+	@ Rival only appears after defeating them on Route 103 (Hoenn starter obtained and rival activated)
+	goto_if_unset FLAG_DEFEATED_RIVAL_ROUTE103, SlateportCity_EventScript_HideRival
+	clearflag FLAG_HIDE_SLATEPORT_CITY_RIVAL
+	return
+
+SlateportCity_EventScript_HideRival::
+	setflag FLAG_HIDE_SLATEPORT_CITY_RIVAL
+	return
 
 SlateportCity_EventScript_TryShowBriney::
 	goto_if_unset FLAG_BADGE04_GET, SlateportCity_EventScript_TryShowBrineyEnd
@@ -22,6 +35,11 @@ SlateportCity_EventScript_EnterSlateport::
 	setflag FLAG_VISITED_SLATEPORT_CITY
 	setvar VAR_CONTEST_HALL_STATE, 0
 	setflag FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER
+	@ Team Aqua removed from Slateport - always hide them
+	setflag FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA
+	@ Also hide the museum Aqua grunts
+	setflag FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS
+	setflag FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_FAMILIAR_AQUA_GRUNT
 	return
 
 SlateportCity_EventScript_MovePeopleForSternInterview::
@@ -253,6 +271,7 @@ SlateportCity_EventScript_Man1SternInterview::
 SlateportCity_EventScript_Woman1::
 	lock
 	faceplayer
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, SlateportCity_EventScript_Woman1RivalInfo
 	goto_if_set FLAG_DOCK_REJECTED_DEVON_GOODS, SlateportCity_EventScript_Woman1AquaGone
 	msgbox SlateportCity_Text_WhatsLongLineOverThere, MSGBOX_DEFAULT
 	release
@@ -260,6 +279,29 @@ SlateportCity_EventScript_Woman1::
 
 SlateportCity_EventScript_Woman1AquaGone::
 	msgbox SlateportCity_Text_VisitedMuseumOften, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_EventScript_Woman1RivalInfo::
+	msgbox SlateportCity_Text_RivalStoppedAquaMuseum, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_EventScript_Rival::
+	lock
+	faceplayer
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, SlateportCity_EventScript_RivalMay
+	goto_if_eq VAR_RESULT, FEMALE, SlateportCity_EventScript_RivalBrendan
+	end
+
+SlateportCity_EventScript_RivalMay::
+	msgbox SlateportCity_Text_RivalMaySlateport, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_EventScript_RivalBrendan::
+	msgbox SlateportCity_Text_RivalBrendanSlateport, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1018,6 +1060,37 @@ SlateportCity_Text_VisitedMuseumOften:
 	.string "the MUSEUM often.\p"
 	.string "I used to dream about the mysteries of\n"
 	.string "the sea after seeing the exhibits.$"
+
+SlateportCity_Text_RivalMaySlateport:
+	.string "Oh, hi there! You're from KANTO,\n"
+	.string "right? I can tell!\p"
+	.string "I'm MAY. My dad is PROF. BIRCH.\n"
+	.string "I've been traveling around HOENN.\p"
+	.string "TEAM AQUA tried to take over the\n"
+	.string "OCEANIC MUSEUM here, but I chased\l"
+	.string "them out.\p"
+	.string "They're up to no good all over\n"
+	.string "the region. I've been keeping\l"
+	.string "an eye on them.$"
+
+SlateportCity_Text_RivalBrendanSlateport:
+	.string "Hey! You're from KANTO, aren't\n"
+	.string "you? Cool!\p"
+	.string "I'm BRENDAN. My dad is PROF. BIRCH.\n"
+	.string "I've been traveling around HOENN.\p"
+	.string "TEAM AQUA tried to take over the\n"
+	.string "OCEANIC MUSEUM here, but I chased\l"
+	.string "them out.\p"
+	.string "They're up to no good all over\n"
+	.string "the region. I've been keeping\l"
+	.string "an eye on them.$"
+
+SlateportCity_Text_RivalStoppedAquaMuseum:
+	.string "TEAM AQUA tried to take over the\n"
+	.string "OCEANIC MUSEUM not long ago.\p"
+	.string "Luckily, a young trainer from\n"
+	.string "LITTLEROOT TOWN drove them out.\p"
+	.string "CAPT. STERN was very grateful.$"
 
 SlateportCity_Text_QuitPushing:
 	.string "Hey, there! Quit pushing!\n"

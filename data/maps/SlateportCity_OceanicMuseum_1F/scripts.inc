@@ -1,5 +1,14 @@
 SlateportCity_OceanicMuseum_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_OceanicMuseum_1F_OnTransition
 	.byte 0
+
+SlateportCity_OceanicMuseum_1F_OnTransition:
+	@ Team Aqua removed from Slateport - always hide museum grunts
+	setflag FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS
+	setflag FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_FAMILIAR_AQUA_GRUNT
+	@ Show museum population instead
+	clearflag FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION
+	end
 
 SlateportCity_OceanicMuseum_1F_EventScript_EntranceAttendant::
 	msgbox SlateportCity_OceanicMuseum_1F_Text_PleaseEnjoyYourself, MSGBOX_NPC

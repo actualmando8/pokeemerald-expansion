@@ -5,7 +5,18 @@ FortreeCity_MapScripts::
 
 FortreeCity_OnTransition:
 	setflag FLAG_VISITED_FORTREE_CITY
+	call Common_EventScript_SetupRivalGfxId
+	call FortreeCity_EventScript_TryShowRival
 	end
+
+FortreeCity_EventScript_TryShowRival::
+	goto_if_set FLAG_RECEIVED_POKEDEX_FROM_BIRCH, FortreeCity_EventScript_HideRival
+	clearflag FLAG_HIDE_FORTREE_CITY_RIVAL
+	return
+
+FortreeCity_EventScript_HideRival::
+	setflag FLAG_HIDE_FORTREE_CITY_RIVAL
+	return
 
 FortreeCity_OnResume:
 	setstepcallback STEP_CB_FORTREE_BRIDGE
@@ -42,6 +53,50 @@ FortreeCity_EventScript_Boy::
 
 FortreeCity_EventScript_GameboyKid::
 	msgbox FortreeCity_Text_PokemonThatEvolveWhenTraded, MSGBOX_NPC
+	end
+
+FortreeCity_EventScript_Rival::
+	lock
+	faceplayer
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, FortreeCity_EventScript_RivalMay
+	goto_if_eq VAR_RESULT, FEMALE, FortreeCity_EventScript_RivalBrendan
+	end
+
+FortreeCity_EventScript_RivalMay::
+	@ Check for both 5 Hoenn badges AND 5 Kanto badges for rival battle
+	goto_if_set FLAG_BADGE05_GET, FortreeCity_EventScript_RivalMayCheckKanto
+	msgbox FortreeCity_Text_RivalMayFortreeEarly, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeCity_EventScript_RivalMayCheckKanto:
+	goto_if_unset FLAG_KANTO_BADGE05_GET, FortreeCity_EventScript_RivalMayNotReady
+	msgbox FortreeCity_Text_RivalMayHandoff, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeCity_EventScript_RivalBrendan::
+	@ Check for both 5 Hoenn badges AND 5 Kanto badges for rival battle
+	goto_if_set FLAG_BADGE05_GET, FortreeCity_EventScript_RivalBrendanCheckKanto
+	msgbox FortreeCity_Text_RivalBrendanFortreeEarly, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeCity_EventScript_RivalBrendanCheckKanto:
+	goto_if_unset FLAG_KANTO_BADGE05_GET, FortreeCity_EventScript_RivalBrendanNotReady
+	msgbox FortreeCity_Text_RivalBrendanHandoff, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeCity_EventScript_RivalMayNotReady:
+	msgbox FortreeCity_Text_RivalMayNotReady, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeCity_EventScript_RivalBrendanNotReady:
+	msgbox FortreeCity_Text_RivalBrendanNotReady, MSGBOX_DEFAULT
+	release
 	end
 
 FortreeCity_EventScript_CitySign::
@@ -143,6 +198,76 @@ FortreeCity_Text_UsedDevonScopePokemonFled:
 	.string "visible!\p"
 	.string "The startled POKéMON fled!$"
 
+FortreeCity_Text_RivalMayFortreeEarly:
+	.string "Oh, hi! You're the trainer from\n"
+	.string "KANTO, right?\p"
+	.string "I've been dealing with TEAM AQUA\n"
+	.string "and TEAM MAGMA all across HOENN.\p"
+	.string "They're getting bolder. I could\n"
+	.string "really use some help, but you\l"
+	.string "should get more BADGES first.$"
+
+FortreeCity_Text_RivalBrendanFortreeEarly:
+	.string "Hey! You're the one from KANTO,\n"
+	.string "right?\p"
+	.string "I've been dealing with TEAM AQUA\n"
+	.string "and TEAM MAGMA all across HOENN.\p"
+	.string "They're getting bolder. I could\n"
+	.string "really use some help, but you\l"
+	.string "should get more BADGES first.$"
+
+FortreeCity_Text_RivalMayNotReady:
+	.string "You've gotten really strong here\n"
+	.string "in HOENN!\p"
+	.string "I've been keeping busy here dealing\n"
+	.string "with TEAM AQUA and MAGMA.\p"
+	.string "We should both focus on getting\n"
+	.string "stronger in our own regions first.\p"
+	.string "Then we can take on these teams\n"
+	.string "together!$"
+
+FortreeCity_Text_RivalBrendanNotReady:
+	.string "You've gotten really strong here\n"
+	.string "in HOENN!\p"
+	.string "I've been keeping busy here dealing\n"
+	.string "with TEAM AQUA and MAGMA.\p"
+	.string "We should both focus on getting\n"
+	.string "stronger in our own regions first.\p"
+	.string "Then we can take on these teams\n"
+	.string "together!$"
+
+FortreeCity_Text_RivalMayHandoff:
+	.string "You did it! You've proven yourself\n"
+	.string "in both KANTO and HOENN!\p"
+	.string "Listen, I need to tell you\n"
+	.string "something important.\p"
+	.string "TEAM AQUA is planning something\n"
+	.string "big. They've been heading toward\l"
+	.string "MT. PYRE.\p"
+	.string "I've been fighting them alone,\n"
+	.string "but I can't be everywhere.\p"
+	.string "I need you to take over from here.\n"
+	.string "Stop TEAM AQUA before they get\l"
+	.string "what they're after!\p"
+	.string "I'll keep investigating from my\n"
+	.string "end. Good luck!$"
+
+FortreeCity_Text_RivalBrendanHandoff:
+	.string "You did it! You've proven yourself\n"
+	.string "in both KANTO and HOENN!\p"
+	.string "Listen, I need to tell you\n"
+	.string "something important.\p"
+	.string "TEAM AQUA is planning something\n"
+	.string "big. They've been heading toward\l"
+	.string "MT. PYRE.\p"
+	.string "I've been fighting them alone,\n"
+	.string "but I can't be everywhere.\p"
+	.string "I need you to take over from here.\n"
+	.string "Stop TEAM AQUA before they get\l"
+	.string "what they're after!\p"
+	.string "I'll keep investigating from my\n"
+	.string "end. Good luck!$"
+
 FortreeCity_Text_CitySign:
 	.string "FORTREE CITY\n"
 	.string "“The treetop city that frolics with\l"
@@ -153,4 +278,3 @@ FortreeCity_Text_GymSign:
 	.string "LEADER: WINONA\p"
 	.string "“The bird user taking flight into\n"
 	.string "the world.”$"
-

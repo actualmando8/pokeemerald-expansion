@@ -15,6 +15,7 @@ MeteorFalls_1F_1R_EventScript_OpenStevensCave::
 
 MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	lockall
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, MeteorFalls_1F_1R_EventScript_MagmaSceneSkip
 	playbgm MUS_ENCOUNTER_MAGMA, FALSE
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
@@ -86,6 +87,11 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	setflag FLAG_HIDE_ROUTE_112_TEAM_MAGMA
 	setflag FLAG_MET_ARCHIE_METEOR_FALLS
 	setflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
+	setvar VAR_METEOR_FALLS_STATE, 1
+	releaseall
+	end
+
+MeteorFalls_1F_1R_EventScript_MagmaSceneSkip::
 	setvar VAR_METEOR_FALLS_STATE, 1
 	releaseall
 	end

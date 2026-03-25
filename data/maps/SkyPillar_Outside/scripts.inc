@@ -75,7 +75,9 @@ SkyPillar_Outside_EventScript_WallaceScene::
 	special WaitWeather
 	waitstate
 	delay 30
-	msgbox SkyPillar_Outside_Text_GotToGoBackForSootopolis, MSGBOX_DEFAULT
+	msgbox SkyPillar_Outside_Text_RivalHandledSkyPillarClimax, MSGBOX_DEFAULT
+	closemessage
+	msgbox SkyPillar_Outside_Text_PlayerNeedsToHandleRayquaza, MSGBOX_DEFAULT
 	closemessage
 	playse SE_EXIT
 	fadescreenswapbuffers FADE_TO_BLACK
@@ -168,3 +170,26 @@ SkyPillar_Outside_Text_GotToGoBackForSootopolis:
 	.string "I've got to go back.\p"
 	.string "Everything is in your hands now.\n"
 	.string "Don't fail us!$"
+
+SkyPillar_Outside_Text_RivalHandledSkyPillarClimax:
+	.string "WALLACE: Wait!\p"
+	.string "While you've been challenging GYMS\n"
+	.string "and earning badges, your rival has\l"
+	.string "been handling the crisis in HOENN.\p"
+	.string "They dealt with TEAM AQUA and MAGMA\n"
+	.string "at their hideouts.\p"
+	.string "But now it's escalated to needing\n"
+	.string "RAYQUAZA to calm the weather!\p"
+	.string "That's where YOU come in.$"
+
+SkyPillar_Outside_Text_PlayerNeedsToHandleRayquaza:
+	.string "WALLACE: {PLAYER}{KUN}.\p"
+	.string "While you focused on becoming a stronger\n"
+	.string "TRAINER with badges, your rival kept\l"
+	.string "the teams busy.\p"
+	.string "Now it's time for you to handle the\n"
+	.string "final piece - RAYQUAZA.\p"
+	.string "RAYQUAZA is up at the top of\n"
+	.string "SKY PILLAR.\p"
+	.string "You're the one who can do this!\n"
+	.string "Don't let HOENN down!$"

@@ -18,8 +18,12 @@ LavaridgeTown_EventScript_ClearLavaridgeWhiteOut::
 	return
 
 LavaridgeTown_EventScript_CheckSetRivalPos::
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, LavaridgeTown_EventScript_CheckSetRivalPos_Skip
 	getplayerxy VAR_0x8004, VAR_0x8005
 	goto_if_eq VAR_0x8004, 9, LavaridgeTown_EventScript_SetRivalPos
+	return
+
+LavaridgeTown_EventScript_CheckSetRivalPos_Skip::
 	return
 
 LavaridgeTown_EventScript_SetRivalPos::
@@ -43,6 +47,7 @@ LavaridgeTown_OnFrame:
 
 LavaridgeTown_EventScript_RivalGiveGoGoggles::
 	lockall
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, LavaridgeTown_EventScript_KantoPlayerGoGoggles
 	getplayerxy VAR_0x8008, VAR_0x8009
 	call_if_eq VAR_0x8008, 9, LavaridgeTown_EventScript_RivalNoticePlayer
 	call_if_ne VAR_0x8008, 9, LavaridgeTown_EventScript_RivalExitHerbShop
@@ -272,6 +277,24 @@ LavaridgeTown_EventScript_GymSign::
 LavaridgeTown_EventScript_HerbShopSign::
 	msgbox LavaridgeTown_Text_HerbShopSign, MSGBOX_SIGN
 	end
+
+LavaridgeTown_EventScript_KantoPlayerGoGoggles::
+	msgbox LavaridgeTown_Text_KantoPlayerFoundGoGoggles, MSGBOX_DEFAULT
+	giveitem ITEM_GO_GOGGLES
+	setflag FLAG_RECEIVED_GO_GOGGLES
+	setvar VAR_LAVARIDGE_TOWN_STATE, 2
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	releaseall
+	end
+
+LavaridgeTown_Text_KantoPlayerFoundGoGoggles:
+	.string "There's a package near the herb shop\n"
+	.string "with a note attached.\p"
+	.string "The note reads:\n"
+	.string "These GO-GOGGLES will protect\l"
+	.string "your eyes in the desert on\l"
+	.string "ROUTE 111. Use them well!\p"
+	.string "It's signed by a passing TRAINER.$"
 
 LavaridgeTown_Text_MayNiceBadgesTakeThis:
 	.string "MAY: {PLAYER}{KUN}! Long time no see!\p"

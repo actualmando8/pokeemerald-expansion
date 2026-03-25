@@ -23,6 +23,23 @@ PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouFemale::
 	return
 
 PalletTown_PlayersHouse_1F_EventScript_MomHeal::
+	goto_if_set FLAG_RECEIVED_POKENAV, PalletTown_PlayersHouse_1F_EventScript_MomHealNormal
+	@ First visit after getting Pokedex - give PokeNav
+	msgbox PalletTown_PlayersHouse_1F_Text_MomGivePokenav
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	message PalletTown_PlayersHouse_1F_Text_ReceivedPokenav
+	waitfanfare
+	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_RECEIVED_POKENAV
+	msgbox PalletTown_PlayersHouse_1F_Text_PokenavExplain
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	msgbox PalletTown_PlayersHouse_1F_Text_LookingGreatTakeCare
+	release
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_MomHealNormal::
 	msgbox PalletTown_PlayersHouse_1F_Text_YouShouldTakeQuickRest
 	closemessage
 	call Common_EventScript_OutOfCenterPartyHeal
@@ -87,6 +104,27 @@ PalletTown_PlayersHouse_1F_Text_MovieOnTVGirlOnBrickRoad::
 	.string "A girl with her hair in pigtails is\l"
 	.string "walking up a brick road.\p"
 	.string "…I better go, too.$"
+
+PalletTown_PlayersHouse_1F_Text_MomGivePokenav::
+	.string "MOM: {PLAYER}! Welcome home!\p"
+	.string "Oh, I almost forgot!\n"
+	.string "I found this in your room.\p"
+	.string "It looks like some kind of\n"
+	.string "navigation device.\p"
+	.string "I think it came from that\n"
+	.string "HOENN region you've been\l"
+	.string "hearing about.\p"
+	.string "Here, you should have it!$"
+
+PalletTown_PlayersHouse_1F_Text_ReceivedPokenav::
+	.string "{PLAYER} received a POKéNAV.$"
+
+PalletTown_PlayersHouse_1F_Text_PokenavExplain::
+	.string "MOM: It's called a POKéNAV.\p"
+	.string "It has a map of the HOENN region\n"
+	.string "and can track other TRAINERS.\p"
+	.string "Sounds useful for your travels!\p"
+	.string "Now rest up, dear.$"
 
 PalletTown_PlayersHouse_1F_Text_OopsWrongSide::
 	.string "Oops, wrong side…$"

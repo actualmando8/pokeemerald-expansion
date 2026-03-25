@@ -23,7 +23,16 @@ MauvilleCity_EventScript_Boy::
 	end
 
 MauvilleCity_EventScript_Maniac::
-	msgbox MauvilleCity_Text_AllSortsOfPeopleComeThrough, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, MauvilleCity_EventScript_ManiacRivalInfo
+	msgbox MauvilleCity_Text_AllSortsOfPeopleComeThrough, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_EventScript_ManiacRivalInfo::
+	msgbox MauvilleCity_Text_RivalMetSteven, MSGBOX_DEFAULT
+	release
 	end
 
 MauvilleCity_EventScript_Woman::
@@ -620,6 +629,14 @@ MauvilleCity_Text_AllSortsOfPeopleComeThrough:
 	.string "and south, and east and west.\p"
 	.string "Because of that, we get all sorts of\n"
 	.string "people coming through.$"
+
+MauvilleCity_Text_RivalMetSteven:
+	.string "I saw the POKéMON CHAMPION STEVEN\n"
+	.string "on ROUTE 118 the other day.\p"
+	.string "He was talking to a young trainer\n"
+	.string "from LITTLEROOT TOWN.\p"
+	.string "That kid must be something special\n"
+	.string "to catch STEVEN's attention!$"
 
 MauvilleCity_Text_RydelVeryGenerous:
 	.string "Have you been to RYDEL'S CYCLES yet?\p"

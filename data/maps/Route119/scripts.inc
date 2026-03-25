@@ -38,6 +38,11 @@ Route119_EventScript_RivalTrigger2::
 
 Route119_EventScript_RivalEncounter::
 	lockall
+	@ Check for both 5 Hoenn badges AND 5 Kanto badges for rival battle
+	goto_if_unset FLAG_BADGE05_GET, Route119_EventScript_RivalNotReady
+	goto_if_unset FLAG_KANTO_BADGE05_GET, Route119_EventScript_RivalNotReady
+	@ Both 5 Hoenn and 5 Kanto badges - time for the battle!
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, Route119_EventScript_RivalSkip
 	addobject LOCALID_ROUTE119_RIVAL_ON_BIKE
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, Route119_EventScript_PlayMayMusic
@@ -56,6 +61,54 @@ Route119_EventScript_RivalEncounter::
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Route119_EventScript_BattleMay
 	goto_if_eq VAR_RESULT, FEMALE, Route119_EventScript_BattleBrendan
+	releaseall
+	end
+
+Route119_EventScript_RivalNotReady::
+	@ Not ready for battle yet - show dialogue but don't battle
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, Route119_EventScript_RivalSkip
+	addobject LOCALID_ROUTE119_RIVAL_ON_BIKE
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, Route119_EventScript_PlayMayMusic
+	call_if_eq VAR_RESULT, FEMALE, Route119_EventScript_PlayBrendanMusic
+	delay 65
+	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_RivalEnter1
+	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_RivalEnter2
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	delay 30
+	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_SetRivalPos1
+	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_SetRivalPos2
+	removeobject LOCALID_ROUTE119_RIVAL_ON_BIKE
+	addobject LOCALID_ROUTE119_RIVAL
+	delay 30
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, Route119_EventScript_TalkMay
+	goto_if_eq VAR_RESULT, FEMALE, Route119_EventScript_TalkBrendan
+	releaseall
+	end
+
+Route119_EventScript_TalkMay:
+	msgbox Route119_Text_MayNotReady, MSGBOX_DEFAULT
+	goto Route119_EventScript_RivalExitNoBattle
+	end
+
+Route119_EventScript_TalkBrendan:
+	msgbox Route119_Text_BrendanNotReady, MSGBOX_DEFAULT
+	goto Route119_EventScript_RivalExitNoBattle
+	end
+
+Route119_EventScript_RivalExitNoBattle:
+	closemessage
+	removeobject LOCALID_ROUTE119_RIVAL
+	setvar VAR_ROUTE119_STATE, 1
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	releaseall
+	end
+
+Route119_EventScript_RivalSkip::
+	setvar VAR_ROUTE119_STATE, 1
 	releaseall
 	end
 
@@ -91,10 +144,8 @@ Route119_EventScript_BattleMayMudkip::
 	end
 
 Route119_EventScript_DefeatedMay::
-	msgbox Route119_Text_MayPresentForYou, MSGBOX_DEFAULT
-	call Route119_EventScript_GiveFlyHM
-	msgbox Route119_Text_MayExplainFly, MSGBOX_DEFAULT
-	goto Route119_EventScript_RivalExitScottArrive
+	msgbox Route119_Text_MayBattleWon, MSGBOX_DEFAULT
+	goto Route119_EventScript_RivalExit
 	end
 
 Route119_EventScript_BattleBrendan::
@@ -121,45 +172,21 @@ Route119_EventScript_BattleBrendanMudkip::
 	end
 
 Route119_EventScript_DefeatedBrendan::
-	msgbox Route119_Text_BrendanIllGiveYouThis, MSGBOX_DEFAULT
-	call Route119_EventScript_GiveFlyHM
-	msgbox Route119_Text_BrendanExplainFly, MSGBOX_DEFAULT
-	goto Route119_EventScript_RivalExitScottArrive
+	msgbox Route119_Text_BrendanBattleWon, MSGBOX_DEFAULT
+	goto Route119_EventScript_RivalExit
 	end
 
-Route119_EventScript_GiveFlyHM::
-	giveitem ITEM_HM_FLY
-	setflag FLAG_RECEIVED_HM_FLY
-	return
-
-Route119_EventScript_RivalExitScottArrive::
+Route119_EventScript_RivalExit::
 	closemessage
-	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_SetRivalPos1
-	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_SetRivalPos2
 	removeobject LOCALID_ROUTE119_RIVAL
-	addobject LOCALID_ROUTE119_RIVAL_ON_BIKE
-	delay 30
-	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_RivalExit1
-	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_RivalExit2
-	removeobject LOCALID_ROUTE119_RIVAL_ON_BIKE
+	setflag FLAG_DEFEATED_RIVAL_ROUTE103
 	setvar VAR_ROUTE119_STATE, 1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	delay 60
-	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_SetScottPos1
-	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_SetScottPos2
-	addobject LOCALID_ROUTE119_SCOTT
-	applymovement LOCALID_ROUTE119_SCOTT, Route119_Movement_ScottEnter
-	waitmovement 0
-	addvar VAR_SCOTT_STATE, 1
-	msgbox Route119_Text_ScottWayToGoBeSeeingYou, MSGBOX_DEFAULT
-	closemessage
-	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_ScottExit1
-	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_ScottExit2
-	removeobject LOCALID_ROUTE119_SCOTT
 	releaseall
 	end
 
+@ Removed GiveFlyHM and Scott arrival - no longer needed
 Route119_EventScript_SetScottPos1::
 	setobjectxyperm LOCALID_ROUTE119_SCOTT, 27, 25
 	return
@@ -476,18 +503,37 @@ Route119_EventScript_ScottWonAtFortreeGymCall::
 	end
 
 Route119_Text_MayIntro:
-	.string "MAY: {PLAYER}{KUN}!\n"
-	.string "Where were you? I was looking for you!\p"
-	.string "How much stronger have you gotten?\n"
-	.string "Let me check for you!\p"
-	.string "Ready with your POKéMON?\n"
-	.string "Of course you are! Go!$"
+	.string "MAY: {PLAYER}{KUN}!\p"
+	.string "Wow! You've been getting BADGES in\n"
+	.string "KANTO too! That's amazing!\p"
+	.string "I've been handling things here\n"
+	.string "in HOENN while you were gone.\p"
+	.string "But now that you're back and\n"
+	.string "stronger than ever…\p"
+	.string "Let's have a proper battle!\n"
+	.string "Show me what you've got!$"
 
 Route119_Text_MayDefeat:
 	.string "Achah!\n"
-	.string "{PLAYER}{KUN}, you're strong!\p"
-	.string "I was worried that you might be\n"
-	.string "struggling with your training.$"
+	.string "You've gotten so strong!$"
+
+Route119_Text_MayBattleWon:
+	.string "MAY: Whoa! You're incredible!\p"
+	.string "You've gotten so much stronger!\p"
+	.string "You've really grown as a TRAINER\n"
+	.string "while traveling between regions.\p"
+	.string "Keep challenging GYMS and becoming\n"
+	.string "stronger! I'll be cheering for you!$"
+
+Route119_Text_MayNotReady:
+	.string "MAY: {PLAYER}{KUN}!\p"
+	.string "You've been working hard in HOENN!\p"
+	.string "I've been keeping busy here dealing\n"
+	.string "with TEAM AQUA and MAGMA.\p"
+	.string "We should both focus on getting\n"
+	.string "stronger in our own regions first.\p"
+	.string "Then we can take on these teams\n"
+	.string "together!$"
 
 Route119_Text_MayPresentForYou:
 	.string "MAY: But I had absolutely nothing to\n"
@@ -518,6 +564,24 @@ Route119_Text_BrendanIntro:
 Route119_Text_BrendanDefeat:
 	.string "Hmm…\n"
 	.string "You've gotten pretty darn decent.$"
+
+Route119_Text_BrendanBattleWon:
+	.string "BRENDAN: Whoa! You're incredible!\p"
+	.string "You've gotten so much stronger!\p"
+	.string "You've really grown as a TRAINER\n"
+	.string "while traveling between regions.\p"
+	.string "Keep challenging GYMS and becoming\n"
+	.string "stronger! I'll be cheering for you!$"
+
+Route119_Text_BrendanNotReady:
+	.string "BRENDAN: {PLAYER}!\p"
+	.string "You've been working hard in HOENN!\p"
+	.string "I've been keeping busy here dealing\n"
+	.string "with TEAM AQUA and MAGMA.\p"
+	.string "We should both focus on getting\n"
+	.string "stronger in our own regions first.\p"
+	.string "Then we can take on these teams\n"
+	.string "together!$"
 
 Route119_Text_BrendanIllGiveYouThis:
 	.string "BRENDAN: I'd say you're good enough\n"

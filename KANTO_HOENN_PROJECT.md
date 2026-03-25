@@ -89,11 +89,11 @@
 
 ### LATE GAME — FINISHING BOTH REGIONS
 - Return to Kanto and Hoenn to finish remaining badges
+- You can beat Kanto or Hoenn first - order doesn't matter
+- Must beat BOTH Kanto Elite Four AND Hoenn Elite Four to unlock Johto
 - Rocket subplot concludes as vanilla with stronger remnants in Sevii
 - Stronger Giovanni fight in Sevii Islands as true final Rocket confrontation
 - Aqua and Magma remnants dealt with in Hoenn
-- Kanto Elite Four beaten
-- Hoenn Elite Four beaten
 - Hoenn rival if obtained appears in Celadon City after 8 badges in both regions — casual encounter, full power battle, payoff for players who did the Littleroot detour
 
 ---

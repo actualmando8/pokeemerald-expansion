@@ -90,6 +90,7 @@ Route118_EventScript_StevenTrigger2::
 	end
 
 Route118_EventScript_StevenTrigger::
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, Route118_EventScript_StevenSkip
 	playse SE_LEDGE
 	applymovement LOCALID_ROUTE118_STEVEN, Route118_Movement_StevenJumpLedge
 	waitmovement 0
@@ -121,6 +122,11 @@ Route118_EventScript_StevenExit2::
 	applymovement LOCALID_ROUTE118_STEVEN, Route118_Movement_StevenExit2
 	waitmovement 0
 	return
+
+Route118_EventScript_StevenSkip::
+	setvar VAR_ROUTE118_STATE, 1
+	releaseall
+	end
 
 Route118_Movement_PlayerWatchStevenExit:
 	delay_16
@@ -300,9 +306,11 @@ Route118_Text_RouteSign119:
 	.string "{UP_ARROW} ROUTE 119$"
 
 @ ========================================
-@ Route 118 Blocker - block until 5 Kanto + 5 Hoenn badges
+@ Route 118 Blocker - block until player meets Birch AND 5 Kanto + 5 Hoenn badges
 @ ========================================
 Route118_EventScript_TryRemoveBlocker::
+	@ First check if player has met Birch
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, Route118_EventScript_TryRemoveBlockerEnd
 	@ Check 5 Hoenn badges (Roxanne, Brawly, Wattson, Flannery, Norman)
 	goto_if_unset FLAG_BADGE01_GET, Route118_EventScript_TryRemoveBlockerEnd
 	goto_if_unset FLAG_BADGE02_GET, Route118_EventScript_TryRemoveBlockerEnd
@@ -339,5 +347,8 @@ Route118_Text_BlockerMessage:
 	.string "TRAINERS should attempt it.\p"
 	.string "Come back when you've proven\n"
 	.string "yourself in both KANTO\l"
-	.string "and HOENN!$"
+	.string "and HOENN!\p"
+	.string "You should also go introduce yourself\n"
+	.string "to PROFESSOR BIRCH in LITTLEROOT\l"
+	.string "if you haven't already.$"
 

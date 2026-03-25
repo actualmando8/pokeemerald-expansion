@@ -5,7 +5,10 @@ SlateportCity_Harbor_MapScripts::
 SlateportCity_Harbor_OnTransition:
 	setescapewarp MAP_SLATEPORT_CITY, 28, 13
 	setvar VAR_TEMP_1, 0
-	call_if_eq VAR_SLATEPORT_HARBOR_STATE, 1, SlateportCity_Harbor_EventScript_ReadyAquaEscapeScene
+	@ Team Aqua removed - Capt. Stern is always in the harbor
+	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_CAPTAIN_STERN
+	@ Show harbor patrons by default
+	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS
 	call_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_ShowSSTidal
 	end
 
@@ -158,12 +161,29 @@ SlateportCity_Harbor_EventScript_FerryAttendant::
 	lock
 	faceplayer
 	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_AskForTicket
+	goto_if_set FLAG_GOT_HOENN_TICKET, SlateportCity_Harbor_EventScript_AskVermilionOnly
 	msgbox SlateportCity_Harbor_Text_FerryServiceUnavailable, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_Harbor_EventScript_AskVermilionOnly::
+	msgbox SlateportCity_Harbor_Text_AskSailVermilion, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_Harbor_EventScript_SailToVermilion
+	msgbox SlateportCity_Harbor_Text_SailAnotherTime, MSGBOX_DEFAULT
 	release
 	end
 
 SlateportCity_Harbor_EventScript_AskForTicket::
 	msgbox SlateportCity_Harbor_Text_MayISeeYourTicket, MSGBOX_DEFAULT
+	goto_if_set FLAG_GOT_HOENN_TICKET, SlateportCity_Harbor_EventScript_AskVermilionFirst
+	message SlateportCity_Harbor_Text_FlashedTicketWhereTo
+	waitmessage
+	goto SlateportCity_Harbor_EventScript_ChooseDestination
+	end
+
+SlateportCity_Harbor_EventScript_AskVermilionFirst::
+	msgbox SlateportCity_Harbor_Text_AskSailVermilion, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_Harbor_EventScript_SailToVermilion
 	message SlateportCity_Harbor_Text_FlashedTicketWhereTo
 	waitmessage
 	goto SlateportCity_Harbor_EventScript_ChooseDestination
@@ -232,6 +252,16 @@ SlateportCity_Harbor_EventScript_BoardFerry::
 	setvar VAR_0x8004, LOCALID_SLATEPORT_HARBOR_SS_TIDAL
 	call Common_EventScript_FerryDepart
 	return
+
+SlateportCity_Harbor_EventScript_SailToVermilion::
+	msgbox SlateportCity_Harbor_Text_VermilionItIs, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	fadescreen FADE_TO_BLACK
+	warp MAP_VERMILION_CITY, 30, 26
+	waitstate
+	release
+	end
 
 SlateportCity_Harbor_EventScript_CancelDestinationSelect::
 	msgbox SlateportCity_Harbor_Text_SailAnotherTime, MSGBOX_DEFAULT
@@ -403,6 +433,14 @@ SlateportCity_Harbor_Text_FlashedTicketWhereTo:
 
 SlateportCity_Harbor_Text_SailAnotherTime:
 	.string "Please sail with us another time!$"
+
+SlateportCity_Harbor_Text_AskSailVermilion:
+	.string "Would you like to sail to\n"
+	.string "VERMILION CITY in KANTO?$"
+
+SlateportCity_Harbor_Text_VermilionItIs:
+	.string "VERMILION CITY it is, then!\n"
+	.string "Have a safe voyage!$"
 
 SlateportCity_Harbor_Text_LilycoveItIs:
 	.string "LILYCOVE CITY it is, then!$"

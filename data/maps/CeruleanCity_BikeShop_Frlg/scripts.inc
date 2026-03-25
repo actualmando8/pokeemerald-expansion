@@ -32,9 +32,24 @@ CeruleanCity_BikeShop_EventScript_ClerkGoodbye::
 
 CeruleanCity_BikeShop_EventScript_ExchangeBikeVoucher::
 	msgbox CeruleanCity_BikeShop_Text_OhBikeVoucherHereYouGo
-	msgreceiveditem CeruleanCity_BikeShop_Text_ExchangedVoucherForBicycle, ITEM_BICYCLE, 1, MUS_RG_OBTAIN_KEY_ITEM
+	@ If player already has Acro Bike, give Mach Bike instead
+	checkitem ITEM_ACRO_BIKE
+	goto_if_eq VAR_RESULT, TRUE, CeruleanCity_BikeShop_EventScript_GiveMachBike
+	@ Give Acro Bike by default
+	msgreceiveditem CeruleanCity_BikeShop_Text_ExchangedVoucherForAcroBike, ITEM_ACRO_BIKE, 1, MUS_RG_OBTAIN_KEY_ITEM
 	setflag FLAG_GOT_BICYCLE
-	additem ITEM_BICYCLE
+	setflag FLAG_RECEIVED_BIKE
+	additem ITEM_ACRO_BIKE
+	removeitem ITEM_BIKE_VOUCHER
+	msgbox CeruleanCity_BikeShop_Text_ThankYouComeAgain
+	release
+	end
+
+CeruleanCity_BikeShop_EventScript_GiveMachBike::
+	msgreceiveditem CeruleanCity_BikeShop_Text_ExchangedVoucherForMachBike, ITEM_MACH_BIKE, 1, MUS_RG_OBTAIN_KEY_ITEM
+	setflag FLAG_GOT_BICYCLE
+	setflag FLAG_RECEIVED_BIKE
+	additem ITEM_MACH_BIKE
 	removeitem ITEM_BIKE_VOUCHER
 	msgbox CeruleanCity_BikeShop_Text_ThankYouComeAgain
 	release
@@ -125,6 +140,14 @@ CeruleanCity_BikeShop_Text_GermanFoldableBicyleFinallyOnMarket::
 	.string "ついに　はつばい！\p"
 	.string "ドイツ　せい　さいこうきゅう\n"
 	.string "おりたたみ　じてんしゃ！$"
+
+CeruleanCity_BikeShop_Text_ExchangedVoucherForAcroBike::
+	.string "{PLAYER} exchanged the\n"
+	.string "BIKE VOUCHER for an ACRO BIKE.$"
+
+CeruleanCity_BikeShop_Text_ExchangedVoucherForMachBike::
+	.string "{PLAYER} exchanged the\n"
+	.string "BIKE VOUCHER for a MACH BIKE.$"
 
 CeruleanCity_BikeShop_Text_ShinyNewBicycle::
 	.string "A shiny new BICYCLE!$"

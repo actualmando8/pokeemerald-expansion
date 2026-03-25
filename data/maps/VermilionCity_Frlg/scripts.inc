@@ -457,7 +457,7 @@ VermilionCity_EventScript_SailToSlateport::
 	closemessage
 	delay 20
 	fadescreen FADE_TO_BLACK
-	warp MAP_SLATEPORT_CITY, 29, 17
+	warp MAP_SLATEPORT_CITY_HARBOR, 11, 13
 	waitstate
 	release
 	end

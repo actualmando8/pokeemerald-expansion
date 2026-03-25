@@ -227,7 +227,16 @@ PetalburgCity_EventScript_CitySign::
 	end
 
 PetalburgCity_EventScript_Gentleman::
-	msgbox PetalburgCity_Text_FullPartyExplanation, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, PetalburgCity_EventScript_GentlemanRivalInfo
+	msgbox PetalburgCity_Text_FullPartyExplanation, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_EventScript_GentlemanRivalInfo::
+	msgbox PetalburgCity_Text_BirchsKidStartedJourney, MSGBOX_DEFAULT
+	release
 	end
 
 PetalburgCity_EventScript_WallyHouseSign::
@@ -259,6 +268,7 @@ PetalburgCity_EventScript_ShowGymToPlayer3::
 	end
 
 PetalburgCity_EventScript_ShowGymToPlayer::
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, PetalburgCity_EventScript_ShowGymSkip
 	applymovement LOCALID_GYM_BOY, Common_Movement_FacePlayer
 	waitmovement 0
 	playbgm MUS_FOLLOW_ME, FALSE
@@ -286,6 +296,10 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkAway
 	waitmovement 0
 	fadedefaultbgm
+	releaseall
+	end
+
+PetalburgCity_EventScript_ShowGymSkip::
 	releaseall
 	end
 
@@ -529,6 +543,7 @@ PetalburgCity_EventScript_Scott3::
 	end
 
 PetalburgCity_EventScript_Scott::
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, PetalburgCity_EventScript_ScottSkip
 	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottStartWalkLeft
 	waitmovement 0
 	playse SE_PIN
@@ -557,6 +572,12 @@ PetalburgCity_EventScript_Scott::
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_ScottExit2
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_ScottExit3
+	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
+	removeobject LOCALID_PETALBURG_SCOTT
+	releaseall
+	end
+
+PetalburgCity_EventScript_ScottSkip::
 	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
 	removeobject LOCALID_PETALBURG_SCOTT
 	releaseall
@@ -724,6 +745,13 @@ PetalburgCity_Text_WaterReflection:
 	.string "Or it could be a look of somber silence\n"
 	.string "struggling with fear…\p"
 	.string "What do you see reflected in your face?$"
+
+PetalburgCity_Text_BirchsKidStartedJourney:
+	.string "PROF. BIRCH's kid has been making\n"
+	.string "quite a name around HOENN.\p"
+	.string "I hear the young trainer has been\n"
+	.string "taking on TEAM AQUA all by\l"
+	.string "themselves! Quite impressive.$"
 
 PetalburgCity_Text_FullPartyExplanation:
 	.string "Let's say you have six POKéMON.\n"

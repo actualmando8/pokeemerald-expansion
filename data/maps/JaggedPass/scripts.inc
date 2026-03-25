@@ -73,7 +73,7 @@ JaggedPass_EventScript_MagmaHideoutGuard::
 	waitmovement 0
 	applymovement LOCALID_MAGMA_HIDEOUT_GUARD, Common_Movement_FacePlayer
 	waitmovement 0
-	msgbox JaggedPass_Text_GruntIntro, MSGBOX_DEFAULT
+	msgbox JaggedPass_Text_GruntIntroRivalHelp, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_GRUNT_JAGGED_PASS, JaggedPass_Text_GruntDefeat
 	setflag FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS
@@ -230,6 +230,20 @@ JaggedPass_Text_GruntDefeat:
 	.string "Urrrgh…\p"
 	.string "I should've ducked into our HIDEOUT\n"
 	.string "right away…$"
+
+JaggedPass_Text_GruntIntroRivalHelp:
+	.string "Wah!\n"
+	.string "So you're {PLAYER}!\p"
+	.string "While you've been off getting GYM\n"
+	.string "badges, your rival has been causing\l"
+	.string "us trouble across HOENN!\p"
+	.string "They took care of our guys at METEOR\n"
+	.string "FALLS and MT. CHIMNEY.\p"
+	.string "But now they've pushed too far!\p"
+	.string "We've got them cornered in the\n"
+	.string "hideout, and now you've shown up!\p"
+	.string "Let's see if you're as tough as\n"
+	.string "your rival!$"
 
 JaggedPass_Text_GoWhereverYouWant:
 	.string "Okay, oh-kay!\n"

@@ -18,6 +18,8 @@ AquaHideout_B2F_EventScript_MattNoticePlayer::
 	waitmovement 0
 	applymovement VAR_0x8008, Common_Movement_FacePlayer
 	waitmovement 0
+	msgbox AquaHideout_B2F_Text_MattNoticePlayerArrival, MSGBOX_DEFAULT
+	closemessage
 	setvar VAR_TEMP_1, 1
 	releaseall
 	end
@@ -114,6 +116,17 @@ AquaHideout_B2F_Text_MattPostBattle:
 	.string "LILYCOVE.\p"
 	.string "But will you find it then?\n"
 	.string "Hehehe!$"
+
+AquaHideout_B2F_Text_MattNoticePlayerArrival:
+	.string "MATT: Hey!\p"
+	.string "So {PLAYER} finally showed up!\p"
+	.string "While you've been off challenging GYMS\n"
+	.string "and collecting badges, your rival has\l"
+	.string "been keeping us busy!\p"
+	.string "But they've been worn down from dealing\n"
+	.string "with all our guys.\p"
+	.string "Now it's your turn! We're not letting\n"
+	.string "either of you leave!$"
 
 AquaHideout_B2F_Text_Grunt4Intro:
 	.string "Wahahah, I grew weary of waiting!\n"

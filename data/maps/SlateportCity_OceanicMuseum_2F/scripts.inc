@@ -1,5 +1,13 @@
 SlateportCity_OceanicMuseum_2F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_OceanicMuseum_2F_OnTransition
 	.byte 0
+
+SlateportCity_OceanicMuseum_2F_OnTransition:
+	@ Team Aqua removed from Slateport - show regular museum patrons
+	clearflag FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION
+	@ Hide the Capt. Stern on 2F (he's in the harbor instead)
+	setflag FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_CAPTAIN_STERN
+	end
 
 SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 	lock

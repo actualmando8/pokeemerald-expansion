@@ -15,6 +15,8 @@ Route121_EventScript_SafariZoneSign::
 
 Route121_EventScript_AquaGruntsMoveOut::
 	lockall
+	goto_if_unset FLAG_BADGE05_GET, Route121_EventScript_AquaSkip
+	goto_if_unset FLAG_KANTO_BADGE05_GET, Route121_EventScript_AquaSkip
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	applymovement LOCALID_ROUTE121_GRUNT_2, Common_Movement_WalkInPlaceRight
 	waitmovement 0
@@ -28,6 +30,11 @@ Route121_EventScript_AquaGruntsMoveOut::
 	removeobject LOCALID_ROUTE121_GRUNT_1
 	removeobject LOCALID_ROUTE121_GRUNT_2
 	removeobject LOCALID_ROUTE121_GRUNT_3
+	setvar VAR_ROUTE121_STATE, 1
+	releaseall
+	end
+
+Route121_EventScript_AquaSkip::
 	setvar VAR_ROUTE121_STATE, 1
 	releaseall
 	end

@@ -3,8 +3,21 @@ MtPyre_Summit_MapScripts::
 	.byte 0
 
 MtPyre_Summit_OnTransition:
+	call Common_EventScript_SetupRivalGfxId
+	call MtPyre_Summit_EventScript_TryShowRival
 	call_if_eq VAR_MT_PYRE_STATE, 2, MtPyre_Summit_EventScript_SetArchieMaxiePositions
 	end
+
+MtPyre_Summit_EventScript_TryShowRival::
+	goto_if_set FLAG_RECEIVED_POKEDEX_FROM_BIRCH, MtPyre_Summit_EventScript_HideRival
+	goto_if_unset FLAG_BADGE05_GET, MtPyre_Summit_EventScript_HideRival
+	goto_if_unset FLAG_KANTO_BADGE05_GET, MtPyre_Summit_EventScript_HideRival
+	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_RIVAL
+	return
+
+MtPyre_Summit_EventScript_HideRival::
+	setflag FLAG_HIDE_MT_PYRE_SUMMIT_RIVAL
+	return
 
 MtPyre_Summit_EventScript_SetArchieMaxiePositions::
 	setobjectxyperm LOCALID_MT_PYRE_SUMMIT_MAXIE, 23, 6
@@ -30,6 +43,8 @@ MtPyre_Summit_EventScript_TeamAquaTrigger2::
 	end
 
 MtPyre_Summit_EventScript_TeamAquaExits::
+	goto_if_unset FLAG_BADGE05_GET, MtPyre_Summit_EventScript_TeamAquaSkip
+	goto_if_unset FLAG_KANTO_BADGE05_GET, MtPyre_Summit_EventScript_TeamAquaSkip
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
@@ -60,6 +75,11 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	giveitem ITEM_MAGMA_EMBLEM
 	setflag FLAG_RECEIVED_RED_OR_BLUE_ORB
 	setflag FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD
+	releaseall
+	end
+
+MtPyre_Summit_EventScript_TeamAquaSkip::
+	setvar VAR_MT_PYRE_STATE, 1
 	releaseall
 	end
 
@@ -401,6 +421,36 @@ MtPyre_Summit_Movement_MaxieApproachArchie2:
 	walk_in_place_faster_left
 	step_end
 
+MtPyre_Summit_EventScript_Rival::
+	lock
+	faceplayer
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, MtPyre_Summit_EventScript_RivalMay
+	goto_if_eq VAR_RESULT, FEMALE, MtPyre_Summit_EventScript_RivalBrendan
+	end
+
+MtPyre_Summit_EventScript_RivalMay::
+	goto_if_ge VAR_MT_PYRE_STATE, 1, MtPyre_Summit_EventScript_RivalMayAfter
+	msgbox MtPyre_Summit_Text_RivalMayBefore, MSGBOX_DEFAULT
+	release
+	end
+
+MtPyre_Summit_EventScript_RivalBrendan::
+	goto_if_ge VAR_MT_PYRE_STATE, 1, MtPyre_Summit_EventScript_RivalBrendanAfter
+	msgbox MtPyre_Summit_Text_RivalBrendanBefore, MSGBOX_DEFAULT
+	release
+	end
+
+MtPyre_Summit_EventScript_RivalMayAfter::
+	msgbox MtPyre_Summit_Text_RivalMayAfter, MSGBOX_DEFAULT
+	release
+	end
+
+MtPyre_Summit_EventScript_RivalBrendanAfter::
+	msgbox MtPyre_Summit_Text_RivalBrendanAfter, MSGBOX_DEFAULT
+	release
+	end
+
 MtPyre_Summit_EventScript_Grunt1::
 	trainerbattle_single TRAINER_GRUNT_MT_PYRE_1, MtPyre_Summit_Text_Grunt1Intro, MtPyre_Summit_Text_Grunt1Defeat
 	msgbox MtPyre_Summit_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
@@ -420,6 +470,42 @@ MtPyre_Summit_EventScript_Grunt4::
 	trainerbattle_single TRAINER_GRUNT_MT_PYRE_4, MtPyre_Summit_Text_Grunt4Intro, MtPyre_Summit_Text_Grunt4Defeat
 	msgbox MtPyre_Summit_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
 	end
+
+MtPyre_Summit_Text_RivalMayBefore:
+	.string "You made it! I tracked TEAM AQUA\n"
+	.string "here to MT. PYRE.\p"
+	.string "They're after the ORB that's\n"
+	.string "enshrined at the summit.\p"
+	.string "I'll hold off the grunts down\n"
+	.string "here. You push ahead and stop\l"
+	.string "ARCHIE!$"
+
+MtPyre_Summit_Text_RivalBrendanBefore:
+	.string "You made it! I tracked TEAM AQUA\n"
+	.string "here to MT. PYRE.\p"
+	.string "They're after the ORB that's\n"
+	.string "enshrined at the summit.\p"
+	.string "I'll hold off the grunts down\n"
+	.string "here. You push ahead and stop\l"
+	.string "ARCHIE!$"
+
+MtPyre_Summit_Text_RivalMayAfter:
+	.string "ARCHIE got away with the RED ORB…\n"
+	.string "I couldn't stop him in time.\p"
+	.string "I've heard TEAM AQUA has a hideout\n"
+	.string "near LILYCOVE CITY.\p"
+	.string "We should head there next.\n"
+	.string "I'll scout ahead and meet you\l"
+	.string "there!$"
+
+MtPyre_Summit_Text_RivalBrendanAfter:
+	.string "ARCHIE got away with the RED ORB…\n"
+	.string "I couldn't stop him in time.\p"
+	.string "I've heard TEAM AQUA has a hideout\n"
+	.string "near LILYCOVE CITY.\p"
+	.string "We should head there next.\n"
+	.string "I'll scout ahead and meet you\l"
+	.string "there!$"
 
 MtPyre_Summit_Text_Grunt1Intro:
 	.string "No! Those TEAM MAGMA goons got\n"

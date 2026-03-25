@@ -132,6 +132,7 @@ RustboroCity_Movement_ScientistLeave:
 RustboroCity_EventScript_FatMan::
 	lock
 	faceplayer
+	goto_if_unset FLAG_RECEIVED_POKEDEX_FROM_BIRCH, RustboroCity_EventScript_FatManRivalInfo
 	goto_if_set FLAG_DEVON_GOODS_STOLEN, RustboroCity_EventScript_FatManSawGrunt
 	msgbox RustboroCity_Text_WeShortenItToDevon, MSGBOX_DEFAULT
 	release
@@ -139,6 +140,11 @@ RustboroCity_EventScript_FatMan::
 
 RustboroCity_EventScript_FatManSawGrunt::
 	msgbox RustboroCity_Text_SneakyLookingManWentAroundCorner, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_EventScript_FatManRivalInfo::
+	msgbox RustboroCity_Text_YoungTrainerChasedGrunt, MSGBOX_DEFAULT
 	release
 	end
 
@@ -282,33 +288,12 @@ RustboroCity_EventScript_StolenGoodsTrigger4::
 	end
 
 RustboroCity_EventScript_StolenGoodsScene::
-	msgbox RustboroCity_Text_OutOfTheWay, MSGBOX_DEFAULT
-	closemessage
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
-	addobject LOCALID_RUSTBORO_GRUNT
-	addobject LOCALID_RUSTBORO_DEVON_EMPLOYEE
-	applymovement LOCALID_RUSTBORO_GRUNT, RustboroCity_Movement_GruntEscape
-	waitmovement 0
-	removeobject LOCALID_RUSTBORO_GRUNT
-	applymovement LOCALID_RUSTBORO_DEVON_EMPLOYEE, RustboroCity_Movement_EmployeeChaseGrunt1
-	waitmovement 0
-	msgbox RustboroCity_Text_WaitDontTakeMyGoods, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_RUSTBORO_DEVON_EMPLOYEE, RustboroCity_Movement_EmployeeChaseGrunt2
-	waitmovement 0
-	fadedefaultbgm
-	removeobject LOCALID_RUSTBORO_DEVON_EMPLOYEE
-	setobjectxyperm LOCALID_RUSTBORO_DEVON_EMPLOYEE, 30, 10
-	clearflag FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1
-	setflag FLAG_DEVON_GOODS_STOLEN
-	setvar VAR_RUSTBORO_CITY_STATE, 2
-	setvar VAR_RUSTURF_TUNNEL_STATE, 2
-	setvar VAR_ROUTE116_STATE, 1
-	clearflag FLAG_HIDE_ROUTE_116_MR_BRINEY
-	clearflag FLAG_HIDE_RUSTURF_TUNNEL_PEEKO
-	clearflag FLAG_HIDE_RUSTURF_TUNNEL_AQUA_GRUNT
-	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
-	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	@ Devon quest removed - skip stolen goods scene
+	goto RustboroCity_EventScript_SkipStolenGoods
+	end
+
+RustboroCity_EventScript_SkipStolenGoods::
+	setvar VAR_RUSTBORO_CITY_STATE, 0
 	releaseall
 	end
 
@@ -1024,6 +1009,13 @@ RustboroCity_Text_SneakyLookingManWentAroundCorner:
 	.string "Hm? A sneaky-looking man?\p"
 	.string "Come to think of it, yes, a shady-\n"
 	.string "looking guy went around the corner.$"
+
+RustboroCity_Text_YoungTrainerChasedGrunt:
+	.string "Some thug from TEAM AQUA stole\n"
+	.string "something from DEVON a while back.\p"
+	.string "But a young trainer from LITTLEROOT\n"
+	.string "chased the crook down and got\l"
+	.string "everything back. What a hero!$"
 
 RustboroCity_Text_HaveYouChallengedGym:
 	.string "Have you taken the POKéMON GYM\n"

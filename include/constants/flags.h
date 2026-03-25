@@ -755,10 +755,10 @@
 #define FLAG_DEFEATED_JOHTO_SILVER_1 0x281 // Silver encounter 1
 #define FLAG_DEFEATED_JOHTO_SILVER_2 0x282 // Silver encounter 2
 #define FLAG_EXP_SHARE_ALL  0x283 // Exp Share All: always on from game start
-#define FLAG_UNUSED_0x284  0x284 // Unused Flag
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
-#define FLAG_UNUSED_0x287  0x287 // Unused Flag
+#define FLAG_HIDE_SLATEPORT_CITY_RIVAL  0x284 // Custom: rival NPC in Slateport for Kanto players
+#define FLAG_HIDE_FALLARBOR_TOWN_RIVAL  0x285 // Custom: rival NPC in Fallarbor for Kanto players
+#define FLAG_HIDE_FORTREE_CITY_RIVAL    0x286 // Custom: rival NPC in Fortree for Kanto players
+#define FLAG_HIDE_MT_PYRE_SUMMIT_RIVAL  0x287 // Custom: rival NPC on Mt. Pyre Summit
 #define FLAG_UNUSED_0x288  0x288 // Unused Flag
 #define FLAG_UNUSED_0x289  0x289 // Unused Flag
 #define FLAG_UNUSED_0x28A  0x28A // Unused Flag
